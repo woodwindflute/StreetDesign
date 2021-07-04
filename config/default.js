@@ -27,7 +27,7 @@ module.exports = {
   db: {
     sequelize: {
       logging: false,
-      database: process.env.PGDATABASE || 'streetmix_dev',
+      database: 'streetmix_dev',
       host: process.env.PGHOST || '127.0.0.1',
       port: process.env.PGPORT || 5432,
       // surely there is a way to inherit these defaults to other config files?
