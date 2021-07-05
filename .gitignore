@@ -11,7 +11,10 @@ Icon
 .Spotlight-V100
 .Trashes
 
-node_modules/
+
+
+**/node_modules/*
+!**/node_modules/@streetmix
 npm-debug.log*
 
 # Ignore built assets
