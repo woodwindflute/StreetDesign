@@ -22,13 +22,7 @@ function SkyBackground (props) {
 
   return (
     <div className="sky-background">
-      {transitions.map(({ item, props, key }) => (
-        <animated.div
-          key={key}
-          className="sky-background-color"
-          style={{ ...props, ...getEnvirons(item).style }}
-        />
-      ))}
+      <img src={require('../../../public/images/background.jpg')} />
     </div>
   )
 }
