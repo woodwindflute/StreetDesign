@@ -58,23 +58,23 @@ function SegmentForPalette (props) {
   const dimensions = getVariantInfoDimensions(variant)
 
   const actualWidth =
-    segment.paletteDefaultWidth ||
-    segment.defaultWidth ||
-    dimensions.right - dimensions.left
+      segment.paletteDefaultWidth ||
+      segment.defaultWidth ||
+      dimensions.right - dimensions.left
   const iconWidth = actualWidth + PALETTE_SEGMENT_EXTRA_PADDING
 
   const classNames = ['segment', 'segment-in-palette']
-  let sublabel = null
+  const sublabel = null
 
   if (props.disabled) {
-    classNames.push('segment-disabled')
-    sublabel = intl.formatMessage({
-      id: 'plus.locked.user',
-      // Default message ends with a Unicode-only left-right order mark
-      // to allow for proper punctuation in `rtl` text direction
-      // This character is hidden from editors by default!
-      defaultMessage: 'Sign in to use!‎'
-    })
+    // classNames.push('segment-disabled')
+    // sublabel = intl.formatMessage({
+    // id: 'plus.locked.user',
+    // Default message ends with a Unicode-only left-right order mark
+    // to allow for proper punctuation in `rtl` text direction
+    // This character is hidden from editors by default!
+    // defaultMessage: 'Sign in to use!‎'
+    // })
   }
 
   const node = (
@@ -90,9 +90,9 @@ function SegmentForPalette (props) {
         sublabel={sublabel}
       >
         {/* Wrapper element necessary for <Tooltip />
-            (alternate solution is to forward ref)
-            This wrapper element is also the target for hover / focus
-            in order the activate the tooltip. */}
+              (alternate solution is to forward ref)
+              This wrapper element is also the target for hover / focus
+              in order the activate the tooltip. */}
         <div style={{ height: '80px' }} tabIndex="0">
           <SegmentCanvas
             actualWidth={iconWidth}
@@ -110,7 +110,7 @@ function SegmentForPalette (props) {
 
   // If disabled, return node only
   if (props.disabled) {
-    return node
+    return props.connectDragSource(node)
   }
 
   // Otherwise, return node wrapped with react-dnd abilities.
