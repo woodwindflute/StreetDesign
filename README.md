@@ -16,6 +16,11 @@ git clone https://github.com/streetmix/streetmix.git
 cd streetmix
 npm install
 ```
+8. Initialize the PostgreSQL database.(Need to setting environment variable of database first.)
+```
+npx sequelize db:create
+npx sequelize db:migrate
+```
 
 #### Environment Variable
 
