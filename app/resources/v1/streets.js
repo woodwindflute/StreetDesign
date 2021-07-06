@@ -279,7 +279,7 @@ exports.get = async function (req, res) {
     return
   }
 
-  res.header('Last-Modified', street.updatedAt)
+  res.header('Last-Modified', 0)
   if (req.method === 'HEAD') {
     res.status(204).end()
     return
