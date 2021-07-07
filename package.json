@@ -103,7 +103,6 @@
     "@primer/octicons-react": "14.2.1",
     "@reduxjs/toolkit": "1.5.0",
     "@sentry/browser": "5.15.5",
-    "streetmix_revised/illustrations": "github:woodwindflute/streetmix_revised",
     "@tippyjs/react": "4.2.3",
     "auth0": "2.33.0",
     "auth0-js": "9.13.2",

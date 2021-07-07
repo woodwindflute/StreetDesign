@@ -30,7 +30,7 @@ initCloudinary()
 compileSVGSprites('assets/images/icons/', 'icons', 'icon')
 compileSVGSprites('assets/images/illustrations', 'illustrations', 'image')
 compileSVGSprites(
-  'node_modules/@streetmix/illustrations/images/',
+  'assets/@streetmix/illustrations/images/',
   'images',
   'image'
 )
