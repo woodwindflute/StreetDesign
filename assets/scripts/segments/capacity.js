@@ -258,7 +258,7 @@ export function saveCsv (data, streetName) {
     const url = URL.createObjectURL(blob)
 
     downloadLink.href = url
-    downloadLink.download = `${streetName}_capacity.csv`
+    downloadLink.download = `_capacity.csv`
 
     document.body.appendChild(downloadLink)
     downloadLink.click()

@@ -6,7 +6,7 @@
  */
 
 exports.config = {
-  app_name: ['Streetmix ' + process.env.NODE_ENV],
+  app_name: ['StreetDesign ' + process.env.NODE_ENV],
   license_key: process.env.NEW_RELIC_LICENSE_KEY,
   logging: {
     /**

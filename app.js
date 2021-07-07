@@ -168,7 +168,7 @@ app.use((req, res, next) => {
     height: 522
   }
 
-  res.locals.STREETMIX_TITLE = 'Streetmix'
+  res.locals.STREETMIX_TITLE = 'StreetDesign'
   res.locals.STREETMIX_URL =
     config.restapi.protocol + config.app_host_port + '/'
 
@@ -225,7 +225,7 @@ if (config.env !== 'production') {
   const options = {
     definition: {
       info: {
-        title: 'Streetmix', // Title (required)
+        title: 'StreetDesign', // Title (required)
         version: '0.1.0' // Version (required)
       }
     },
