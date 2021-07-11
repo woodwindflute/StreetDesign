@@ -10,14 +10,14 @@ import { deleteGalleryStreet } from '../store/slices/gallery'
 import { switchGalleryStreet } from './view'
 import GalleryStreetItem from './GalleryStreetItem'
 
-function GalleryContents (props) {
-  const userId = useSelector((state) => state.gallery.userId)
+function GalleryContents(props) {
+  const userId = useSelector((state) => decodeURI(state.gallery.userId))
   const streets = useSelector((state) => state.gallery.streets || [])
   const currentStreetId = useSelector((state) => state.street.id)
   const isOwnedByCurrentUser = useSelector(
     (state) =>
       state.user.signedIn &&
-      state.gallery.userId === state.user.signInData.userId
+      decodeURI(state.gallery.userId) === state.user.signInData.userId
   )
   const dispatch = useDispatch()
 
@@ -36,12 +36,12 @@ function GalleryContents (props) {
     }
   }, [selectedStreet])
 
-  function selectStreet (streetId) {
+  function selectStreet(streetId) {
     setSelectedStreet(streetId)
     switchGalleryStreet(streetId)
   }
 
-  function deleteStreet (streetId) {
+  function deleteStreet(streetId) {
     if (streetId === currentStreetId) {
       setSelectedStreet(null)
       showError(ERRORS.NO_STREET, false)
@@ -64,10 +64,10 @@ function GalleryContents (props) {
               <Avatar userId={userId} />
               <div className="gallery-user-id">{userId}</div>
             </>
-            )
+          )
           : (
             <FormattedMessage id="gallery.all" defaultMessage="All streets" />
-            )}
+          )}
       </div>
 
       {/* Street count */}
@@ -107,12 +107,12 @@ function GalleryContents (props) {
                 >
                   <FormattedMessage id="btn.copy" defaultMessage="Make a copy" />
                 </a>
-                )
+              )
               : (
                 <button className="gallery-copy-last-street" disabled={true}>
                   <FormattedMessage id="btn.copy" defaultMessage="Make a copy" />
                 </button>
-                )}
+              )}
           </div>
         )}
 
