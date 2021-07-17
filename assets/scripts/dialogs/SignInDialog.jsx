@@ -204,7 +204,7 @@ export default class SignInDialog extends React.Component {
               <h1>
                 <FormattedMessage
                   id="dialogs.sign-in.heading"
-                  defaultMessage="Sign in / Sign up"
+                  defaultMessage="登入/註冊"
                 />
               </h1>
             </header>
@@ -212,7 +212,7 @@ export default class SignInDialog extends React.Component {
               <p>
                 <FormattedMessage
                   id="dialogs.sign-in.description"
-                  defaultMessage="Save your first design or sign in to access your past designs."
+                  defaultMessage="保存你的第一個街道！或登入使用之前的。"
                 />
               </p>
 
@@ -223,7 +223,7 @@ export default class SignInDialog extends React.Component {
                 >
                   <FormattedMessage
                     id="dialogs.sign-in.email-label"
-                    defaultMessage="Email"
+                    defaultMessage="電子郵件"
                   />
                 </label>
 
@@ -248,7 +248,7 @@ export default class SignInDialog extends React.Component {
                   <small>
                     <FormattedMessage
                       id="dialogs.sign-in.email-description"
-                      defaultMessage="We’ll send you a link to sign in. No password is required."
+                      defaultMessage="將會傳送登入連接給您，無須密碼。"
                     />
                   </small>
                 </p>
@@ -259,7 +259,7 @@ export default class SignInDialog extends React.Component {
                 >
                   <FormattedMessage
                     id="dialogs.sign-in.button.email"
-                    defaultMessage="Continue with email"
+                    defaultMessage="使用email登入/註冊"
                   />
                 </button>
               </form>
@@ -281,7 +281,7 @@ export default class SignInDialog extends React.Component {
                 <Icon icon="twitter" />
                 <FormattedMessage
                   id="dialogs.sign-in.button.twitter"
-                  defaultMessage="Continue with Twitter"
+                  defaultMessage="使用Twitter登入/註冊"
                 />
               </button>
 
@@ -292,7 +292,7 @@ export default class SignInDialog extends React.Component {
                 <Icon icon="google" />
                 <FormattedMessage
                   id="dialogs.sign-in.button.google"
-                  defaultMessage="Continue with Google"
+                  defaultMessage="使用Google登入/註冊"
                 />
               </button>
 
@@ -303,7 +303,7 @@ export default class SignInDialog extends React.Component {
                 <Icon icon="facebook" />
                 <FormattedMessage
                   id="dialogs.sign-in.button.facebook"
-                  defaultMessage="Continue with Facebook"
+                  defaultMessage="使用Facebook登入/註冊"
                 />
               </button>
             </div>
@@ -312,14 +312,13 @@ export default class SignInDialog extends React.Component {
               <p className="sign-in-disclaimer">
                 <FormattedMessage
                   id="dialogs.sign-in.tos"
-                  defaultMessage="By clicking one of these buttons, I agree to the
-                    {tosLink} and {privacyLink}."
+                  defaultMessage="如您註冊或使用我們的服務，即視為您已確認接受我們的 {tosLink} 及 {privacyLink}."
                   values={{
                     tosLink: (
                       <a href="/terms-of-service" target="_blank">
                         <FormattedMessage
                           id="dialogs.sign-in.tos-link-label"
-                          defaultMessage="terms of service"
+                          defaultMessage="服務條款"
                         />
                       </a>
                     ),
@@ -327,7 +326,7 @@ export default class SignInDialog extends React.Component {
                       <a href="/privacy-policy" target="_blank">
                         <FormattedMessage
                           id="dialogs.sign-in.privacy-link-label"
-                          defaultMessage="privacy policy"
+                          defaultMessage="隱私權政策"
                         />
                       </a>
                     )
