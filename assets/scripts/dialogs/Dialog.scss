@@ -40,10 +40,10 @@ $header-text-colour: $colour-turquoise-700;
 .dialog-box {
   position: relative;
   // balance the dialog by making it slightly north of center
-  margin-top: -3%;
+  margin-top: 0%;
   padding: 0;
   background: white;
-  line-height: 1.4;
+  line-height: 0.6;
   z-index: $z-09-dialog-box;
   touch-action: none;
 

@@ -110,7 +110,7 @@ export default class SignInDialog extends React.Component {
       <p className="sign-in-error-message">
         <FormattedMessage
           id="dialogs.sign-in.email-invalid"
-          defaultMessage="Oops! That didn’t look like a valid email address. Please try again."
+          defaultMessage="這不是正確的電子信箱！請再試一次。"
         />
       </p>
     )
@@ -125,7 +125,7 @@ export default class SignInDialog extends React.Component {
               <h1 className="sign-in-loading-message">
                 <FormattedMessage
                   id="dialogs.sign-in.loading-message"
-                  defaultMessage="Signing you in…"
+                  defaultMessage="登入中..."
                 />
               </h1>
             </header>
@@ -151,7 +151,7 @@ export default class SignInDialog extends React.Component {
               <h1 className="sign-in-loading-message">
                 <FormattedMessage
                   id="dialogs.sign-in.loading-message"
-                  defaultMessage="Signing you in…"
+                  defaultMessage="登入中..."
                 />
               </h1>
             </header>
@@ -159,7 +159,7 @@ export default class SignInDialog extends React.Component {
               <p>
                 <FormattedMessage
                   id="dialogs.sign-in.sent-message-with-email"
-                  defaultMessage="We’ve sent an email to {email}. Please follow the instructions there to continue signing in!"
+                  defaultMessage="我們已經將信寄至 {email}，請根據操作指示登入。"
                   values={{
                     email: (
                       <span className="sign-in-email">{this.state.email}</span>
@@ -170,13 +170,13 @@ export default class SignInDialog extends React.Component {
               <p className="sign-in-resend">
                 <FormattedMessage
                   id="dialogs.sign-in.email-unreceived"
-                  defaultMessage="Didn’t receive it?"
+                  defaultMessage="沒有收到嗎？"
                 />
                 <br />
                 <a onClick={this.handleEmailResend}>
                   <FormattedMessage
                     id="dialogs.sign-in.resend-email"
-                    defaultMessage="Resend email"
+                    defaultMessage="再寄一次"
                   />
                 </a>
               </p>
@@ -212,7 +212,7 @@ export default class SignInDialog extends React.Component {
               <p>
                 <FormattedMessage
                   id="dialogs.sign-in.description"
-                  defaultMessage="保存你的第一個街道！或登入使用之前的。"
+                  defaultMessage="保存你的第一個街道！或登入使用之前的設計。"
                 />
               </p>
 
@@ -248,7 +248,7 @@ export default class SignInDialog extends React.Component {
                   <small>
                     <FormattedMessage
                       id="dialogs.sign-in.email-description"
-                      defaultMessage="將會傳送登入連接給您，無須密碼。"
+                      defaultMessage="將會傳送登入網址給您，無須密碼。"
                     />
                   </small>
                 </p>
@@ -259,7 +259,7 @@ export default class SignInDialog extends React.Component {
                 >
                   <FormattedMessage
                     id="dialogs.sign-in.button.email"
-                    defaultMessage="使用email登入/註冊"
+                    defaultMessage="使用Email登入/註冊"
                   />
                 </button>
               </form>
@@ -269,21 +269,10 @@ export default class SignInDialog extends React.Component {
                 <span>
                   <FormattedMessage
                     id="dialogs.sign-in.social-heading"
-                    defaultMessage="or"
+                    defaultMessage="或"
                   />
                 </span>
               </div>
-
-              <button
-                className="button-tertiary sign-in-button sign-in-social-button sign-in-twitter-button"
-                onClick={this.handleTwitterSignIn}
-              >
-                <Icon icon="twitter" />
-                <FormattedMessage
-                  id="dialogs.sign-in.button.twitter"
-                  defaultMessage="使用Twitter登入/註冊"
-                />
-              </button>
 
               <button
                 className="button-tertiary sign-in-button sign-in-social-button sign-in-google-button"
@@ -312,7 +301,7 @@ export default class SignInDialog extends React.Component {
               <p className="sign-in-disclaimer">
                 <FormattedMessage
                   id="dialogs.sign-in.tos"
-                  defaultMessage="如您註冊或使用我們的服務，即視為您已確認接受我們的 {tosLink} 及 {privacyLink}."
+                  defaultMessage="使用此服務即接受我們的 {tosLink} 及 {privacyLink}"
                   values={{
                     tosLink: (
                       <a href="/terms-of-service" target="_blank">
