@@ -9,7 +9,7 @@ const WhatsNewDialog = () => (
       <div className="whats-new-dialog">
         <header>
           <h1>
-            <FormattedMessage id="dialogs.whatsnew.heading" defaultMessage="What’s new in Streetmix?&lrm;" />
+            <FormattedMessage id="dialogs.whatsnew.heading" defaultMessage="3D 街景" />
           </h1>
         </header>
         <div className="dialog-content dialog-content-bleed">

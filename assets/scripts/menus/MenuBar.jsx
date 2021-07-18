@@ -89,45 +89,26 @@ function MenuBar (props) {
       <ul className="menu-bar-left">
         <li className="menu-bar-title">
           <img src={logo} alt="Streemix" className="menu-bar-logo" />
-          <h1>Streetmix</h1>
+          <h1>StreetDesign</h1>
         </li>
+        <MenuBarItem
+          label="營建署道路設計 StreetDesign"
+          translation="營建署道路設計 StreetDesign"
+          url="http://localhost:8000/"
+        />
         <MenuBarItem
           label="Help"
           translation="menu.item.help"
           onClick={handleClickMenuButton('help')}
         />
-        {!offline && (
-          <>
-            <MenuBarItem
-              label="Contact"
-              translation="menu.item.contact"
-              onClick={handleClickMenuButton('contact')}
-            />
-            {upgradeFunnel
-              ? (
-                <MenuBarItem
-                  url="#"
-                  label="Upgrade"
-                  translation="menu.upgrade"
-                  onClick={handleClickUpgrade}
-                />
-                )
-              : (
-                <MenuBarItem
-                  label="Donate"
-                  translation="menu.contribute.donate"
-                  url="https://opencollective.com/streetmix/"
-                />
-                )}
-            <MenuBarItem
-              label="Store"
-              translation="menu.item.store"
-              url="https://cottonbureau.com/people/streetmix"
-            />
-          </>
-        )}
       </ul>
       <ul className="menu-bar-right" ref={menuBarRightEl}>
+        <MenuBarItem
+          label="View as 3D mode"
+          translation="menu.item.view"
+          url="#"
+          onClick={() => dispatch(showDialog('WHATS_NEW'))}
+        />
         <MenuBarItem
           label="New street"
           translation="menu.item.new-street"

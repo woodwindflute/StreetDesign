@@ -13,6 +13,9 @@
  *
  * Only one modal window is shown at a time. Nested modals aren't supported.
  */
+
+// 之後這邊改作新用戶教學
+
 import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
