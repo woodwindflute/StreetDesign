@@ -144,7 +144,7 @@ function GeotagDialog() {
   const geocodeAvailable = !!PELIAS_API_KEY
 
   const maxBounds = [
-    [30, 125],
+    [28, 125],
     [20, 118]
   ]
   const mapRef = useRef(null)
