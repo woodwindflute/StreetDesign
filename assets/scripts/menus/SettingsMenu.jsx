@@ -56,51 +56,6 @@ function SettingsMenu (props) {
   // testing, but these are not actually to accessible spec
   return (
     <Menu {...props}>
-      <h2 className="menu-header" id="settings-menu-units-select">
-        <FormattedMessage id="settings.units.label" defaultMessage="Units" />
-      </h2>
-      <ul
-        className="menu-item-group"
-        role="listbox"
-        aria-labelledby="settings-menu-units-select"
-      >
-        <li
-          className={`menu-item ${
-            units === SETTINGS_UNITS_METRIC ? 'menu-item-selected' : ''
-          }`}
-          onClick={handleSelectMetric}
-          role="option"
-          aria-selected={units === SETTINGS_UNITS_METRIC}
-        >
-          {units === SETTINGS_UNITS_METRIC && (
-            <FontAwesomeIcon className="menu-item-icon" icon={ICON_CHECK} />
-          )}
-          {/* &#x200E; prevents trailing parentheses from going in the wrong place in rtl languages */}
-          <FormattedMessage
-            id="settings.units.metric"
-            defaultMessage="Metric units (meters)"
-          />
-          &#x200E;
-        </li>
-        <li
-          className={`menu-item ${
-            units === SETTINGS_UNITS_IMPERIAL ? 'menu-item-selected' : ''
-          }`}
-          onClick={handleSelectImperial}
-          role="option"
-          aria-selected={units === SETTINGS_UNITS_IMPERIAL}
-        >
-          {units === SETTINGS_UNITS_IMPERIAL && (
-            <FontAwesomeIcon className="menu-item-icon" icon={ICON_CHECK} />
-          )}
-          <FormattedMessage
-            id="settings.units.imperial"
-            defaultMessage="Imperial units (feet)"
-          />
-          &#x200E;
-        </li>
-      </ul>
-
       {enableLocaleSettings && (
         <>
           <h2 className="menu-header" id="settings-menu-language-select">

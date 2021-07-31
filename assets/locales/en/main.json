@@ -13,7 +13,8 @@
       "settings": "Settings",
       "share": "Share",
       "store": "Store",
-      "upgrade": "Upgrade"
+      "upgrade": "Upgrade",
+      "view": "View as 3D mode"
     },
     "help": {
       "keyboard-label": "Keyboard shortcuts:",
@@ -35,12 +36,12 @@
       "save": "Save as image…",
       "save-byline": "For including in a report, blog, etc.",
       "messages": {
-        "my-street": "Check out my street, {streetName}, on Streetmix!",
-        "my-street-unnamed": "Check out my street on Streetmix!",
-        "someone-elses-street": "Check out {streetName} by {streetCreator} on Streetmix!",
-        "someone-elses-street-unnamed": "Check out this street by {streetCreator} on Streetmix!",
-        "anonymous-creator-street": "Check out {streetName} on Streetmix!",
-        "anonymous-creator-street-unnamed": "Check out this street on Streetmix!"
+        "my-street": "Check out my street, {streetName}!",
+        "my-street-unnamed": "Check out my street!",
+        "someone-elses-street": "Check out {streetName} by {streetCreator}!",
+        "someone-elses-street-unnamed": "Check out this street by {streetCreator}!",
+        "anonymous-creator-street": "Check out {streetName}!",
+        "anonymous-creator-street-unnamed": "Check out this street!"
       }
     },
     "contact": {
@@ -59,7 +60,7 @@
     },
     "feedback": {
       "prompt": "Send us a message:",
-      "message-placeholder": "What do you think of Streetmix?",
+      "message-placeholder": "What do you think of it?",
       "email-placeholder": "Your email (optional)",
       "send": "Send message",
       "confirm": "We got it. Thanks!",
@@ -84,10 +85,10 @@
     "remixing": "Remixing…",
     "having-trouble": "Having trouble…",
     "no-street": "No street selected.",
-    "trouble-loading": "We’re having trouble loading Streetmix.",
-    "slow-connection-1": "Streetmix wasn’t able to connect to the Internet in awhile now.",
+    "trouble-loading": "We’re having trouble loading it.",
+    "slow-connection-1": "It wasn’t able to connect to the Internet in awhile now.",
     "slow-connection-2": "You might want to reload the page and try again. Please note you might lose the latest change to the street. Sorry!",
-    "no-connection": "Streetmix is having trouble connecting to the Internet.",
+    "no-connection": "It is having trouble connecting to the Internet.",
     "more-info": "More info"
   },
   "error": {
@@ -120,11 +121,11 @@
     "auth-api-problem-title": "There was a problem with signing you in.",
     "auth-api-problem-description": "There was a problem with authentication.",
     "please-try-again": "Please try again later or let us know via <email_link>email</email_link> or <tweet_link>Twitter</tweet_link>.",
-    "unsupported-browser-title": "Streetmix doesn’t work on your browser.",
+    "unsupported-browser-title": "It doesn’t work on your browser.",
     "unsupported-browser-description": "Sorry about that. You might want to try <chrome_link>Chrome</chrome_link>, <firefox_link>Firefox</firefox_link>, <edge_link>Microsoft Edge</edge_link>, or Safari.",
     "unsupported-browser-internet-explorer": "Are you on Internet Explorer? <a>Find out more.</a>",
     "unsupported-browser-contact-us": "If you think your browser should be supported, please contact us via <a>email</a>.",
-    "cannot-create-new-street-on-phone-title": "Streetmix works on tablets and desktops only.",
+    "cannot-create-new-street-on-phone-title": "It works on tablets and desktops only.",
     "cannot-create-new-street-on-phone-description": "If you follow another link to a specific street, you can view it on your phone – but you cannot yet create new streets.",
     "generic-error-title": "Something went wrong.",
     "generic-error-description": "We’re sorry – something went wrong.",
@@ -151,7 +152,7 @@
       "text": "Something unexpected happened 😢. We’ve logged the error, but if you can remember what happened on the way here, <a>please tell us about it</a>. This could also be a temporary problem, so please try one more time."
     },
     "welcome": {
-      "heading": "Welcome to Streetmix.",
+      "heading": "Welcome.",
       "new": {
         "intro": "Design, remix, and share your neighborhood street. Add trees or bike paths, widen sidewalks or traffic lanes, learn how your decisions can impact your community.",
         "instruction": "Start by moving some segments around.",
@@ -214,7 +215,7 @@
       "option-watermark": "Watermark",
       "loading": "Loading…",
       "save-button": "Save to your computer…",
-      "license": "This Streetmix-created image may be reused anywhere, for any purpose, under the {licenseLink} license.",
+      "license": "This image may be reused anywhere, for any purpose, under the {licenseLink} license.",
       "error-preview": "There was an error displaying a preview image.",
       "error-unavailable": "Saving to image is not available on this browser.",
       "preview-image-alt": "Preview"
@@ -250,7 +251,7 @@
         "google": "Continue with Google",
         "facebook": "Continue with Facebook"
       },
-      "tos": "By clicking one of these buttons, I agree to the {tosLink} and {privacyLink}.",
+      "tos": "I agree to the {tosLink} and {privacyLink}.",
       "tos-link-label": "terms of service",
       "privacy-link-label": "privacy policy",
       "loading-message": "Signing you in…",
@@ -259,7 +260,7 @@
       "resend-email": "Resend email"
     },
     "whatsnew": {
-      "heading": "What’s new in Streetmix?"
+      "heading": "3D Street View"
     },
     "newsletter": {
       "heading": "Subscribe to our newsletter",
@@ -290,7 +291,7 @@
     "all-segments-deleted": "All segments have been removed.",
     "no-undo": "Nothing to undo.",
     "no-redo": "Nothing to redo.",
-    "no-save": "No need to save by hand; Streetmix automatically saves your street!",
+    "no-save": "No need to save by hand; We automatically saves your street!",
     "remixing": "Now editing a freshly-made duplicate of the original street. The duplicate has been put in your gallery.",
     "remixing-sign-in": "Now editing a freshly-made duplicate of the original street. Sign in to start your own gallery of streets.",
     "reloaded": "Your street was reloaded from the server as it was modified elsewhere."
@@ -382,7 +383,7 @@
     "byline": "by {user}",
     "roles": {
       "admin": "Admin",
-      "subscriber": "Streetmix+ subscriber"
+      "subscriber": "Subscriber"
     }
   },
   "export": {

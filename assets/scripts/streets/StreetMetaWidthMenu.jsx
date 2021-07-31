@@ -108,26 +108,6 @@ function StreetMetaWidthMenu ({ street, onChange }) {
         })}
       </option>
       <option disabled={true} />
-      <option
-        id="switch-to-imperial-units"
-        value={STREET_WIDTH_SWITCH_TO_IMPERIAL}
-        disabled={units === SETTINGS_UNITS_IMPERIAL}
-      >
-        {formatMessage({
-          id: 'width.imperial',
-          defaultMessage: 'Switch to imperial units (feet)'
-        })}
-      </option>
-      <option
-        id="switch-to-metric-units"
-        value={STREET_WIDTH_SWITCH_TO_METRIC}
-        disabled={units === SETTINGS_UNITS_METRIC}
-      >
-        {formatMessage({
-          id: 'width.metric',
-          defaultMessage: 'Switch to metric units'
-        })}
-      </option>
     </select>
   )
 }
