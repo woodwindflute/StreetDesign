@@ -15,7 +15,7 @@ exports.post = async function (req, res) {
     }
     const userJson = { id: user.id }
     logger.info({ user: userJson }, 'New user created.')
-    res.header('Location', config.restapi.baseuri + '/v1/users/' + user.id)
+    res.header('Location', config.restapi.baseuri + '/v1/users/' + user.id, 'Content-Type', 'application/json;charset=utf-8')
     res.status(201).send(userJson)
   } // END function - handleCreateUser
 
@@ -37,7 +37,7 @@ exports.post = async function (req, res) {
     const userJson = { id: user.id }
     logger.info({ user: userJson }, 'Existing user logged in.')
 
-    res.header('Location', config.restapi.baseuri + '/v1/users/' + user.id)
+    res.header('Location', config.restapi.baseuri + '/v1/users/' + user.id, 'Content-Type', 'application/json;charset=utf-8')
     res.status(200).send(userJson)
   } // END function - handleUpdateUser
 
@@ -91,21 +91,6 @@ exports.post = async function (req, res) {
       })
     }
   } // END function - handleAuth0TwitterSignIn
-  /**
-   * Returns a randomly-generated 4-digit string of a number between 0000 and 9999
-   *
-   * @returns {string}
-   */
-  const generateRandomId = () =>
-    Math.floor(Math.random() * 10000)
-      .toString()
-      .padStart(4, '0')
-
-  const generateId = function (nickname) {
-    // TODO - Check if the Id generated is not existing
-    const id = generateRandomId()
-    return nickname + '-' + id
-  }
 
   const handleUserProfileImage = async function (user, credentials) {
     const publicId = `${config.env}/profile_image/${user.id}`
@@ -140,12 +125,12 @@ exports.post = async function (req, res) {
         user = await User.findOne({ where: { auth0Id: credentials.auth0Id } })
       }
       if (!user) {
-        const numOfUser = await User.findOne({
+        const userByNickname = await User.findOne({
           where: { id: credentials.nickname }
         })
 
         // Ensure there is no existing user with id same this nickname
-        if (!numOfUser) {
+        if (!userByNickname) {
           const newUserData = {
             id: credentials.nickname,
             auth0Id: credentials.auth0Id,
@@ -158,14 +143,27 @@ exports.post = async function (req, res) {
             handleCreateUserError(err)
           }
         } else {
-          const id = generateId(credentials.nickname)
-          const newUserData = {
-            id: id,
-            auth0Id: credentials.auth0Id,
-            email: credentials.email,
-            profileImageUrl: credentials.profileImageUrl
+          if (userByNickname.email === credentials.email) {
+            const userUpdates = userByNickname.toJSON()
+            userUpdates.auth0Id = credentials.auth0Id
+            try {
+              const updatedUser = await User.update(
+                userUpdates,
+                {
+                  where: { auth0Id: userByNickname.auth0Id },
+                  returning: true
+                }
+              )
+              handleUpdateUser(updatedUser)
+            } catch (err) {
+              handleUpdateUserError(err)
+            }
+          } else {
+            res.status(400).json({
+              status: 400,
+              msg: 'The account is registered.'
+            })
           }
-          User.create(newUserData).then(handleCreateUser)
         }
       } else {
         const profileImageUrl = await handleUserProfileImage(user, credentials)

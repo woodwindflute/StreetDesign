@@ -34,7 +34,7 @@ exports.post = async function (req, res) {
     street.creatorIp = requestIp(req)
   }
 
-  function updateUserLastStreetId (userId) {
+  function updateUserLastStreetId(userId) {
     return User.findOne({ where: { auth0_id: userId } }).then((user) => {
       if (!user.lastStreetId) {
         return user.update({ lastStreetId: 1 })
@@ -43,7 +43,7 @@ exports.post = async function (req, res) {
     })
   }
 
-  async function updateSequence () {
+  async function updateSequence() {
     let sequence
     try {
       sequence = await Sequence.findByPk('streets')
@@ -121,7 +121,7 @@ exports.post = async function (req, res) {
     res.status(201).json(s)
   }
 
-  function handleErrors (error) {
+  function handleErrors(error) {
     switch (error) {
       case ERRORS.USER_NOT_FOUND:
         res.status(404).json({ status: 404, msg: 'User not found.' })
@@ -177,7 +177,7 @@ exports.delete = async function (req, res) {
     return
   }
 
-  async function deleteStreet (street) {
+  async function deleteStreet(street) {
     let user
     if (!req.user) {
       throw new Error(ERRORS.UNAUTHORISED_ACCESS)
@@ -209,7 +209,7 @@ exports.delete = async function (req, res) {
     return street.save({ returning: true })
   }
 
-  function handleErrors (error) {
+  function handleErrors(error) {
     switch (error) {
       case ERRORS.USER_NOT_FOUND:
         res.status(404).json({ status: 404, msg: 'User not found.' })
@@ -291,7 +291,7 @@ exports.get = async function (req, res) {
 } // END function - exports.get
 
 exports.find = async function (req, res) {
-  const creatorId = req.query.creatorId
+  const creatorId = req.query.creatorId ? decodeURI(req.query.creatorId) : req.query.creatorId
   const namespacedId = req.query.namespacedId
   const start = (req.query.start && Number.parseInt(req.query.start, 10)) || 0
   const count = (req.query.count && Number.parseInt(req.query.count, 10)) || 20
@@ -327,7 +327,7 @@ exports.find = async function (req, res) {
     })
   } // END function - findStreets
 
-  function handleErrors (error) {
+  function handleErrors(error) {
     switch (error) {
       case ERRORS.USER_NOT_FOUND:
         res.status(404).json({ status: 404, msg: 'Creator not found.' })
@@ -459,7 +459,7 @@ exports.put = async function (req, res) {
     return
   }
 
-  function handleErrors (error) {
+  function handleErrors(error) {
     switch (error) {
       case ERRORS.USER_NOT_FOUND:
         res.status(404).json({ status: 404, msg: 'Creator not found.' })
@@ -487,7 +487,7 @@ exports.put = async function (req, res) {
     }
   } // END function - handleErrors
 
-  async function updateStreetData (street) {
+  async function updateStreetData(street) {
     street.name = body.name || street.name
     street.data = body.data || street.data
     street.clientUpdatedAt =
@@ -522,7 +522,7 @@ exports.put = async function (req, res) {
     handleErrors(ERRORS.CANNOT_UPDATE_STREET)
   }
 
-  async function updateStreetWithUser (street, user) {
+  async function updateStreetWithUser(street, user) {
     if (!user) {
       throw new Error(ERRORS.UNAUTHORISED_ACCESS)
     }
@@ -562,7 +562,6 @@ exports.put = async function (req, res) {
     const user = await User.findOne({
       where: { auth0_id: req.user.sub }
     })
-
     const isOwner = user && user.id === street.creatorId
     if (!isOwner) {
       res.status(401).end()

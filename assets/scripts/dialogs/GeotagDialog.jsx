@@ -1,5 +1,5 @@
 /* global L */
-import React, { useState } from 'react'
+import React, { createRef, useEffect, useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { useSelector, useDispatch, batch } from 'react-redux'
 import { useIntl } from 'react-intl'
@@ -17,24 +17,25 @@ import ErrorBanner from './Geotag/ErrorBanner'
 import GeoSearch from './Geotag/GeoSearch'
 import LocationPopup from './Geotag/LocationPopup'
 import './GeotagDialog.scss'
+import './BoundaryCanvas.js'
+import geoJson from './COUNTY_MOI_1090820.json'
 
 const REVERSE_GEOCODE_API = `https://${PELIAS_HOST_NAME}/v1/reverse`
 const REVERSE_GEOCODE_ENDPOINT = `${REVERSE_GEOCODE_API}?api_key=${PELIAS_API_KEY}`
 const MAP_TILES =
-  'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png'
-const MAP_TILES_2X =
-  'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}@2x.png'
+  'https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png'
 const MAP_ATTRIBUTION =
-  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
+  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 // zoom level for a closer, 'street' zoom level
 const MAP_LOCATION_ZOOM = 12
 // Default location if geo IP not detected; this hovers over the Atlantic Ocean
-const DEFAULT_MAP_ZOOM = 2
+const DEFAULT_MAP_ZOOM = 8
+// origin map center lat: 10.45, lng: -10.78
 const DEFAULT_MAP_LOCATION = {
-  lat: 10.45,
-  lng: -10.78
+  lat: 23.5832,
+  lng: 120.5825
 }
-
+const MIN_ZOOM = 7
 // Override icon paths in stock Leaflet's stylesheet
 delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
@@ -57,7 +58,7 @@ GeotagDialog.propTypes = {
   })
 }
 
-function getInitialState (props) {
+function getInitialState(props) {
   // Determine initial map center, and what to display
   let mapCenter, zoom, markerLocation, label
 
@@ -118,7 +119,7 @@ reverse geocodeing based on user input (the user can click on the map to reverse
 
 It is tested primary via cypress at the moment
  */
-function GeotagDialog () {
+function GeotagDialog() {
   // this kinda goofy props object is a result of refactoring
   // some legacy code. definetly worth refactoring further in the future
   // if it causes other problems or confusion
@@ -142,11 +143,20 @@ function GeotagDialog () {
 
   const geocodeAvailable = !!PELIAS_API_KEY
 
-  // `dpi` is a bad name for what is supposed to be referring to the devicePixelRatio
-  // value. A devicePixelRatio higher than 1 (e.g. Retina or 4k monitors) will load
-  // higher resolution map tiles.
-  const dpi = useSelector((state) => state.system.devicePixelRatio || 1.0)
-  const tileUrl = dpi > 1 ? MAP_TILES_2X : MAP_TILES
+  const maxBounds = [
+    [28, 125],
+    [20, 118]
+  ]
+  const mapRef = useRef(null)
+
+  useEffect(() => {
+    const map = mapRef.current.leafletElement
+    const osm = new L.TileLayer.boundaryCanvas(MAP_TILES, {
+      boundary: geoJson,
+      attribution: MAP_ATTRIBUTION
+    })
+    map.addLayer(osm)
+  }, [])
 
   const handleMapClick = (event) => {
     // get the new latlng of the clicked position
@@ -230,7 +240,7 @@ function GeotagDialog () {
     updateMap(latlng, locationProperties)
   }
 
-  function updateMap (latlng, locationProperties) {
+  function updateMap(latlng, locationProperties) {
     /*
     after the location position is updated,
     we need to update the map UI elements
@@ -288,18 +298,20 @@ function GeotagDialog () {
                   focus={mapCenter}
                 />
               </div>
-              )
+            )
             : (
               <ErrorBanner />
-              )}
+            )}
           <Map
             center={mapCenter}
             zoomControl={false}
             zoom={zoom}
             onClick={geocodeAvailable ? handleMapClick : null}
             useFlyTo={true}
+            maxBounds={maxBounds}
+            minZoom={MIN_ZOOM}
+            ref={mapRef}
           >
-            <TileLayer attribution={MAP_ATTRIBUTION} url={tileUrl} />
             <ZoomControl
               zoomInTitle={intl.formatMessage({
                 id: 'dialogs.geotag.zoom-in',
@@ -310,7 +322,6 @@ function GeotagDialog () {
                 defaultMessage: 'Zoom out'
               })}
             />
-
             {renderPopup && (
               <LocationPopup
                 position={markerLocation}
