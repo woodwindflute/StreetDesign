@@ -26,7 +26,6 @@
 
   </head>
   <body>
-    <!-- Original source https://www.codeply.com/go/sbfCXYgqoO -->
     <a-scene renderer="colorManagement: true; highRefreshRate: true; foveationLevel: 3; physicallyCorrectLights: true; logarithmicDepthBuffer: false;" fogoff="type: linear; color: #D5C69B; far: 200" gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/;">
       <a-assets>
         <streetmix-assets url="./"></streetmix-assets>
@@ -96,7 +95,7 @@
     });
 
     window.onload = function () {
-      if (window.location.hash.substring(1).length === 0) window.location.hash = '#http://localhost:8000/-/10';
+      if (window.location.hash.substring(1).length === 0) window.location.hash = '#https://streetmix.net/kfarr/3';
       document.querySelector('#inputUrl').value = window.location.hash.substring(1);
     }
 

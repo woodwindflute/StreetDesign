@@ -14,7 +14,8 @@
       "share": "分享",
       "store": "",
       "upgrade": "",
-      "view": "以3D模式觀看"
+      "view": "3D模式",
+      "plan": "平面圖"
     },
     "help": {
       "keyboard-label": "快捷鍵：",
