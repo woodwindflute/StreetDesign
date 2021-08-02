@@ -5,9 +5,9 @@ function streetmixUserToAPI (userURL) { // eslint-disable-line no-unused-vars
   const creatorId = pathArray[1];
   const namespacedId = pathArray[2];
   if (creatorId === '-') {
-    return 'http://localhost:8000/api/v1/streets?namespacedId=' + namespacedId;
+    return 'https://pure-inlet-10299.herokuapp.com/api/v1/streets?namespacedId=' + namespacedId;
   } else {
-    return 'http://localhost:8000/api/v1/streets?namespacedId=' + namespacedId + '&creatorId=' + creatorId;
+    return 'https://pure-inlet-10299.herokuapp.com/api/v1/streets?namespacedId=' + namespacedId + '&creatorId=' + creatorId;
   }
 }
 module.exports.streetmixUserToAPI = streetmixUserToAPI;
@@ -44,7 +44,7 @@ function streetmixAPIToUser (APIURL) { // eslint-disable-line no-unused-vars
     creatorId = '-';
   }
 
-  return 'http://localhost:8000/' + creatorId + '/' + namespacedId;
+  return 'https://pure-inlet-10299.herokuapp.com/' + creatorId + '/' + namespacedId;
 }
 module.exports.streetmixAPIToUser = streetmixAPIToUser;
 

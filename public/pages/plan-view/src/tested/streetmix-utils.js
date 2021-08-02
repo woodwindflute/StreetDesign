@@ -1,26 +1,26 @@
 function streetmixUserToAPI (userURL) { // eslint-disable-line no-unused-vars
   // this takes in a user facing Streetmix.net URL like https://streetmix.net/kfarr/3/a-frame-city-builder-street-only
   // and turns it into the API redirect URL like https://streetmix.net/api/v1/streets?namespacedId=3&creatorId=kfarr
-  var pathArray = new URL(userURL).pathname.split('/');
-  const creatorId = pathArray[1];
-  const namespacedId = pathArray[2];
+  const pathArray = new URL(userURL).pathname.split('/')
+  const creatorId = pathArray[1]
+  const namespacedId = pathArray[2]
   if (creatorId === '-') {
-    return 'http://localhost:8000/api/v1/streets?namespacedId=' + namespacedId;
+    return 'https://pure-inlet-10299.herokuapp.com/api/v1/streets?namespacedId=' + namespacedId
   } else {
-    return 'http://localhost:8000/api/v1/streets?namespacedId=' + namespacedId + '&creatorId=' + creatorId;
+    return 'https://pure-inlet-10299.herokuapp.com/api/v1/streets?namespacedId=' + namespacedId + '&creatorId=' + creatorId
   }
 }
-module.exports.streetmixUserToAPI = streetmixUserToAPI;
+module.exports.streetmixUserToAPI = streetmixUserToAPI
 
 function pathStartsWithAPI (urlString) {
   // First, check the URL path to see if it starts with /api/
-  const url = document.createElement('a');
-  url.href = urlString;
-  const pathname = url.pathname;
-  const topDir = pathname.split('/')[1];
-  return (topDir === 'api');
+  const url = document.createElement('a')
+  url.href = urlString
+  const pathname = url.pathname
+  const topDir = pathname.split('/')[1]
+  return (topDir === 'api')
 }
-module.exports.pathStartsWithAPI = pathStartsWithAPI;
+module.exports.pathStartsWithAPI = pathStartsWithAPI
 
 function streetmixAPIToUser (APIURL) { // eslint-disable-line no-unused-vars
   // this takes in a Streetmix.net API redirect URL like https://streetmix.net/api/v1/streets?namespacedId=3&creatorId=kfarr
@@ -28,33 +28,33 @@ function streetmixAPIToUser (APIURL) { // eslint-disable-line no-unused-vars
 
   // modified from: https://stackoverflow.com/questions/2090551/parse-query-string-in-javascript
   function getQueryVariable (queryString, variable) {
-    var vars = queryString.split('&');
-    for (var i = 0; i < vars.length; i++) {
-      var pair = vars[i].split('=');
+    const vars = queryString.split('&')
+    for (let i = 0; i < vars.length; i++) {
+      const pair = vars[i].split('=')
       if (decodeURIComponent(pair[0]) === variable) {
-        return decodeURIComponent(pair[1]);
+        return decodeURIComponent(pair[1])
       }
     }
-    console.log('Query variable %s not found', variable);
+    console.log('Query variable %s not found', variable)
   }
-  var queryString = new URL(APIURL).search.substring(1);
-  var namespacedId = getQueryVariable(queryString, 'namespacedId');
-  var creatorId = getQueryVariable(queryString, 'creatorId');
+  const queryString = new URL(APIURL).search.substring(1)
+  const namespacedId = getQueryVariable(queryString, 'namespacedId')
+  let creatorId = getQueryVariable(queryString, 'creatorId')
   if (typeof creatorId === 'undefined') {
-    creatorId = '-';
+    creatorId = '-'
   }
 
-  return 'https://streetmix.net/' + creatorId + '/' + namespacedId;
+  return 'https://streetmix.net/' + creatorId + '/' + namespacedId
 }
-module.exports.streetmixAPIToUser = streetmixAPIToUser;
+module.exports.streetmixAPIToUser = streetmixAPIToUser
 
 function calcStreetWidth (segments) { // eslint-disable-line no-unused-vars
-  var cumulativeWidthInMeters = 0;
+  let cumulativeWidthInMeters = 0
   segments.forEach((currentSegment) => {
-    const segmentWidthInFeet = currentSegment.width;
-    const segmentWidthInMeters = segmentWidthInFeet * 0.3048;
-    cumulativeWidthInMeters = cumulativeWidthInMeters + segmentWidthInMeters;
-  });
-  return cumulativeWidthInMeters;
+    const segmentWidthInFeet = currentSegment.width
+    const segmentWidthInMeters = segmentWidthInFeet * 0.3048
+    cumulativeWidthInMeters = cumulativeWidthInMeters + segmentWidthInMeters
+  })
+  return cumulativeWidthInMeters
 }
-module.exports.calcStreetWidth = calcStreetWidth;
+module.exports.calcStreetWidth = calcStreetWidth

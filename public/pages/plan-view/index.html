@@ -164,7 +164,7 @@
         const creator = settings.lastStreetCreatorId
         const streetId = settings.lastStreetNamespacedId
         // get hash from window
-        const streetURL = 'http://localhost:8000/' + creator + '/' + streetId
+        const streetURL = 'https://pure-inlet-10299.herokuapp.com/' + creator + '/' + streetId
         if (streetURL !== undefined && streetURL.length > 0) {
           console.log('[set-loader-from-hash]','Using URL from hash', streetURL)
           this.el.setAttribute('streetmix-loader', 'streetmixStreetURL', streetURL);

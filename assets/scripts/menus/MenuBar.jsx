@@ -94,7 +94,7 @@ function MenuBar (props) {
         <MenuBarItem
           label="營建署道路設計 StreetDesign"
           translation="營建署道路設計 StreetDesign"
-          url="http://localhost:8000/"
+          url="https://pure-inlet-10299.herokuapp.com/"
         />
         <MenuBarItem
           label="Help"
