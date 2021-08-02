@@ -11,6 +11,7 @@ import SaveAsImageDialog from './SaveAsImageDialog'
 import SignInDialog from './SignInDialog'
 import WhatsNewDialog from './WhatsNewDialog'
 import NewsletterDialog from './NewsletterDialog'
+import PlanViewDialog from './PlanViewDialog'
 import UpgradeDialog from './UpgradeDialog'
 import SentimentSurveyDialog from './SentimentSurveyDialog'
 import ErrorDialog from './ErrorDialog'
@@ -36,6 +37,9 @@ const DIALOG_COMPONENTS = {
   },
   WHATS_NEW: {
     id: WhatsNewDialog
+  },
+  PLAN_VIEW: {
+    id: PlanViewDialog
   },
   NEWSLETTER: {
     id: NewsletterDialog

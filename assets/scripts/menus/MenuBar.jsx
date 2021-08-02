@@ -104,7 +104,13 @@ function MenuBar (props) {
       </ul>
       <ul className="menu-bar-right" ref={menuBarRightEl}>
         <MenuBarItem
-          label="View as 3D mode"
+          label="Plan view"
+          translation="menu.item.plan"
+          url="#"
+          onClick={() => dispatch(showDialog('PLAN_VIEW'))}
+        />
+        <MenuBarItem
+          label="3D mode"
           translation="menu.item.view"
           url="#"
           onClick={() => dispatch(showDialog('WHATS_NEW'))}
