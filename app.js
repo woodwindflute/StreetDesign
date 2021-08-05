@@ -131,12 +131,17 @@ const csp = {
   // Reported CSP violations should be addressed before releasing to
   // production. IF A NEW FEATURE IS REPORTING A CSP VIOLATION, IT WILL
   // FAIL IN PRODUCTION, EVEN THOUGH IT WORKS IN DEVELOPMENT MODE.
-  reportOnly: app.locals.config.env === 'development'
+  reportOnly: app.locals.config.env === 'production'
 }
 
 // Allows websockets for hot-module reloading
 // (note: ports are assigned randomly by Parcel)
 if (app.locals.config.env === 'development') {
+  csp.directives.scriptSrc.push("'unsafe-eval'")
+  csp.directives.connectSrc.push('ws:')
+}
+
+if (app.locals.config.env === 'production') {
   csp.directives.scriptSrc.push("'unsafe-eval'")
   csp.directives.connectSrc.push('ws:')
 }
