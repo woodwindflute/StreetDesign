@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src *">
-    <script src="./dist/aframe.min.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="default-src '*';">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="./dist/aframe-street-component.js"></script>
 
     <!-- user controls -->
-    <script src="./dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://raw.githack.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
     <script src="src/lib/aframe-orbit-controls.min.js"></script>
 
     <!-- ocean, ground, sky -->
@@ -14,8 +14,8 @@
     <script src="src/lib/aframe-cubemap-component.js"></script>
 
     <!-- 2d ui toolbar -->
-    <link rel="stylesheet" href="./dist/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./dist/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     <!-- move a-frame performance `stats` below toolbar -->
     <style>
