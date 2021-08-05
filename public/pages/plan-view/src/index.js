@@ -63,7 +63,7 @@ AFRAME.registerComponent('streetmix-loader', {
     const settings = JSON.parse(localStorage.getItem('settings'))
     const creator = settings.lastStreetCreatorId
     const streetId = settings.lastStreetNamespacedId
-    streetmixAPIURL = 'https://pure-inlet-10299.herokuapp.com/api/v1/streets?namespacedId=' + streetId + '&creatorId=' + creator
+    streetmixAPIURL = 'https://' + location.host + '/api/v1/streets?namespacedId=' + streetId + '&creatorId=' + creator
     console.log('[streetmix-loader]', 'GET ' + streetmixAPIURL)
 
     request.open('GET', streetmixAPIURL, true)

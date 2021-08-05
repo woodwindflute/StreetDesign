@@ -113,9 +113,6 @@
       </a-presentation>
       <a-entity id="cameraRig">
         <a-entity id="camera" camera="far: 1000; zoom: 20" wasd-controls="enabled: false" 
-        animation__zoomin="property: camera.zoom; from: 10; to: 22; dur: 4000; easing: easeInOutQuad; "
-        animation__zoominfast="property: camera.zoom; from: 1; to: 40; dur: 100; easing: linear; autoplay: false;"
-        animation__zoomout="property: camera.zoom; from: 22; to: 1; dur: 100; easing: linear; autoplay: false;"
         ></a-entity>
         <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: lowPoly; color: #ccffcc" teleport-controls="cameraRig: #cameraRig; button: trigger"></a-entity>
         <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: lowPoly; color: #ccffcc" teleport-controls="cameraRig: #cameraRig; button: trigger"></a-entity>
@@ -164,7 +161,7 @@
         const creator = settings.lastStreetCreatorId
         const streetId = settings.lastStreetNamespacedId
         // get hash from window
-        const streetURL = 'https://pure-inlet-10299.herokuapp.com/' + creator + '/' + streetId
+        const streetURL = 'https://' + location.host + creator + '/' + streetId
         if (streetURL !== undefined && streetURL.length > 0) {
           console.log('[set-loader-from-hash]','Using URL from hash', streetURL)
           this.el.setAttribute('streetmix-loader', 'streetmixStreetURL', streetURL);

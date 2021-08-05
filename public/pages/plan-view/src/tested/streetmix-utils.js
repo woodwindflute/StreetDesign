@@ -5,9 +5,9 @@ function streetmixUserToAPI (userURL) { // eslint-disable-line no-unused-vars
   const creatorId = pathArray[1]
   const namespacedId = pathArray[2]
   if (creatorId === '-') {
-    return 'https://pure-inlet-10299.herokuapp.com/api/v1/streets?namespacedId=' + namespacedId
+    return 'https://' + location.host + '/api/v1/streets?namespacedId=' + namespacedId
   } else {
-    return 'https://pure-inlet-10299.herokuapp.com/api/v1/streets?namespacedId=' + namespacedId + '&creatorId=' + creatorId
+    return 'https://' + location.host + '/api/v1/streets?namespacedId=' + namespacedId + '&creatorId=' + creatorId
   }
 }
 module.exports.streetmixUserToAPI = streetmixUserToAPI
