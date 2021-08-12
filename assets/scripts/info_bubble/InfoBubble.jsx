@@ -589,8 +589,10 @@ export class InfoBubble extends React.Component {
         widthOrHeightControl = <WidthControl position={position} />
         break
       case INFO_BUBBLE_TYPE_LEFT_BUILDING:
+        widthOrHeightControl = null
+        break
       case INFO_BUBBLE_TYPE_RIGHT_BUILDING:
-        widthOrHeightControl = <BuildingHeightControl position={position} />
+        widthOrHeightControl = null
         break
       default:
         widthOrHeightControl = null

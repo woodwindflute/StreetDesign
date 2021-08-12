@@ -1,32 +1,12 @@
 {
   "building": {
-    "waterfront": {
-      "id": "waterfront",
-      "title": "Waterfront"
-    },
     "grass": {
       "id": "grass",
       "title": "Grass"
     },
-    "fence": {
-      "id": "fence",
-      "title": "Empty lot"
-    },
-    "parking-lot": {
-      "id": "car",
-      "title": "Parking lot"
-    },
     "residential": {
       "id": "residential",
       "title": "Home"
-    },
-    "narrow": {
-      "id": "building-thin",
-      "title": "Narrow building"
-    },
-    "wide": {
-      "id": "building-wide",
-      "title": "Wide building"
     },
     "arcade": {
       "id": "building-arcade",
