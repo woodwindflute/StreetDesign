@@ -14,7 +14,7 @@ import {
 } from './constants'
 import './StreetMetaWidthMenu.scss'
 
-const DEFAULT_STREET_WIDTHS = [40, 60, 80]
+const DEFAULT_STREET_WIDTHS = [50, 66.6, 83.3, 100, 133.3]
 
 // Custom hook to focus an element after it's mounted
 // To use, call this function in a ref prop
