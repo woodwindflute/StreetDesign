@@ -1,129 +1,70 @@
-import React, { useRef } from 'react'
-import PropTypes from 'prop-types'
-import { useIntl } from 'react-intl'
-import DownshiftPelias from 'downshift-pelias'
-import Pelias from 'pelias-js'
-import { PELIAS_HOST_NAME, PELIAS_API_KEY } from '../../app/config'
+import React, { useState } from 'react';
+import Autosuggest from 'react-autosuggest';
+import { HERE_API_KEY, HERE_HOST_NAME } from '../../app/config';
 
-GeoSearch.propTypes = {
-  handleSearchResults: PropTypes.func,
-  focus: PropTypes.shape({
-    lat: PropTypes.number,
-    lng: PropTypes.number
-  })
-}
+const AUTOSUGGEST_GEOCODE_API = `https://autosuggest.${HERE_HOST_NAME}/v1/autosuggest`
+const AUTOSUGGEST_GEOCODE_ENDPOINT = `${AUTOSUGGEST_GEOCODE_API}?apikey=${HERE_API_KEY}`
 
-function GeoSearch ({
-  handleSearchResults,
-  focus = { lat: 0, lng: 0 }
-}) {
-  const intl = useIntl()
-  const inputEl = useRef()
+function GeoSearch() {
+  const [value, setValue] = useState('')
+  const [suggestions, setSuggestions] = useState([])
 
-  function handleClickClearSearch (clearSelection) {
-    clearSelection()
-    inputEl.current.focus()
+  const handleChange = (event, { newValue }) => {
+    setValue(newValue)
   }
 
-  function handleChange (selection) {
-    if (!selection) return
-
-    handleSearchResults(
-      selection.geometry.coordinates.reverse(),
-      selection.properties
-    )
-    inputEl.current.focus()
+  const handleSuggestionsFetchRequested = ({ value }) => {
+    getSuggestions(value)
   }
 
-  function renderSuggestion (item, index, inputValue, getItemProps) {
-    const label = item.properties.label
+  const handleSuggestionsClearRequested = () => {
+    setSuggestions([])
+  }
 
-    // Highlight the input query
-    const regex = new RegExp(`(${inputValue})`, 'gi')
-    const parts = label.split(regex)
-    const highlighted = parts.map((part, index) => {
-      if (part.toLowerCase() === inputValue.toLowerCase()) {
-        return <strong key={index}>{part}</strong>
-      }
-      return part
-    })
+  const getSuggestionValue = (suggestion) => {
+    return suggestion.address.label
+  }
 
+  const renderSuggestion = (suggestion) => {
     return (
-      <li
-        {...getItemProps({
-          className: 'geotag-suggestion',
-          key: item.properties.gid,
-          index,
-          item
-        })}
-      >
-        {highlighted}
-      </li>
+      suggestion.address.label
     )
   }
 
-  const pelias = new Pelias({
-    peliasUrl: `https://${PELIAS_HOST_NAME}`,
-    apiKey: PELIAS_API_KEY
-  })
+  const getSuggestions = (value) => {
+    const inputLength = value.length
+    if (inputLength === 0) {
+      setSuggestions([])
+    } else {
+      autosuggestionGeocode(value).then((res) => {
+        const suggestions = res.items
+        setSuggestions(suggestions)
+      })
+    }
+  }
 
-  pelias.search.setBoundaryCircle({
-    lat: focus.lat,
-    lon: focus.lng,
-    radius: 10
-  })
-  pelias.autocomplete.setFocusPoint({ lat: focus.lat, lon: focus.lng })
+  const autosuggestionGeocode = (value) => {
+    const url = `${AUTOSUGGEST_GEOCODE_ENDPOINT}&at=23.5832,120.5825&limit=5&lang=zh-TW&q=${value}`
+    return window.fetch(url).then((response) => response.json())
+  }
+  const inputProps = {
+    value: value,
+    onChange: handleChange
+  }
 
   return (
-    <DownshiftPelias pelias={pelias} onChange={handleChange}>
-      {({
-        getInputProps,
-        getMenuProps,
-        getItemProps,
-        clearSelection,
-        inputValue,
-        isOpen,
-        results
-      }) => (
-        <div className="geotag-input-form">
-          <input
-            {...getInputProps({
-              className: 'geotag-input',
-              autoFocus: true,
-              ref: inputEl,
-              placeholder: intl.formatMessage({
-                id: 'dialogs.geotag.search',
-                defaultMessage: 'Search for a location'
-              })
-            })}
-          />
-          {inputValue && (
-            <span
-              title={intl.formatMessage({
-                id: 'dialogs.geotag.clear-search',
-                defaultMessage: 'Clear search'
-              })}
-              className="geotag-input-clear"
-              onClick={() => {
-                handleClickClearSearch(clearSelection)
-              }}
-            >
-              ×
-            </span>
-          )}
-          {isOpen && results && results.features.length > 0 && (
-            <div className="geotag-suggestions-container">
-              <ul {...getMenuProps({ className: 'geotag-suggestions-list' })}>
-                {results.features.map((item, index) =>
-                  renderSuggestion(item, index, inputValue, getItemProps)
-                )}
-              </ul>
-            </div>
-          )}
-        </div>
-      )}
-    </DownshiftPelias>
+    <div className="geotag-input-form">
+      <Autosuggest
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={handleSuggestionsFetchRequested}
+        onSuggestionsClearRequested={handleSuggestionsClearRequested}
+        getSuggestionValue={getSuggestionValue}
+        renderSuggestion={renderSuggestion}
+        inputProps={inputProps}
+      />
+    </div>
   )
 }
+
 
 export default GeoSearch
