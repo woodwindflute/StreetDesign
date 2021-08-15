@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { useSelector, useDispatch, batch } from 'react-redux'
 import { useIntl } from 'react-intl'
 import { Map, TileLayer, ZoomControl, Marker } from 'react-leaflet'
-import { PELIAS_HOST_NAME, PELIAS_API_KEY } from '../app/config'
+import { HERE_HOST_NAME, HERE_API_KEY } from '../app/config'
 import { isOwnedByCurrentUser } from '../streets/owner'
 import { setMapState } from '../store/slices/map'
 import {
@@ -20,8 +20,8 @@ import './GeotagDialog.scss'
 import './BoundaryCanvas.js'
 import geoJson from './COUNTY_MOI_1090820.json'
 
-const REVERSE_GEOCODE_API = `https://${PELIAS_HOST_NAME}/v1/reverse`
-const REVERSE_GEOCODE_ENDPOINT = `${REVERSE_GEOCODE_API}?api_key=${PELIAS_API_KEY}`
+const REVERSE_GEOCODE_API = `https://revgeocode.${HERE_HOST_NAME}/v1/revgeocode`
+const REVERSE_GEOCODE_ENDPOINT = `${REVERSE_GEOCODE_API}?apikey=${HERE_API_KEY}`
 const MAP_TILES =
   'https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png'
 const MAP_ATTRIBUTION =
@@ -141,7 +141,7 @@ function GeotagDialog() {
   const [renderPopup, setRenderPopup] = useState(!!initialState.markerLocation)
   const intl = useIntl()
 
-  const geocodeAvailable = !!PELIAS_API_KEY
+  const geocodeAvailable = !!HERE_API_KEY
 
   const maxBounds = [
     [28, 125],
@@ -170,12 +170,12 @@ function GeotagDialog() {
     const zoom = event.target.getZoom()
     reverseGeocode(latlng).then((res) => {
       const latlng = {
-        lat: res.features[0].geometry.coordinates[1],
-        lng: res.features[0].geometry.coordinates[0]
+        lat: res.items[0].position.lat,
+        lng: res.items[0].position.lng
       }
       setZoom(zoom)
-      updateMap(latlng, res.features[0].properties, res.features[0].label)
-    })
+      updateMap(latlng, res.items[0].address)
+    }).catch()
   }
 
   const handleMarkerDragStart = (event) => {
@@ -193,8 +193,8 @@ function GeotagDialog() {
       lng: latlng.lng
     }
     reverseGeocode(latlng).then((res) => {
-      updateMap(latlng, res.features[0].properties, res.features[0].label)
-    })
+      updateMap(latlng, res.items[0].address)
+    }).catch()
   }
 
   const handleConfirmLocation = (event) => {
@@ -205,10 +205,10 @@ function GeotagDialog() {
       wofId: addressInformation.id,
       label: addressInformation.label,
       hierarchy: {
-        country: addressInformation.country,
-        region: addressInformation.region,
-        locality: addressInformation.locality,
-        neighbourhood: addressInformation.neighbourhood,
+        country: addressInformation.countryName,
+        county: addressInformation.county,
+        city: addressInformation.city,
+        district: addressInformation.district,
         street: addressInformation.street
       },
       geometryId: null,
@@ -226,8 +226,7 @@ function GeotagDialog() {
   }
 
   const reverseGeocode = (latlng) => {
-    const url = `${REVERSE_GEOCODE_ENDPOINT}&point.lat=${latlng.lat}&point.lon=${latlng.lng}`
-
+    const url = `${REVERSE_GEOCODE_ENDPOINT}&at=${latlng.lat},${latlng.lng}&lang=zh-TW`
     return window.fetch(url).then((response) => response.json())
   }
 
@@ -293,10 +292,7 @@ function GeotagDialog() {
           {geocodeAvailable
             ? (
               <div className="geotag-input-container">
-                <GeoSearch
-                  handleSearchResults={handleSearchResults}
-                  focus={mapCenter}
-                />
+                <GeoSearch />
               </div>
             )
             : (

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import { showDialog } from '../store/slices/dialogs'
 
-function StreetMetaGeotag (props) {
+function StreetMetaGeotag(props) {
   const street = useSelector((state) => state.street)
   const editable = useSelector(
     (state) => !state.app.readOnly && state.flags.GEOTAG.value
@@ -13,13 +13,13 @@ function StreetMetaGeotag (props) {
   // Render nothing if there is no street location, and geolocation is not enabled
   if (!editable && !street.location) return null
 
-  function handleClickGeotag (event) {
+  function handleClickGeotag(event) {
     event.preventDefault()
 
     dispatch(showDialog('GEOTAG'))
   }
 
-  function getGeotagText () {
+  function getGeotagText() {
     const { hierarchy } = street.location
     const unknownLabel = (
       <FormattedMessage
@@ -28,16 +28,12 @@ function StreetMetaGeotag (props) {
       />
     )
 
-    let text = hierarchy.locality
-      ? hierarchy.locality
-      : hierarchy.region
-        ? hierarchy.region
-        : hierarchy.neighbourhood
-          ? hierarchy.neighbourhood
-          : null
-
-    if (text && hierarchy.country) {
-      text = text + ', ' + hierarchy.country
+    let text
+    if (hierarchy.country) {
+      text = hierarchy.city === hierarchy.county ?
+        text = hierarchy.country + ',' + hierarchy.county :
+        text = hierarchy.country + ',' + hierarchy.county + ',' + hierarchy.city
+      text = hierarchy.district ? text + ',' + hierarchy.district : text
     }
 
     return text || unknownLabel
@@ -46,14 +42,14 @@ function StreetMetaGeotag (props) {
   // Determine what text label to render
   const geotagText = street.location
     ? (
-        getGeotagText()
-      )
+      getGeotagText()
+    )
     : (
       <FormattedMessage
         id="dialogs.geotag.add-location"
         defaultMessage="Add location"
       />
-      )
+    )
 
   return (
     <span className="street-metadata-map">
