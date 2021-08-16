@@ -6,7 +6,7 @@
     "zIndex": 30,
     "defaultWidth": 6,
     "rules": {
-      "minWidth": 6
+      "minWidth": 3
     },
     "variants": ["sidewalk-density"],
     "details": {
@@ -86,6 +86,7 @@
   },
   "sidewalk-tree": {
     "name": "Sidewalk tree",
+    "enableWithFlag": "DISABLED",
     "nameKey": "sidewalk-tree",
     "owner": "NATURE",
     "zIndex": 22,
@@ -268,6 +269,7 @@
   },
   "sidewalk-bench": {
     "name": "Bench",
+    "enableWithFlag": "DISABLED",
     "nameKey": "bench",
     "owner": "PEDESTRIAN",
     "zIndex": 24,
@@ -521,6 +523,7 @@
   },
   "sidewalk-lamp": {
     "name": "Lamp",
+    "enableWithFlag": "DISABLED",
     "nameKey": "sidewalk-lamp",
     "owner": "PEDESTRIAN",
     "zIndex": 19,
@@ -1646,7 +1649,6 @@
   },
   "bike-lane": {
     "name": "Bike lane",
-    "enableWithFlag": "DISABLED",
     "nameKey": "bike-lane",
     "owner": "BIKE",
     "zIndex": 16,
@@ -2500,7 +2502,7 @@
     "zIndex": 13,
     "defaultWidth": 7,
     "rules": {
-      "minWidth": 7,
+      "minWidth": 1,
       "maxWidth": 10
     },
     "variants": ["parking-lane-direction", "parking-lane-orientation"],
@@ -2519,15 +2521,6 @@
             {
               "id": "markings--parking-left"
             }
-          ],
-          "vehicles": [
-            {
-              "id": "car",
-              "offsetX": 6,
-              "variants": {
-                "direction|orientation": ["inbound", "left"]
-              }
-            }
           ]
         }
       },
@@ -2544,325 +2537,6 @@
           "markings": [
             {
               "id": "markings--parking-right"
-            }
-          ],
-          "vehicles": [
-            {
-              "id": "car",
-              "variants": {
-                "direction|orientation": ["inbound", "right"]
-              }
-            }
-          ]
-        }
-      },
-      "outbound|left": {
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "markings": [
-            {
-              "id": "markings--parking-left"
-            }
-          ],
-          "vehicles": [
-            {
-              "id": "car",
-              "offsetX": 6,
-              "variants": {
-                "direction|orientation": ["outbound", "left"]
-              }
-            }
-          ]
-        }
-      },
-      "outbound|right": {
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "markings": [
-            {
-              "id": "markings--parking-right"
-            }
-          ],
-          "vehicles": [
-            {
-              "id": "car",
-              "variants": {
-                "direction|orientation": ["outbound", "right"]
-              }
-            }
-          ]
-        }
-      },
-      "sideways|left": {
-        "name": "Perpendicular parking",
-        "nameKey": "perpendicular-parking",
-        "rules": {
-          "minWidth": 14,
-          "maxWidth": 20
-        },
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "vehicles": [
-            {
-              "id": "car",
-              "variants": {
-                "direction|orientation": ["sideways", "left"]
-              }
-            }
-          ]
-        }
-      },
-      "sideways|right": {
-        "name": "Perpendicular parking",
-        "nameKey": "perpendicular-parking",
-        "rules": {
-          "minWidth": 14,
-          "maxWidth": 20
-        },
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "vehicles": [
-            {
-              "id": "car",
-              "variants": {
-                "direction|orientation": ["sideways", "right"]
-              }
-            }
-          ]
-        }
-      },
-      "angled-front-left|left": {
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "rules": {
-          "minWidth": 14,
-          "maxWidth": 18
-        },
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "vehicles": [
-            {
-              "id": "car",
-              "variants": {
-                "direction|orientation": ["angled-front-left", "left"]
-              }
-            }
-          ]
-        }
-      },
-      "angled-front-right|left": {
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "rules": {
-          "minWidth": 14,
-          "maxWidth": 18
-        },
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "vehicles": [
-            {
-              "id": "car",
-              "variants": {
-                "direction|orientation": ["angled-front-right", "left"]
-              }
-            }
-          ]
-        }
-      },
-      "angled-rear-left|left": {
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "rules": {
-          "minWidth": 14,
-          "maxWidth": 18
-        },
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "vehicles": [
-            {
-              "id": "car",
-              "variants": {
-                "direction|orientation": ["angled-rear-left", "left"]
-              }
-            }
-          ]
-        }
-      },
-      "angled-rear-right|left": {
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "rules": {
-          "minWidth": 14,
-          "maxWidth": 18
-        },
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "vehicles": [
-            {
-              "id": "car",
-              "variants": {
-                "direction|orientation": ["angled-rear-right", "left"]
-              }
-            }
-          ]
-        }
-      },
-      "angled-front-left|right": {
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "rules": {
-          "minWidth": 14,
-          "maxWidth": 18
-        },
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "vehicles": [
-            {
-              "id": "car",
-              "variants": {
-                "direction|orientation": ["angled-front-left", "right"]
-              }
-            }
-          ]
-        }
-      },
-      "angled-front-right|right": {
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "rules": {
-          "minWidth": 14,
-          "maxWidth": 18
-        },
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "vehicles": [
-            {
-              "id": "car",
-              "variants": {
-                "direction|orientation": ["angled-front-right", "right"]
-              }
-            }
-          ]
-        }
-      },
-      "angled-rear-left|right": {
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "rules": {
-          "minWidth": 14,
-          "maxWidth": 18
-        },
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "vehicles": [
-            {
-              "id": "car",
-              "variants": {
-                "direction|orientation": ["angled-rear-left", "right"]
-              }
-            }
-          ]
-        }
-      },
-      "angled-rear-right|right": {
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "rules": {
-          "minWidth": 14,
-          "maxWidth": 18
-        },
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "vehicles": [
-            {
-              "id": "car",
-              "variants": {
-                "direction|orientation": ["angled-rear-right", "right"]
-              }
             }
           ]
         }
@@ -2936,7 +2610,7 @@
         "nameKey": "sharrow",
         "rules": {
           "minWidth": 12,
-          "maxWidth": 14
+          "maxWidth": 20
         },
         "defaultWidth": 14,
         "description": {
@@ -3696,6 +3370,7 @@
   },
   "bus-lane": {
     "name": "Bus lane",
+    "enableWithFlag": "DISABLED",
     "nameKey": "bus-lane",
     "owner": "TRANSIT",
     "zIndex": 15,
@@ -4678,6 +4353,7 @@
   },
   "transit-shelter": {
     "name": "Transit shelter",
+    "enableWithFlag": "DISABLED",
     "nameKey": "transit-shelter",
     "owner": "TRANSIT",
     "zIndex": 20,
