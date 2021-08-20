@@ -169,6 +169,7 @@
     "sequelize": "6.6.2",
     "sequelize-cli": "6.2.0",
     "sequelize-mock": "0.10.2",
+    "shallow-equal": "1.2.1",
     "shifty": "2.15.2",
     "slugify": "1.4.7",
     "stripe": "8.81.0",
