@@ -1,70 +1,110 @@
-import React, { useState } from 'react';
-import Autosuggest from 'react-autosuggest';
-import { HERE_API_KEY, HERE_HOST_NAME } from '../../app/config';
+import Downshift from 'downshift'
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { useIntl } from 'react-intl'
+import { HERE_API_KEY, HERE_HOST_NAME } from '../../app/config'
 
-const AUTOSUGGEST_GEOCODE_API = `https://autosuggest.${HERE_HOST_NAME}/v1/autosuggest`
-const AUTOSUGGEST_GEOCODE_ENDPOINT = `${AUTOSUGGEST_GEOCODE_API}?apikey=${HERE_API_KEY}`
+const DISCOVER_GEOCODE_API = `https://discover.${HERE_HOST_NAME}/v1/discover`
+const DISCOVER_GEOCODE_ENDPOINT = `${DISCOVER_GEOCODE_API}?apikey=${HERE_API_KEY}`
 
-function GeoSearch() {
-  const [value, setValue] = useState('')
-  const [suggestions, setSuggestions] = useState([])
+GeoSearch.propTypes = {
+  handleSearchResults: PropTypes.func
+}
 
-  const handleChange = (event, { newValue }) => {
-    setValue(newValue)
+function GeoSearch({ handleSearchResults }) {
+  const [items, setItmes] = useState()
+
+  const intl = useIntl()
+
+  const handleChange = (selection) => {
+    if (!selection) {
+      return
+    }
+    handleSearchResults(selection.position, selection.address)
   }
 
-  const handleSuggestionsFetchRequested = ({ value }) => {
-    getSuggestions(value)
-  }
-
-  const handleSuggestionsClearRequested = () => {
-    setSuggestions([])
-  }
-
-  const getSuggestionValue = (suggestion) => {
-    return suggestion.address.label
-  }
-
-  const renderSuggestion = (suggestion) => {
-    return (
-      suggestion.address.label
-    )
-  }
-
-  const getSuggestions = (value) => {
-    const inputLength = value.length
+  const handleInputValueChange = (inputValue, stateAndHelpers) => {
+    const inputLength = inputValue.length
     if (inputLength === 0) {
-      setSuggestions([])
+      setItmes()
     } else {
-      autosuggestionGeocode(value).then((res) => {
-        const suggestions = res.items
-        setSuggestions(suggestions)
+      discoverGeocode(inputValue).then((res) => {
+        const items = res.items
+        setItmes(items)
       })
     }
   }
 
-  const autosuggestionGeocode = (value) => {
-    const url = `${AUTOSUGGEST_GEOCODE_ENDPOINT}&at=23.5832,120.5825&limit=5&lang=zh-TW&q=${value}`
+  const discoverGeocode = (inputValue) => {
+    const url = `${DISCOVER_GEOCODE_ENDPOINT}&at=23.5832,120.5825&in=countryCode:TWN&limit=5&lang=zh-TW&q=${inputValue}`
     return window.fetch(url).then((response) => response.json())
   }
-  const inputProps = {
-    value: value,
-    onChange: handleChange
+
+  const renderSuggestion = (item, index, getItemProps) => {
+    return (
+      <li
+        {...getItemProps({
+          className: 'geotag-suggestion',
+          key: item.address.label,
+          index,
+          item,
+        })}
+      >
+        {item.address.label}
+      </li>
+    )
   }
 
   return (
-    <div className="geotag-input-form">
-      <Autosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={handleSuggestionsFetchRequested}
-        onSuggestionsClearRequested={handleSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestion={renderSuggestion}
-        inputProps={inputProps}
-      />
-    </div>
+    <Downshift
+      onChange={handleChange}
+      itemToString={(item) => (item ? item.address.label : '')}
+      onInputValueChange={handleInputValueChange}
+    >
+      {({
+        getInputProps,
+        getItemProps,
+        getMenuProps,
+        clearSelection,
+        isOpen,
+        inputValue,
+      }) => (
+        <div className='geotag-input-form'>
+          <input {...getInputProps({
+            className: 'geotag-input',
+            autoFocus: true,
+            placeholder: intl.formatMessage({
+              id: 'dialogs.geotag.search',
+              defaultMessage: 'Search for a location'
+            })
+          })} />
+          {inputValue && (
+            <span
+              title={intl.formatMessage({
+                id: 'dialogs.geotag.clear-search',
+                defaultMessage: 'Clear search'
+              })}
+              className="geotag-input-clear"
+              onClick={(e) => {
+                clearSelection()
+              }}
+            >
+              ×
+            </span>
+          )}
+          {isOpen && items && (
+            <div className='geotag-suggestions-container'>
+              <ul {...getMenuProps({ className: 'geotag-suggestions-list' })}>
+                {items.map((item, index) => (
+                  renderSuggestion(item, index, getItemProps)
+                ))}
+              </ul>
+            </div>)
+          }
+        </div>
+      )}
+    </Downshift>
   )
 }
-
 
 export default GeoSearch
