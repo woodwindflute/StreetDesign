@@ -23,7 +23,7 @@ function GeoSearch({ handleSearchResults }) {
     handleSearchResults(selection.position, selection.address)
   }
 
-  const handleInputValueChange = (inputValue, stateAndHelpers) => {
+  const handleInputValueChange = (inputValue) => {
     const inputLength = inputValue.length
     if (inputLength === 0) {
       setItmes()

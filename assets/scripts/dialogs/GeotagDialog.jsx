@@ -231,10 +231,10 @@ function GeotagDialog() {
   }
 
   // Search dialog state dosen't sync up with map state (IMO should clear or update with label)
-  const handleSearchResults = (point, locationProperties) => {
+  const handleSearchResults = (position, locationProperties) => {
     const latlng = {
-      lat: point[0],
-      lng: point[1]
+      lat: position.lat,
+      lng: position.lng
     }
     updateMap(latlng, locationProperties)
   }
@@ -292,7 +292,9 @@ function GeotagDialog() {
           {geocodeAvailable
             ? (
               <div className="geotag-input-container">
-                <GeoSearch />
+                <GeoSearch
+                  handleSearchResults={handleSearchResults}
+                />
               </div>
             )
             : (
