@@ -31,8 +31,8 @@ function StreetMetaGeotag(props) {
     let text
     if (hierarchy.country) {
       text = hierarchy.city === hierarchy.county ?
-        text = hierarchy.country + ',' + hierarchy.county :
-        text = hierarchy.country + ',' + hierarchy.county + ',' + hierarchy.city
+        hierarchy.country + ',' + hierarchy.county :
+        hierarchy.country + ',' + hierarchy.county + ',' + hierarchy.city
       text = hierarchy.district ? text + ',' + hierarchy.district : text
     }
 
