@@ -478,6 +478,503 @@ export function prepareDefaultStreet () {
   }
 }
 
+export function prepare15mStreet () {
+  const units = store.getState().settings.units
+  const currentDate = new Date().toISOString()
+  const defaultStreet = {
+    units: units,
+    location: null,
+    name: null,
+    showAnalytics: true,
+    userUpdated: false,
+    editCount: 0,
+    width: 50,
+    environment: DEFAULT_ENVIRONS,
+    leftBuildingHeight: 1,
+    leftBuildingVariant: 'grass',
+    rightBuildingHeight: 1,
+    rightBuildingVariant: 'grass',
+    schemaVersion: LATEST_SCHEMA_VERSION,
+    segments: [
+      {
+        id: 'hIOgSyH3Vs6paiLDpJ3CZ',
+        type: 'sidewalk',
+        variantString: 'dense',
+        width: 10
+      },
+      {
+        id: 'ZsoG-iGzb0EsuG4W_DIIi',
+        type: 'drive-lane',
+        variantString: 'inbound|sharrow',
+        width: 15
+      },
+      {
+        id: 'joTgUym_kRQfqYU6yubGf',
+        type: 'drive-lane',
+        variantString: 'inbound|sharrow',
+        width: 15
+      },
+      {
+        id: '2torFDEa69L7ZantLwxNI',
+        type: 'sidewalk',
+        variantString: 'dense',
+        width: 10
+      }
+    ],
+    updatedAt: currentDate,
+    clientUpdatedAt: currentDate,
+    creatorId: (isSignedIn() && getSignInData().userId) || null
+  }
+
+  store.dispatch(updateStreetData(defaultStreet))
+
+  if (isSignedIn()) {
+    updateLastStreetInfo()
+  }
+}
+
+export function prepare20mStreet () {
+  const units = store.getState().settings.units
+  const currentDate = new Date().toISOString()
+  const defaultStreet = {
+    units: units,
+    location: null,
+    name: null,
+    showAnalytics: true,
+    userUpdated: false,
+    editCount: 0,
+    width: 66.6666,
+    environment: DEFAULT_ENVIRONS,
+    leftBuildingHeight: 1,
+    leftBuildingVariant: 'grass',
+    rightBuildingHeight: 1,
+    rightBuildingVariant: 'grass',
+    schemaVersion: LATEST_SCHEMA_VERSION,
+    segments: [
+      {
+        id: 'E7ufFzhQiqFOTZMKLnEKw',
+        type: 'sidewalk',
+        variantString: 'dense',
+        width: 8.33333
+      },
+      {
+        id: '7LhwG4SCX05N-vOCHNpF2',
+        type: 'drive-lane',
+        variantString: 'inbound|sharrow',
+        width: 15
+      },
+      {
+        id: '5sz8uhQBTZHMdxuoLFYhh',
+        type: 'drive-lane',
+        variantString: 'inbound|car',
+        width: 10
+      },
+      {
+        id: 'm4MW-4ckkc2uq1Iia-qH5',
+        type: 'drive-lane',
+        variantString: 'inbound|car',
+        width: 10
+      },
+      {
+        id: 'V6NBjKLJE8BFYMlsbcnB7',
+        type: 'drive-lane',
+        variantString: 'inbound|sharrow',
+        width: 15
+      },
+      {
+        id: 'TztR0m2wyFTJv75ww6sYF',
+        type: 'sidewalk',
+        variantString: 'dense',
+        width: 8.33333
+      }
+    ],
+    updatedAt: currentDate,
+    clientUpdatedAt: currentDate,
+    creatorId: (isSignedIn() && getSignInData().userId) || null
+  }
+
+  store.dispatch(updateStreetData(defaultStreet))
+
+  if (isSignedIn()) {
+    updateLastStreetInfo()
+  }
+}
+
+export function prepare25mStreet () {
+  const units = store.getState().settings.units
+  const currentDate = new Date().toISOString()
+  const defaultStreet = {
+    units: units,
+    location: null,
+    name: null,
+    showAnalytics: true,
+    userUpdated: false,
+    editCount: 0,
+    width: 83.3333,
+    environment: DEFAULT_ENVIRONS,
+    leftBuildingHeight: 1,
+    leftBuildingVariant: 'grass',
+    rightBuildingHeight: 1,
+    rightBuildingVariant: 'grass',
+    schemaVersion: LATEST_SCHEMA_VERSION,
+    segments: [
+      {
+        id: 'bvV3VJp9pU0k6Jzeq9Rz3',
+        type: 'sidewalk',
+        variantString: 'dense',
+        width: 6.66667
+      },
+      {
+        id: 'Hf01jC_9xxFjp-TAjOX-y',
+        type: 'sidewalk',
+        variantString: 'empty',
+        width: 5
+      },
+      {
+        id: 'IMyp7iXCj6mF5h46E8PuM',
+        type: 'parking-lane',
+        variantString: 'inbound|right',
+        width: 3.33333
+      },
+      {
+        id: '92-dDK_0ON6EKphPuzHID',
+        type: 'drive-lane',
+        variantString: 'inbound|car',
+        width: 11.66667
+      },
+      {
+        id: 'bRemDAGxGng_G5PrZVpJd',
+        type: 'drive-lane',
+        variantString: 'inbound|car',
+        width: 10
+      },
+      {
+        id: 'zv7WR8lNlIQDDGBvqxiHW',
+        type: 'parking-lane',
+        variantString: 'inbound|right',
+        width: 1.66667
+      },
+      {
+        id: 'V8lVXyDmJJPZLBJuEPFQ1',
+        type: 'divider',
+        variantString: 'planting-strip',
+        width: 6.66667
+      },
+      {
+        id: 'V8SFeB2X0riUN09kE6oBg',
+        type: 'parking-lane',
+        variantString: 'inbound|left',
+        width: 1.66667
+      },
+      {
+        id: 'dukEUdDWsXBNzcIRo9E0g',
+        type: 'drive-lane',
+        variantString: 'outbound|car',
+        width: 10
+      },
+      {
+        id: 'W4mAMFGXXTyZtU3VOdoPb',
+        type: 'drive-lane',
+        variantString: 'outbound|car',
+        width: 11.66667
+      },
+      {
+        id: 'V3M5CyAFm_4LzMeUwOjkW',
+        type: 'parking-lane',
+        variantString: 'inbound|left',
+        width: 3.33333
+      },
+      {
+        id: 'fveWV-or6Z_rpdB0dgmyu',
+        type: 'sidewalk',
+        variantString: 'empty',
+        width: 5
+      },
+      {
+        id: 'KVQ8IiLtO1kMlm1Q38f-u',
+        type: 'sidewalk',
+        variantString: 'dense',
+        width: 6.66667
+      }
+    ],
+    updatedAt: currentDate,
+    clientUpdatedAt: currentDate,
+    creatorId: (isSignedIn() && getSignInData().userId) || null
+  }
+
+  store.dispatch(updateStreetData(defaultStreet))
+
+  if (isSignedIn()) {
+    updateLastStreetInfo()
+  }
+}
+
+export function prepare30mStreet () {
+  const units = store.getState().settings.units
+  const currentDate = new Date().toISOString()
+  const defaultStreet = {
+    units: units,
+    location: null,
+    name: null,
+    showAnalytics: true,
+    userUpdated: false,
+    editCount: 0,
+    width: 100,
+    environment: DEFAULT_ENVIRONS,
+    leftBuildingHeight: 1,
+    leftBuildingVariant: 'grass',
+    rightBuildingHeight: 1,
+    rightBuildingVariant: 'grass',
+    schemaVersion: LATEST_SCHEMA_VERSION,
+    segments: [
+      {
+        id: 'PRVwYIFb9Bh1mJ04BIqJC',
+        type: 'sidewalk',
+        variantString: 'dense',
+        width: 8.33333
+      },
+      {
+        id: 'JfxL7n-x2abz0UqaJSLsO',
+        type: 'bike-lane',
+        variantString: 'inbound|regular|road',
+        width: 5
+      },
+      {
+        id: '9m22Nbh9In457HRP76WoH',
+        type: 'sidewalk',
+        variantString: 'empty',
+        width: 6.66667
+      },
+      {
+        id: 'MndtOxKEOQ7X-OIsse_Co',
+        type: 'parking-lane',
+        variantString: 'inbound|right',
+        width: 3.33333
+      },
+      {
+        id: 'UWvIOj91PHQ-yKkEIXDjz',
+        type: 'drive-lane',
+        variantString: 'inbound|car',
+        width: 11.66667
+      },
+      {
+        id: 'B8huqM4mpn-t8Wac-RR7i',
+        type: 'drive-lane',
+        variantString: 'inbound|car',
+        width: 10
+      },
+      {
+        id: 'KOkCwv3kZVIWGZnXLQa52',
+        type: 'parking-lane',
+        variantString: 'inbound|right',
+        width: 1.66667
+      },
+      {
+        id: 'zLvaduiMnD_a55a8jgzzv',
+        type: 'divider',
+        variantString: 'median',
+        width: 6.66667
+      },
+      {
+        id: 'u6vVyRQNloCJ9wPRnNsOq',
+        type: 'parking-lane',
+        variantString: 'inbound|left',
+        width: 1.66667
+      },
+      {
+        id: 'vPZc4M6G-TVSMEhUK5trk',
+        type: 'drive-lane',
+        variantString: 'outbound|car',
+        width: 10
+      },
+      {
+        id: 'TufwnU4vN9n6Lk6G4nNWX',
+        type: 'drive-lane',
+        variantString: 'outbound|car',
+        width: 11.66667
+      },
+      {
+        id: 'Ree5IYbnM3GEE-y2nyokG',
+        type: 'parking-lane',
+        variantString: 'inbound|right',
+        width: 3.33333
+      },
+      {
+        id: '_IleYnJyhMMtHyBDVyN3R',
+        type: 'sidewalk',
+        variantString: 'empty',
+        width: 6.66667
+      },
+      {
+        id: 'QRWR_87jOTSwXzKE0hGfX',
+        type: 'bike-lane',
+        variantString: 'outbound|regular|road',
+        width: 5
+      },
+      {
+        id: 'YIc1dHUL_il47haRsz4Pl',
+        type: 'sidewalk',
+        variantString: 'dense',
+        width: 8.33333
+      }
+    ],
+    updatedAt: currentDate,
+    clientUpdatedAt: currentDate,
+    creatorId: (isSignedIn() && getSignInData().userId) || null
+  }
+
+  store.dispatch(updateStreetData(defaultStreet))
+
+  if (isSignedIn()) {
+    updateLastStreetInfo()
+  }
+}
+
+export function prepare40mStreet () {
+  const units = store.getState().settings.units
+  const currentDate = new Date().toISOString()
+  const defaultStreet = {
+    units: units,
+    location: null,
+    name: null,
+    showAnalytics: true,
+    userUpdated: false,
+    editCount: 0,
+    width: 133.3333,
+    environment: DEFAULT_ENVIRONS,
+    leftBuildingHeight: 1,
+    leftBuildingVariant: 'grass',
+    rightBuildingHeight: 1,
+    rightBuildingVariant: 'grass',
+    schemaVersion: LATEST_SCHEMA_VERSION,
+    segments: [
+      {
+        id: 'fCwyqV_FBCyF2jsdK9m2F',
+        type: 'sidewalk',
+        variantString: 'dense',
+        width: 8.33333
+      },
+      {
+        id: '5-CuA9gtNozIpddHmNu5Y',
+        type: 'divider',
+        variantString: 'planting-strip',
+        width: 5
+      },
+      {
+        id: 'lbnSqNqq0f8FE4CoHF7lx',
+        type: 'bike-lane',
+        variantString: 'inbound|regular|road',
+        width: 6.66667
+      },
+      {
+        id: 'Cwk_Dx0Xnazfl2fGNJV79',
+        type: 'sidewalk',
+        variantString: 'empty',
+        width: 5
+      },
+      {
+        id: 'W-0HxA3DksFk70Wo9neWD',
+        type: 'parking-lane',
+        variantString: 'inbound|right',
+        width: 3.33333
+      },
+      {
+        id: 'bh6iZ9wiMSqsYkleRaWvu',
+        type: 'drive-lane',
+        variantString: 'inbound|car',
+        width: 11.66667
+      },
+      {
+        id: 'VTB87-3G65vVyhoFF1Jv3',
+        type: 'drive-lane',
+        variantString: 'inbound|car',
+        width: 11.66667
+      },
+      {
+        id: 'RgLUr89YieCenTdTq22Xa',
+        type: 'drive-lane',
+        variantString: 'inbound|car',
+        width: 10
+      },
+      {
+        id: 'WZ51Q8rbUSrujXiKT0R13',
+        type: 'parking-lane',
+        variantString: 'inbound|right',
+        width: 1.66667
+      },
+      {
+        id: '2xExFQLYPNPFf9wRXuh3Q',
+        type: 'divider',
+        variantString: 'median',
+        width: 6.66667
+      },
+      {
+        id: 'A46uQwnbeEm0ByRk35Edn',
+        type: 'parking-lane',
+        variantString: 'inbound|left',
+        width: 1.66667
+      },
+      {
+        id: 'SNzezHg0E7bWayHW8LWPg',
+        type: 'drive-lane',
+        variantString: 'outbound|car',
+        width: 10
+      },
+      {
+        id: 'HNRQuYvX5B5fBYwR4VkXh',
+        type: 'drive-lane',
+        variantString: 'outbound|car',
+        width: 11.66667
+      },
+      {
+        id: 'Tm-iqHVJ3pdjYlbwx8yuE',
+        type: 'drive-lane',
+        variantString: 'outbound|car',
+        width: 11.66667
+      },
+      {
+        id: '9xa_orAK5ZMQFjZLDhDMu',
+        type: 'parking-lane',
+        variantString: 'inbound|left',
+        width: 3.33333
+      },
+      {
+        id: 'ZnoKiallgm6bPMcb6gQ_q',
+        type: 'sidewalk',
+        variantString: 'empty',
+        width: 5
+      },
+      {
+        id: 'jzAdI6o9yv7EcEnIdWdzV',
+        type: 'bike-lane',
+        variantString: 'outbound|regular|road',
+        width: 6.66667
+      },
+      {
+        id: 'VZGFl0sol-ZPaDfMq2WNa',
+        type: 'divider',
+        variantString: 'planting-strip',
+        width: 5
+      },
+      {
+        id: 'D5nVNA20Mxr6_mVPyv-R4',
+        type: 'sidewalk',
+        variantString: 'dense',
+        width: 8.33333
+      }
+    ],
+    updatedAt: currentDate,
+    clientUpdatedAt: currentDate,
+    creatorId: (isSignedIn() && getSignInData().userId) || null
+  }
+
+  store.dispatch(updateStreetData(defaultStreet))
+
+  if (isSignedIn()) {
+    updateLastStreetInfo()
+  }
+}
+
 export function prepareEmptyStreet () {
   const units = store.getState().settings.units
   const currentDate = new Date().toISOString()

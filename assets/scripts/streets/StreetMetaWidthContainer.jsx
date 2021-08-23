@@ -90,7 +90,23 @@ function StreetMetaWidthContainer (props) {
       // Change width to the desired selection
       default:
         if (selection) {
-          dispatch(updateStreetWidth(selection))
+          switch (selection) {
+            case 50:
+              dispatch(updateStreetWidth(selection))
+              break
+            case 66:
+              dispatch(updateStreetWidth(selection + 0.6666))
+              break
+            case 83:
+              dispatch(updateStreetWidth(selection + 0.3333))
+              break
+            case 100:
+              dispatch(updateStreetWidth(selection))
+              break
+            case 133:
+              dispatch(updateStreetWidth(selection + 0.3333))
+              break
+          }
         }
         break
     }

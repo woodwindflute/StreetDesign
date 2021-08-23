@@ -4,6 +4,10 @@ import { FormattedMessage } from 'react-intl'
 import { NEW_STREET_DEFAULT, NEW_STREET_EMPTY } from '../../streets/constants'
 import {
   onNewStreetDefaultClick,
+  onNewStreet20mClick,
+  onNewStreet25mClick,
+  onNewStreet30mClick,
+  onNewStreet40mClick,
   onNewStreetEmptyClick
 } from '../../streets/creation'
 import { getLastStreet } from '../../store/actions/street'
@@ -55,18 +59,82 @@ function NewStreet (props) {
           <input
             type="radio"
             name="new-street"
-            id="new-street-default"
+            id="new-street-15m"
             checked={
-              state.selectedNewStreetType === 'new-street-default' ||
+              state.selectedNewStreetType === 'new-street-15m' ||
               !state.selectedNewStreetType
             }
             onChange={handleChangeNewStreetType}
             onClick={onNewStreetDefaultClick}
           />
-          <label htmlFor="new-street-default">
+          <label htmlFor="new-street-15m">
             <FormattedMessage
-              id="dialogs.new-street.default"
-              defaultMessage="Start with an example street"
+              id="dialogs.new-street.15m"
+              defaultMessage="15m"
+            />
+          </label>
+        </li>
+        <li>
+          <input
+            type="radio"
+            name="new-street"
+            id="new-street-20m"
+            checked={state.selectedNewStreetType === 'new-street-20m'}
+            onChange={handleChangeNewStreetType}
+            onClick={onNewStreet20mClick}
+          />
+          <label htmlFor="new-street-20m">
+            <FormattedMessage
+              id="dialogs.new-street.20m"
+              defaultMessage="20m"
+            />
+          </label>
+        </li>
+        <li>
+          <input
+            type="radio"
+            name="new-street"
+            id="new-street-25m"
+            checked={state.selectedNewStreetType === 'new-street-25m'}
+            onChange={handleChangeNewStreetType}
+            onClick={onNewStreet25mClick}
+          />
+          <label htmlFor="new-street-25m">
+            <FormattedMessage
+              id="dialogs.new-street.25m"
+              defaultMessage="25m"
+            />
+          </label>
+        </li>
+        <li>
+          <input
+            type="radio"
+            name="new-street"
+            id="new-street-30m"
+            checked={state.selectedNewStreetType === 'new-street-30m'}
+            onChange={handleChangeNewStreetType}
+            onClick={onNewStreet30mClick}
+          />
+          <label htmlFor="new-street-30m">
+            <FormattedMessage
+              id="dialogs.new-street.30m"
+              defaultMessage="30m"
+            />
+          </label>
+        </li>
+        <li>
+          <input
+            type="radio"
+            name="new-street"
+            id="new-street-40m"
+            checked={state.selectedNewStreetType === 'new-street-40m'}
+            onChange={handleChangeNewStreetType}
+            onClick={onNewStreet40mClick}
+          />
+          <label htmlFor="new-street-40m">
+            <FormattedMessage
+              id="dialogs.new-street.40m"
+              defaultMessage="40m"
             />
           </label>
         </li>
@@ -86,26 +154,6 @@ function NewStreet (props) {
             />
           </label>
         </li>
-        {/* Display this button only if there is a previous street to copy
-            from that is not the same as the current street */}
-        {priorLastStreetId && priorLastStreetId !== street.id && (
-          <li>
-            <input
-              type="radio"
-              name="new-street"
-              id="new-street-last"
-              checked={state.selectedNewStreetType === 'new-street-last'}
-              onChange={handleChangeNewStreetType}
-              onClick={handleGetLastStreet}
-            />
-            <label htmlFor="new-street-last">
-              <FormattedMessage
-                id="dialogs.new-street.last"
-                defaultMessage="Start with a copy of last street"
-              />
-            </label>
-          </li>
-        )}
       </ul>
     </div>
   )
