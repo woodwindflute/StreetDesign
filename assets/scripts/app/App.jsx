@@ -26,7 +26,7 @@ import WelcomePanel from './WelcomePanel'
 import NotificationBar from './NotificationBar'
 import { setStreetSectionTop } from './window_resize'
 
-function App () {
+function App() {
   const locale = useSelector((state) => state.locale)
 
   useEffect(() => {
