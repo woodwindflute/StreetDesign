@@ -13,20 +13,21 @@ const uiSlice = createSlice({
     activeSegment: null,
     draggingState: null,
     draggingType: 0,
-    resizeGuidesVisible: false
+    resizeGuidesVisible: false,
+    guideEnd: false
   },
 
   reducers: {
-    setWelcomePanelVisible (state, action) {
+    setWelcomePanelVisible(state, action) {
       state.welcomePanelVisible = true
     },
 
-    setWelcomePanelDismissed (state, action) {
+    setWelcomePanelDismissed(state, action) {
       state.welcomePanelDismissed = true
       state.welcomePanelVisible = false
     },
 
-    setActiveSegment (state, action) {
+    setActiveSegment(state, action) {
       // If we're in the middle of a resize drag state, do not set a new
       // active segment.
       if (state.resizeGuidesVisible !== true) {
@@ -34,11 +35,11 @@ const uiSlice = createSlice({
       }
     },
 
-    initDraggingState (state, action) {
+    initDraggingState(state, action) {
       state.draggingType = action.payload
     },
 
-    updateDraggingState (state, action) {
+    updateDraggingState(state, action) {
       state.draggingState = {
         segmentBeforeEl: action.payload.segmentBeforeEl,
         segmentAfterEl: action.payload.segmentAfterEl,
@@ -46,18 +47,22 @@ const uiSlice = createSlice({
       }
     },
 
-    clearDraggingState (state, action) {
+    clearDraggingState(state, action) {
       state.draggingState = null
       state.draggingType = DRAGGING_TYPE_NONE
     },
 
-    setDraggingType (state, action) {
+    setDraggingType(state, action) {
       state.draggingType = action.payload
       state.resizeGuidesVisible = action.payload === DRAGGING_TYPE_RESIZE
     },
 
-    toggleToolbox (state, action) {
+    toggleToolbox(state, action) {
       state.toolboxVisible = !state.toolboxVisible
+    },
+
+    setGuideEnd(state, action) {
+      state.guideEnd = true
     }
   }
 })
@@ -70,7 +75,8 @@ export const {
   updateDraggingState,
   clearDraggingState,
   setDraggingType,
-  toggleToolbox
+  toggleToolbox,
+  setGuideEnd
 } = uiSlice.actions
 
 export default uiSlice.reducer

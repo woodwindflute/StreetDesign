@@ -6,11 +6,12 @@ import StreetName from './StreetName'
 import StreetMeta from './StreetMeta'
 import './StreetNameplateContainer.scss'
 
-function StreetNameplateContainer (props) {
+function StreetNameplateContainer(props) {
   const isVisible = useSelector((state) => !state.ui.welcomePanelVisible)
   const isEditable = useSelector(
     (state) => !state.app.readOnly && state.flags.EDIT_STREET_NAME.value
   )
+  const isGuideEnd = useSelector((state) => state.ui.guideEnd)
   const streetName = useSelector((state) => state.street.name)
   const dispatch = useDispatch()
   const intl = useIntl()
@@ -55,20 +56,20 @@ function StreetNameplateContainer (props) {
     updateCoords()
   }, [streetName, updateCoords])
 
-  function handleResizeStreetName (coords) {
+  function handleResizeStreetName(coords) {
     setStreetNameCoords({
       left: coords.left,
       width: coords.width
     })
   }
 
-  function updatePositions (event) {
+  function updatePositions(event) {
     if (event.detail && event.detail.rightMenuBarLeftPos) {
       setRightMenuBarLeftPos(event.detail.rightMenuBarLeftPos)
     }
   }
 
-  function determineClassNames () {
+  function determineClassNames() {
     const classNames = ['street-nameplate-container']
 
     if (streetNameCoords.left + streetNameCoords.width > rightMenuBarLeftPos) {
@@ -79,14 +80,14 @@ function StreetNameplateContainer (props) {
     // <WelcomePanel /> when it's visible. We've checked the store to see if
     // the panel is visible, and if so, this component is not. In this case,
     // momentarily keep the UI clean by hiding it until the panel goes away.
-    if (!isVisible) {
+    if (!isVisible && isGuideEnd) {
       classNames.push('hidden')
     }
 
     return classNames
   }
 
-  function handleClickStreetName () {
+  function handleClickStreetName() {
     if (!isEditable) return
 
     const newName = window.prompt(
@@ -95,10 +96,10 @@ function StreetNameplateContainer (props) {
         defaultMessage: 'New street name:'
       }),
       streetName ||
-        intl.formatMessage({
-          id: 'street.default-name',
-          defaultMessage: 'Unnamed St'
-        })
+      intl.formatMessage({
+        id: 'street.default-name',
+        defaultMessage: 'Unnamed St'
+      })
     )
 
     if (newName) {
