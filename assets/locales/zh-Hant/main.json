@@ -30,10 +30,10 @@
       "sign-in-twitter-link": "登入",
       "sign-in-link": "{signInLink}你所創建的街道和個人街道圖集的鏈接",
       "link": "複製和貼上這個連結來分享：",
-      "copy-to-clipboard": "",
+      "copy-to-clipboard": "複製",
       "twitter": "分享到推特",
       "facebook": "分享到臉書",
-      "print": "影印",
+      "rate": "評語",
       "save": "存為圖片",
       "save-byline": "將連接內嵌在報告，部落格等等",
       "messages": {
