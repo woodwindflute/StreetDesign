@@ -67,8 +67,6 @@ function PaletteItems (props) {
         tooltipTarget={target}
       />
     ))
-    console.log("DISPLAY SEGMENTS FOR DEBUG");
-  console.log(displayedSegments)
   return (
     <>
       <Tooltip source={source} />
