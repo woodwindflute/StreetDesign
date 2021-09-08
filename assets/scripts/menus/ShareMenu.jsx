@@ -107,6 +107,11 @@ function ShareMenu (props) {
     dispatch(showDialog('SAVE_AS_IMAGE'))
   }
 
+  function handleClickRate (event) {
+    event.preventDefault()
+    dispatch(showDialog('RATE'))
+  }
+
   function handleClickSignIn (event) {
     event.preventDefault()
     doSignIn()
@@ -218,9 +223,6 @@ function ShareMenu (props) {
           </ExternalLink>
         </>
       )}
-      <a href="#" onClick={handleClickPrint}>
-        <FormattedMessage id="menu.share.print" defaultMessage="Print…" />
-      </a>
       <a id="save-as-image" href="#" onClick={handleClickSaveAsImage}>
         <FormattedMessage
           id="menu.share.save"
@@ -232,6 +234,9 @@ function ShareMenu (props) {
             defaultMessage="For including in a report, blog, etc."
           />
         </span>
+      </a>
+      <a href="#" onClick={handleClickRate}>
+        <FormattedMessage id="menu.share.rate" defaultMessage="Rate" />
       </a>
     </Menu>
   )
