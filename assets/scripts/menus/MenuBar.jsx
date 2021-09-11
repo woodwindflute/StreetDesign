@@ -92,9 +92,9 @@ function MenuBar (props) {
           <h1>StreetDesign</h1>
         </li>
         <MenuBarItem
-          label="營建署道路設計 StreetDesign"
-          translation="營建署道路設計 StreetDesign"
-          url={'https://' + location.host}
+          label="營建署人本道路設計"
+          translation="營建署人本道路設計"
+          url={'http://' + location.host}
         />
         <MenuBarItem
           label="Help"
