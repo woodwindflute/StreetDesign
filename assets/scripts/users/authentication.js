@@ -272,7 +272,7 @@ function errorReceiveSignInDetails (data) {
       addToast({
         message: formatMessage(
           'error.auth-expired',
-          'We automatically signed you out due to inactivity. Please sign in again.'
+          '因閒置過久，我們已自動將您登出。請再重新登入。'
         ),
         component: 'TOAST_SIGN_IN',
         duration: Infinity

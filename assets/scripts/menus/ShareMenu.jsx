@@ -13,7 +13,7 @@ import { startPrinting } from '../store/slices/app'
 import Menu from './Menu'
 import './ShareMenu.scss'
 
-function ShareMenu (props) {
+function ShareMenu(props) {
   const offline = useSelector((state) => state.system.offline)
   const signedIn = useSelector((state) => state.user.signedIn || false)
   const userId = useSelector((state) => state.user.signInData?.userId || '')
@@ -27,11 +27,11 @@ function ShareMenu (props) {
     updateLinks()
   })
 
-  function updateLinks () {
+  function updateLinks() {
     setShareUrl(getSharingUrl())
   }
 
-  function getSharingMessage () {
+  function getSharingMessage() {
     let message = ''
 
     if (street.creatorId) {
@@ -91,7 +91,7 @@ function ShareMenu (props) {
     return message
   }
 
-  function handleShow () {
+  function handleShow() {
     // Make sure links are updated when the menu is opened
     updateLinks()
 
@@ -102,17 +102,17 @@ function ShareMenu (props) {
     }, 200)
   }
 
-  function handleClickSaveAsImage (event) {
+  function handleClickSaveAsImage(event) {
     event.preventDefault()
     dispatch(showDialog('SAVE_AS_IMAGE'))
   }
 
-  function handleClickSignIn (event) {
+  function handleClickSignIn(event) {
     event.preventDefault()
     doSignIn()
   }
 
-  function handleClickPrint (event) {
+  function handleClickPrint(event) {
     event.preventDefault()
 
     // Manually dispatch printing state here. Workaround for Chrome bug where
@@ -146,6 +146,11 @@ function ShareMenu (props) {
     '&description=' +
     encodeURIComponent(shareText)
 
+  const lineLink =
+    'https://social-plugins.line.me/lineit/share' +
+    '?url=' +
+    encodeURIComponent(shareUrl)
+
   const signInLink = (
     <a onClick={handleClickSignIn} href="#">
       <FormattedMessage
@@ -166,7 +171,7 @@ function ShareMenu (props) {
           }}
         />
       </div>
-      )
+    )
     : null
 
   return (
@@ -214,6 +219,13 @@ function ShareMenu (props) {
             <FormattedMessage
               id="menu.share.facebook"
               defaultMessage="Share using Facebook"
+            />
+          </ExternalLink>
+          <ExternalLink className="share-via-line" href={lineLink}>
+            <Icon icon="line" />
+            <FormattedMessage
+              id="menu.share.line"
+              defaultMessage="Share using Line"
             />
           </ExternalLink>
         </>

@@ -16,7 +16,7 @@ module.exports = {
     callback_path: '/services/auth/sign-in-callback'
   },
   monetization: process.env.WEB_MONETIZATION_PAYMENT_POINTER,
-  facebook_app_id: '204327799717656',
+  facebook_app_id: '149780207260268',
   cookie_session_secret: process.env.COOKIE_SESSION_SECRET || 'seger handrail',
   restapi_proxy_baseuri_rel: '/api',
   restapi: {
