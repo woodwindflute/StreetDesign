@@ -15,6 +15,7 @@ import PlanViewDialog from './PlanViewDialog'
 import UpgradeDialog from './UpgradeDialog'
 import SentimentSurveyDialog from './SentimentSurveyDialog'
 import ErrorDialog from './ErrorDialog'
+import RateDialog from './RateDialog'
 
 const DIALOG_COMPONENTS = {
   ABOUT: {
@@ -49,6 +50,9 @@ const DIALOG_COMPONENTS = {
   },
   SENTIMENT_SURVEY: {
     id: SentimentSurveyDialog
+  },
+  RATE: {
+    id: RateDialog
   }
 }
 

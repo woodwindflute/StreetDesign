@@ -13,7 +13,7 @@ import { startPrinting } from '../store/slices/app'
 import Menu from './Menu'
 import './ShareMenu.scss'
 
-function ShareMenu(props) {
+function ShareMenu (props) {
   const offline = useSelector((state) => state.system.offline)
   const signedIn = useSelector((state) => state.user.signedIn || false)
   const userId = useSelector((state) => state.user.signInData?.userId || '')
@@ -27,11 +27,11 @@ function ShareMenu(props) {
     updateLinks()
   })
 
-  function updateLinks() {
+  function updateLinks () {
     setShareUrl(getSharingUrl())
   }
 
-  function getSharingMessage() {
+  function getSharingMessage () {
     let message = ''
 
     if (street.creatorId) {
@@ -91,7 +91,7 @@ function ShareMenu(props) {
     return message
   }
 
-  function handleShow() {
+  function handleShow () {
     // Make sure links are updated when the menu is opened
     updateLinks()
 
@@ -102,17 +102,22 @@ function ShareMenu(props) {
     }, 200)
   }
 
-  function handleClickSaveAsImage(event) {
+  function handleClickSaveAsImage (event) {
     event.preventDefault()
     dispatch(showDialog('SAVE_AS_IMAGE'))
   }
 
-  function handleClickSignIn(event) {
+  function handleClickRate (event) {
+    event.preventDefault()
+    dispatch(showDialog('RATE'))
+  }
+
+  function handleClickSignIn (event) {
     event.preventDefault()
     doSignIn()
   }
 
-  function handleClickPrint(event) {
+  function handleClickPrint (event) {
     event.preventDefault()
 
     // Manually dispatch printing state here. Workaround for Chrome bug where
@@ -171,7 +176,7 @@ function ShareMenu(props) {
           }}
         />
       </div>
-    )
+      )
     : null
 
   return (
@@ -230,9 +235,6 @@ function ShareMenu(props) {
           </ExternalLink>
         </>
       )}
-      <a href="#" onClick={handleClickPrint}>
-        <FormattedMessage id="menu.share.print" defaultMessage="Print…" />
-      </a>
       <a id="save-as-image" href="#" onClick={handleClickSaveAsImage}>
         <FormattedMessage
           id="menu.share.save"
@@ -244,6 +246,9 @@ function ShareMenu(props) {
             defaultMessage="For including in a report, blog, etc."
           />
         </span>
+      </a>
+      <a href="#" onClick={handleClickRate}>
+        <FormattedMessage id="menu.share.rate" defaultMessage="Rate" />
       </a>
     </Menu>
   )

@@ -3,14 +3,6 @@
     "grass": {
       "id": "grass",
       "title": "Grass"
-    },
-    "residential": {
-      "id": "residential",
-      "title": "Home"
-    },
-    "arcade": {
-      "id": "building-arcade",
-      "title": "Arcade building"
     }
   },
   "direction": {
@@ -319,31 +311,11 @@
     },
     "truck": {
       "id": "truck",
-      "title": "Truck"
-    },
-    "microvan": {
-      "id": "microvan",
-      "title": "Microvan",
-      "enableWithFlag": "SEGMENT_MICROVAN",
-      "enableCondition": "SUBSCRIBE"
-    },
-    "av": {
-      "id": "rideshare",
-      "title": "Autonomous vehicle",
-      "enableWithFlag": "SEGMENT_AV",
-      "enableCondition": "SIGN_IN"
+      "title": "Bus"
     },
     "motorcycle-sidecar": {
       "id": "motorcycle-sidecar",
-      "title": "Motorcycle with sidecar",
-      "enableWithFlag": "SEGMENT_KRZ",
-      "enableCondition": "SIGN_IN"
-    },
-    "pedestrian": {
-      "id": "sidewalk-density-normal",
-      "title": "Pedestrian",
-      "enableWithFlag": "SEGMENT_PED_LANES",
-      "enableCondition": "SIGN_IN"
+      "title": "Motorcycle with sidecar"
     }
   },
   "sidewalk-density": {
