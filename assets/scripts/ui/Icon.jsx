@@ -12,11 +12,12 @@ import {
 import forumsIcon from './icons/forums.svg'
 import googleIcon from './icons/google.svg'
 import slackIcon from './icons/slack.svg'
+import lineIcon from './icons/line.png'
 
 const OCTICON_DEFAULT_CLASSNAME = 'octicon'
 
 // Preserve, don't replace default Octicon classname
-function octiconClassNames (className) {
+function octiconClassNames(className) {
   return [OCTICON_DEFAULT_CLASSNAME, className].join(' ').trim()
 }
 
@@ -25,7 +26,7 @@ Icon.propTypes = {
   className: PropTypes.string
 }
 
-function Icon ({ icon, className }) {
+function Icon({ icon, className }) {
   switch (icon) {
     case 'copy':
       return (
@@ -39,6 +40,8 @@ function Icon ({ icon, className }) {
       return <FontAwesomeIcon className="menu-item-icon" icon={ICON_GITHUB} />
     case 'discord':
       return <FontAwesomeIcon className="menu-item-icon" icon={ICON_DISCORD} />
+    case 'line':
+      return <img className="menu-item-icon" src={lineIcon} alt="" />
     case 'person':
       return (
         <FontAwesomeIcon icon={ICON_PERSON} className="icon-person" size="md" />
