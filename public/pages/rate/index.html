@@ -34,16 +34,16 @@
       let ph1 = "";
       let ph2 = "";
       let ph3 = "";
-      let stylePh1 = { color: "black" };
-      let stylePh2 = { color: "black" };
-      let stylePh3 = { color: "black" };
+      let stylePh1 = "color: black ";
+      let stylePh2 = "color: black ";
+      let stylePh3 = "color: black ";
       function Rating(props) {
         let detPh1 = 0;
         let detPh2 = 0;
         let detPh3 = 0;
-        stylePh1 = { color: "black" };
-        stylePh2 = { color: "black" };
-        stylePh3 = { color: "black" };
+        stylePh1 = "color: black ";
+        stylePh2 = "color: black ";
+        stylePh3 = "color: black ";
         ph1 = "";
         ph2 = "";
         ph3 = "";
@@ -92,7 +92,7 @@
         }
         switch (detPh1) {
           case 0:
-            stylePh1 = { color: "red" };
+            stylePh1 = "color: red";
             ph1 = "無設立人行道，未考量行人及弱勢族群使用。";
             break;
           case 1:
@@ -111,16 +111,16 @@
             ph2 = "車道寬度介於 3.0~3.5m，感謝您提供良好的車行環境！";
             break;
           case 2:
-            stylePh2 = { color: "red" };
+            stylePh2 = "color: red";
             ph2 =
               "車道 > 3.5m 過寬。容易導致汽機車併排搶道，可能增加事故發生。";
             break;
           case 3:
-            stylePh2 = { color: "red" };
+            stylePh2 = "color: red";
             ph2 = "車道 < 3m 過窄。可能導致車行困難。";
             break;
           case 4:
-            stylePh2 = { color: "red" };
+            stylePh2 = "color: red";
             ph2 =
               "車道 > 3.5m 過寬。容易導致汽機車併排搶道，可能增加事故發生。車道 < 3m 過窄。可能導致車行困難。";
             break;
@@ -137,6 +137,9 @@
         document.getElementById("p1").innerHTML = ph1;
         document.getElementById("p2").innerHTML = ph2;
         document.getElementById("p3").innerHTML = ph3;
+        document.getElementById("p1").style = stylePh1
+        document.getElementById("p2").style = stylePh2
+        document.getElementById("p3").style = stylePh3
       }
     </script>
   </head>
