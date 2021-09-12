@@ -4,7 +4,7 @@ module.exports = {
     protocol: 'https://',
     baseuri: '/api'
   },
-  facebook_app_id: '162729607241489',
+  facebook_app_id: '149780207260268',
   plausible: {
     domain: 'streetmix.net'
   },
