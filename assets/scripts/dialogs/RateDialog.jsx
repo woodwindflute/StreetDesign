@@ -101,7 +101,7 @@ function RateDialog (props) {
 
   const request = new XMLHttpRequest()
 
-  request.open('GET', APIURL, false)
+  request.open('GET', APIURL, true)
   request.onload = function () {
     if (this.status >= 200 && this.status < 400) {
       // Connection success
