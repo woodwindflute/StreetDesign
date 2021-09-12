@@ -4,7 +4,7 @@
     <script>
       const settings = localStorage.getItem("settings");
       const streetid = JSON.parse(settings).lastStreetId;
-      const APIURL = "http://" + location.host + "/api/v1/streets/" + streetid;
+      const APIURL = "https://" + location.host + "/api/v1/streets/" + streetid;
       console.log(settings);
 
       const request = new XMLHttpRequest();
