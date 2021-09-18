@@ -29,11 +29,11 @@ import { hideLoadingScreen, loadImages } from './load_resources'
 
 let serverContacted
 
-export function setServerContacted (value) {
+export function setServerContacted(value) {
   serverContacted = value
 }
 
-function preInit () {
+function preInit() {
   initSystemCapabilities()
   setIgnoreStreetChanges(true)
 
@@ -51,7 +51,7 @@ function preInit () {
   observeStoreToUpdateBodyClasses()
 }
 
-export async function initialize () {
+export async function initialize() {
   preInit()
   if (!debug.forceUnsupportedBrowser) {
     // TODO temporary ban
@@ -99,7 +99,7 @@ export async function initialize () {
   checkIfEverythingIsLoaded()
 }
 
-export function checkIfEverythingIsLoaded () {
+export function checkIfEverythingIsLoaded() {
   if (store.getState().errors.abortEverything) {
     return
   }
@@ -109,7 +109,7 @@ export function checkIfEverythingIsLoaded () {
   }
 }
 
-function onEverythingLoaded () {
+function onEverythingLoaded() {
   if (getMode() === MODES.NEW_STREET_COPY_LAST) {
     fetchLastStreet()
   }
@@ -207,16 +207,16 @@ function onEverythingLoaded () {
   }
 }
 
-function showConsoleMessage () {
+function showConsoleMessage() {
   console.log(
     `%c
-          ____  _    %cWelcome to%c   _             _      _
-         / ___|| |_ _ __ ___  ___| |_ _ __ ___ (_)_  _| |
-         \\___ \\| __| '__/ _ \\/ _ \\ __| '_ \` _ \\| \\ \\/ / |
-          ___) | |_| | |  __/  __/ |_| | | | | | |>  <|_|
-         |____/ \\__|_|  \\___|\\___|\\__|_| |_| |_|_/_/\\_(_)
-%c..:  We’re looking for contributors!  https://github.com/streetmix/streetmix  :..
-%c..:  Support us financially at        https://opencollective.com/streetmix    :..`,
+            ____  _    %cWelcome to%c   _             _      _
+           / ___|| |_ _ __ ___  ___| |_ _ __ ___ (_)_  _| |
+           \\___ \\| __| '__/ _ \\/ _ \\ __| '_ \` _ \\| \\ \\/ / |
+            ___) | |_| | |  __/  __/ |_| | | | | | |>  <|_|
+           |____/ \\__|_|  \\___|\\___|\\__|_| |_| |_|_/_/\\_(_)
+  %c..:  We’re looking for contributors!  https://github.com/streetmix/streetmix  :..
+  %c..:  Support us financially at        https://opencollective.com/streetmix    :..`,
     'color: green',
     'color:gray',
     'color: green',
@@ -229,7 +229,7 @@ function showConsoleMessage () {
  * Toggle features based on system state. (This allows toggling to debug things,
  * which will allow us to remove the debug URL parameters as a future TODO)
  */
-function observeStoreToUpdateBodyClasses () {
+function observeStoreToUpdateBodyClasses() {
   const select = (state) => ({ system: state.system, app: state.app })
   const onChange = (state) => {
     document.body.classList.toggle('windows', state.system.windows)

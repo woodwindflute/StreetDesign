@@ -163,7 +163,7 @@ app.use((req, res, next) => {
 
   // Set default metatag information for social sharing cards
   res.locals.STREETMIX_IMAGE = {
-    image: 'https://streetmix.net/images/thumbnail.png',
+    image: config.restapi.protocol + config.app_host_port + '/images/thumbnail.png',
     width: 1008,
     height: 522
   }
