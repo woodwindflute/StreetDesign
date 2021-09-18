@@ -2,8 +2,9 @@ import React from 'react'
 import Guide from 'byte-guide'
 import './UserGuide.scss'
 
+const LOCAL_KEY = Math.random().toString(36).slice(-8)
+
 function UserGuide({ handleGuideEnd }) {
-  const localKey = Math.random().toString(36).slice(-8)
 
   const steps = [
     {
@@ -28,12 +29,12 @@ function UserGuide({ handleGuideEnd }) {
 
   return (
     <Guide
-      localKey={localKey}
+      localKey={LOCAL_KEY}
       steps={steps}
       stepText={() => { }}
       nextText='下一步'
       okText='開始使用'
-      afterStepChange={handleGuideEnd}
+      onClose={handleGuideEnd}
     />
   )
 }
