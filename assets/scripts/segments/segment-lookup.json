@@ -10,26 +10,6 @@
     },
     "variants": ["sidewalk-density"],
     "details": {
-      "dense": {
-        "components": {
-          "lanes": [
-            {
-              "id": "sidewalk",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "vehicles": [
-            {
-              "id": "pedestrian",
-              "variants": {
-                "density": "dense"
-              }
-            }
-          ]
-        }
-      },
       "normal": {
         "components": {
           "lanes": [
@@ -50,7 +30,9 @@
           ]
         }
       },
-      "sparse": {
+      "tree": {
+        "name": "Tree",
+        "nameKey": "sidewalk-tree",
         "components": {
           "lanes": [
             {
@@ -60,11 +42,77 @@
               }
             }
           ],
-          "vehicles": [
+          "objects": [
             {
-              "id": "pedestrian",
+              "id": "tree",
               "variants": {
-                "density": "sparse"
+                "type": "big"
+              }
+            }
+          ]
+        }
+      },
+      "lamp": {
+        "name": "Lamp",
+        "nameKey": "sidewalk-lamp",
+        "components": {
+          "lanes": [
+            {
+              "id": "sidewalk",
+              "variants": {
+                "color": "regular"
+              }
+            }
+          ],
+          "objects": [
+            {
+              "id": "lamp",
+              "variants": {
+                "type|orientation": ["modern", "both"]
+              }
+            }
+          ]
+        }
+      },
+      "transformer-box": {
+        "name": "Transformer box",
+        "nameKey": "transformer-box",
+        "components": {
+          "lanes": [
+            {
+              "id": "sidewalk",
+              "variants": {
+                "color": "regular"
+              }
+            }
+          ],
+          "objects": [
+            {
+              "id": "transformer-box",
+              "variants": {
+                "type": "default"
+              }
+            }
+          ]
+        }
+      },
+      "bus-stop": {
+        "name": "Bus stop",
+        "nameKey": "bus-stop",
+        "components": {
+          "lanes": [
+            {
+              "id": "sidewalk",
+              "variants": {
+                "color": "regular"
+              }
+            }
+          ],
+          "objects": [
+            {
+              "id": "bus-stop",
+              "variants": {
+                "type": "default"
               }
             }
           ]
