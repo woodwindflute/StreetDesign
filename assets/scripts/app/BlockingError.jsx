@@ -14,7 +14,7 @@ import { goReloadClearSignIn, doSignIn } from '../users/authentication'
 import { goReload, goHome, goNewStreet, goExampleStreet } from './routing'
 import { ERRORS } from './errors'
 
-function BlockingError (props) {
+function BlockingError(props) {
   const errorType = useSelector((state) => state.errors.errorType)
   const street = useSelector((state) => state.street)
 
@@ -36,7 +36,7 @@ function BlockingError (props) {
           <Avatar userId={street.creatorId} />
           {street.creatorId}
         </a>
-        )
+      )
       : null
   }
   const sessionReloadButton = (
@@ -87,16 +87,6 @@ function BlockingError (props) {
         )
       }}
     />
-  )
-  const needHelpLink = (
-    <p className="error-help-link">
-      <ExternalLink href="https://streetmix.readthedocs.io/en/latest/support/troubleshooting/">
-        <FormattedMessage
-          id="error.need-help-link"
-          defaultMessage="Need help?"
-        />
-      </ExternalLink>
-    </p>
   )
 
   switch (errorType) {
@@ -332,7 +322,6 @@ function BlockingError (props) {
             />
           </p>
           {tryAgainButton}
-          {needHelpLink}
         </>
       )
       break
@@ -358,7 +347,6 @@ function BlockingError (props) {
             />
           </p>
           {tryAgainButton}
-          {needHelpLink}
         </>
       )
       break
@@ -384,7 +372,6 @@ function BlockingError (props) {
             />
           </p>
           {tryAgainButton}
-          {needHelpLink}
         </>
       )
       break
@@ -410,7 +397,6 @@ function BlockingError (props) {
             />
           </p>
           {tryAgainButton}
-          {needHelpLink}
         </>
       )
       break
@@ -430,7 +416,6 @@ function BlockingError (props) {
             />
           </p>
           {homeButton}
-          {needHelpLink}
         </>
       )
       break
@@ -454,7 +439,6 @@ function BlockingError (props) {
             &nbsp;{pleaseLetUsKnow}
           </p>
           {homeButton}
-          {needHelpLink}
         </>
       )
       break
@@ -583,7 +567,7 @@ function BlockingError (props) {
           {description}
         </div>
       </div>
-      )
+    )
     : null
 }
 
