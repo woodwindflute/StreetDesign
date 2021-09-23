@@ -319,17 +319,25 @@
     }
   },
   "sidewalk-density": {
-    "dense": {
-      "id": "sidewalk-density-dense",
-      "title": "Dense"
-    },
     "normal": {
       "id": "sidewalk-density-normal",
       "title": "Normal"
     },
-    "sparse": {
-      "id": "sidewalk-density-sparse",
-      "title": "Sparse"
+    "tree": {
+      "id": "tree",
+      "title": "Tree"
+    },
+    "lamp": {
+      "id": "lamp-modern",
+      "title": "Lamp"
+    },
+    "transformer-box": {
+      "id": "transformer-box",
+      "title": "Transformer box"
+    },
+    "bus-stop": {
+      "id": "bus-stop",
+      "title": "Bus stop(left)"
     },
     "empty": {
       "id": "",

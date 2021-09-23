@@ -122,7 +122,7 @@
     "access-denied-description": "你取消了這次登入。",
     "auth-api-problem-title": "在你登入的過程中出了點小問題。",
     "auth-api-problem-description": "在確認你身份的過程中出了點小問題。",
-    "please-try-again": "請稍後再試，或通過<email_link>電郵</email_link>或<tweet_link>推特</tweet_link>聯絡我們。",
+    "please-try-again": "請稍後再試。",
     "unsupported-browser-title": "無法在這個瀏覽器上運行。",
     "unsupported-browser-description": "很抱歉！ 你可以嘗試使用<chrome_link>Chrome</chrome_link>, <firefox_link>Firefox</firefox_link>, <edge_link>Microsoft Edge</edge_link>, 或Safari.",
     "unsupported-browser-internet-explorer": "你在使用Internet Explorer嗎? <a>了解更多</a>",

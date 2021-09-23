@@ -43,7 +43,9 @@
     "brt-lane": "",
     "temporary-barrier": "",
     "inception-train": "“盗梦空间”列車",
-    "magic-carpet": ""
+    "magic-carpet": "",
+    "bus-stop": "公車站",
+    "transformer-box": "電箱"
   },
   "descriptions": {
     "wayfinding-sign": {
@@ -126,10 +128,12 @@
     "parking-lane-direction|angled-rear-right": "斜角的",
     "direction|inbound": "車流正面駛入",
     "direction|outbound": "車流順向駛出",
-    "sidewalk-density|empty": "空",
-    "sidewalk-density|sparse": "稀少",
     "sidewalk-density|normal": "一般",
-    "sidewalk-density|dense": "擁擠",
+    "sidewalk-density|tree": "樹",
+    "sidewalk-density|lamp": "路燈",
+    "sidewalk-density|transformer-box": "電箱",
+    "sidewalk-density|bus-stop": "公車亭",
+    "sidewalk-density|empty": "空",
     "lamp-orientation|left": "向左",
     "lamp-orientation|both": "左右雙向",
     "lamp-orientation|right": "向右",

@@ -8,15 +8,15 @@ import React from 'react'
 import { FormattedMessage } from 'react-intl'
 import { useSelector } from 'react-redux'
 import ExternalLink from '../ui/ExternalLink'
-import logo from '../../images/logo_horizontal.svg'
-import numoLogo from '../../images/sponsors/numo.svg'
-import cfalogo from '../../images/sponsors/codeforamerica.png'
-import mozlogo from '../../images/sponsors/mozilla.svg'
+import logo from '../../images/logo_horizontal.png'
+// import numoLogo from '../../images/sponsors/numo.svg'
+// import cfalogo from '../../images/sponsors/codeforamerica.png'
+// import mozlogo from '../../images/sponsors/mozilla.svg'
 import Credits from './About/Credits.jsx' // Without extension, test will erroneously import .json instead
 import Dialog from './Dialog'
 import './AboutDialog.scss'
 
-function AboutDialog (props) {
+function AboutDialog(props) {
   const offline = useSelector((state) => state.system.offline)
 
   return (
@@ -51,7 +51,7 @@ function AboutDialog (props) {
                     defaultMessage="Partners"
                   />
                 </h3>
-                <ul className="about-dialog-sponsors">
+                {/* <ul className="about-dialog-sponsors">
                   <li>
                     <ExternalLink href="https://numo.global/">
                       <img src={numoLogo} alt="New Urban Mobility Alliance" />
@@ -75,7 +75,7 @@ function AboutDialog (props) {
                       <img src={mozlogo} alt="Mozilla Open Source Support" />
                     </ExternalLink>
                   </li>
-                </ul>
+                </ul> */}
                 {!offline && (
                   <>
                     <p>

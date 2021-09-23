@@ -310,7 +310,7 @@
         "type": {
           "big": {
             "graphics": {
-              "center": "trees--tree"
+              "center": "trees--tree1"
             }
           },
           "palm-tree": {
@@ -435,12 +435,12 @@
           "modern": {
             "right": {
               "graphics": {
-                "right": "lamps--lamp-modern-right"
+                "right": "additions--lamp-right"
               }
             },
             "left": {
               "graphics": {
-                "left": "lamps--lamp-modern-left"
+                "left": "additions--lamp-left"
               }
             },
             "both": {
@@ -784,6 +784,34 @@
           "default": {
             "graphics": {
               "center": "construction--barricade"
+            }
+          }
+        }
+      }
+    },
+    "transformer-box": {
+      "name": "Transformer box",
+      "nameKey": "transformer-box",
+      "zIndex": 20,
+      "variants": {
+        "type": {
+          "default": {
+            "graphics": {
+              "center": "additions--transformer-box"
+            }
+          }
+        }
+      }
+    },
+    "bus-stop": {
+      "name": "Bus stop",
+      "nameKey": "bus-stop",
+      "zIndex": 20,
+      "variants": {
+        "type": {
+          "default": {
+            "graphics": {
+              "center": "additions--bus-stop-left"
             }
           }
         }

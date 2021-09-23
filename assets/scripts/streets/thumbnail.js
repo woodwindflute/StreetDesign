@@ -22,7 +22,7 @@ const BACKGROUND_DIRT_COLOUR = 'rgb(53, 45, 39)'
 
 const WATERMARK_TEXT_SIZE = 24
 const WATERMARK_RIGHT_MARGIN = 15
-const WATERMARK_BOTTOM_MARGIN = 15
+const WATERMARK_BOTTOM_MARGIN = 20
 const WATERMARK_DARK_COLOR = '#333333'
 const WATERMARK_LIGHT_COLOR = '#cccccc'
 
@@ -37,7 +37,7 @@ const WORDMARK_MARGIN = 4
  * @param {Boolean} invert - if `true`, render light text for dark background
  * @modifies {CanvasRenderingContext2D}
  */
-function drawWatermark (ctx, dpi, invert) {
+function drawWatermark(ctx, dpi, invert) {
   const text = formatMessage(
     'export.watermark',
     'Made with {streetmixWordmark}',
@@ -110,7 +110,7 @@ function drawWatermark (ctx, dpi, invert) {
  * @param {string} color - color to render
  * @modifies {CanvasRenderingContext2D} ctx
  */
-function drawBackgroundColor (ctx, dpi, width, height, color) {
+function drawBackgroundColor(ctx, dpi, width, height, color) {
   ctx.fillStyle = color
   ctx.fillRect(0, 0, width * dpi, height * dpi)
 }
@@ -125,7 +125,7 @@ function drawBackgroundColor (ctx, dpi, width, height, color) {
  * @param {Object} imageId - image ID to render
  * @modifies {CanvasRenderingContext2D} ctx
  */
-function drawBackgroundImage (ctx, dpi, width, height, imageId) {
+function drawBackgroundImage(ctx, dpi, width, height, imageId) {
   const img = images.get(imageId)
 
   for (let i = 0; i < Math.floor(height / img.height) + 1; i++) {
@@ -155,7 +155,7 @@ function drawBackgroundImage (ctx, dpi, width, height, imageId) {
  * @param {Array} backgroundGradient - environs definition of gradient
  * @modifies {CanvasRenderingContext2D} ctx
  */
-function drawBackgroundGradient (ctx, dpi, width, height, backgroundGradient) {
+function drawBackgroundGradient(ctx, dpi, width, height, backgroundGradient) {
   const gradient = ctx.createLinearGradient(0, 0, 0, height * dpi)
 
   // Make color stops
@@ -179,7 +179,7 @@ function drawBackgroundGradient (ctx, dpi, width, height, backgroundGradient) {
  * @param {Array} objects - environs definition of background objects
  * @modifies {CanvasRenderingContext2D} ctx
  */
-function drawBackgroundObjects (ctx, dpi, width, height, objects) {
+function drawBackgroundObjects(ctx, dpi, width, height, objects) {
   objects.forEach((object) => {
     const {
       image: imageId,
@@ -211,7 +211,7 @@ function drawBackgroundObjects (ctx, dpi, width, height, objects) {
  * @param {Object} env - environs settings
  * @modifies {CanvasRenderingContext2D} ctx
  */
-function drawClouds (ctx, dpi, width, height, env) {
+function drawClouds(ctx, dpi, width, height, env) {
   // Handle cloud opacity
   ctx.save()
   ctx.globalAlpha = env.cloudOpacity ?? 1
@@ -268,7 +268,7 @@ function drawClouds (ctx, dpi, width, height, env) {
   ctx.restore()
 }
 
-export function drawStreetThumbnail (
+export function drawStreetThumbnail(
   ctx,
   street,
   thumbnailWidth,
@@ -480,7 +480,7 @@ export function drawStreetThumbnail (
       (groundLevel + GROUND_BASELINE_HEIGHT * multiplier) * dpi,
       thumbnailWidth * dpi,
       (thumbnailHeight - groundLevel - GROUND_BASELINE_HEIGHT * multiplier) *
-        dpi
+      dpi
     )
   }
 

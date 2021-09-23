@@ -34,7 +34,7 @@ import { makeDefaultStreet } from './creation'
 import { NEW_STREET_EMPTY } from './constants'
 import {
   prepareEmptyStreet,
-  prepareDefaultStreet,
+  prepare15mStreet,
   trimStreetData,
   updateEverything,
   updateToLatestSchemaVersion,
@@ -80,7 +80,7 @@ export function createNewStreetOnServer () {
   if (settings.newStreetPreference === NEW_STREET_EMPTY) {
     prepareEmptyStreet()
   } else {
-    prepareDefaultStreet()
+    prepare15mStreet()
   }
 
   const options = {

@@ -20,7 +20,6 @@ const WELCOME_NEW_STREET = 1
 const WELCOME_FIRST_TIME_NEW_STREET = 2
 const WELCOME_FIRST_TIME_EXISTING_STREET = 3
 
-const HOW_MANY_STEPS = 3
 // In the past, dismissing the welcome panel would set this flag in
 // LocalStorage, and the next time a welcome panel would be shown for a
 // returning user, the presence of this flag would show different content (or
@@ -49,14 +48,14 @@ function WelcomePanel(props) {
   const { readOnly, everythingLoaded } = useSelector((state) => state.app)
   const {
     welcomePanelVisible: isVisible,
-    welcomePanelDismissed: isDismissed
+    welcomePanelDismissed: isDismissed,
+    guideEnd: isGuideEnd
   } = useSelector((state) => state.ui)
   const dispatch = useDispatch()
   const [welcomeType, setWelcomeType] = useState(WELCOME_NONE)
   const [isReturningUser, setIsReturningUser] = useState(
     getIsReturningUserFromLocalStorage()
   )
-  const [isGuideEnd, setIsGuideEnd] = useState(false)
 
   // Do not show under the following conditions:
   // If app is read-only
@@ -72,11 +71,8 @@ function WelcomePanel(props) {
     dispatch(setWelcomePanelVisible())
   }
 
-  const handleGuideEnd = (nextIndex) => {
-    if (nextIndex === HOW_MANY_STEPS) {
-      setIsGuideEnd(true)
-      dispatch(setGuideEnd())
-    }
+  const handleGuideEnd = () => {
+    dispatch(setGuideEnd())
   }
 
   const handleWelcomeDismissed = useCallback(() => {

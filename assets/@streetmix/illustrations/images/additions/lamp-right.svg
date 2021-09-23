@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 23.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="圖層_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 160 350"
+   style="enable-background:new 0 0 160 350;"
+   xml:space="preserve"
+   sodipodi:docname="lamp-right.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs29" /><sodipodi:namedview
+   id="namedview27"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:zoom="1.4628571"
+   inkscape:cx="79.980471"
+   inkscape:cy="175.3418"
+   inkscape:window-width="1920"
+   inkscape:window-height="1009"
+   inkscape:window-x="1358"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="圖層_1" />
+<style
+   type="text/css"
+   id="style2">
+	.st0{fill:#B7B4A7;}
+	.st1{fill:#382F2F;}
+	.st2{fill:#EED58E;}
+</style>
+<g
+   id="g24"
+   style="opacity:1"
+   transform="matrix(-1,0,0,1,160.74,50)">
+	<path
+   class="st0"
+   d="m 75.04,302.29 c 0,2.39 -11.53,4.32 -25.75,4.32 -14.23,0 -25.76,-1.94 -25.76,-4.32 0,-2.39 11.53,-4.32 25.76,-4.32 14.22,0 25.75,1.94 25.75,4.32 z"
+   id="path4" />
+	<g
+   id="g22">
+		<g
+   id="g10">
+			<rect
+   x="30.52"
+   y="293.79999"
+   class="st1"
+   width="37.299999"
+   height="8.1300001"
+   id="rect6" />
+			<path
+   class="st1"
+   d="M 62.14,249.08 52.7,239.6 v -13.66 c 0,0 5.43,-4.46 0,-8.92 V 59.81 h 2.83 v -5.3 h -6.61 -6.61 v 5.3 h 2.83 v 157.22 c -5.43,4.46 0,8.92 0,8.92 v 13.66 l -9.44,9.48 -2.73,48.78 h 15.95 15.95 z"
+   id="path8" />
+		</g>
+		<g
+   id="g20">
+			<g
+   id="g14">
+				<path
+   class="st1"
+   d="M 50.04,59.37 47.13,59.3 c 0.01,-0.46 0.58,-11.28 27.28,-13.04 l 3.72,-0.25 c 33.05,-2.21 56.64,-3.1 59.08,5.67 l -3.01,0.27 C 132.21,44.78 99.87,47.47 78.33,48.91 l -3.72,0.25 C 50.91,50.72 50.04,59.28 50.04,59.37 Z"
+   id="path12" />
+			</g>
+			<path
+   class="st1"
+   d="m 101.19,47.62 -0.52,11.17 36.53,-7.11 c 0,0 -1.58,-8.26 -36.01,-4.06 z"
+   id="path16" />
+			<path
+   class="st2"
+   d="m 107.72,57.42 c 0,0 3,5.98 12.99,4.04 10,-1.94 9.04,-8.33 9.04,-8.33 z"
+   id="path18" />
+		</g>
+	</g>
+</g>
+</svg>
