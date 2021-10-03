@@ -53,19 +53,19 @@
           console.log(segments[i]);
           switch (segments[i].type) {
             case "sidewalk":
-              if(segments[i].variantString != "emtpy"){
+              if (segments[i].variantString != "empty") {
                 if (segments[i].width >= 8.33333 && detPh1 < 1) {
-                // 最好的
-                detPh1 = 1;
-              } else if (
-                segments[i].width > 5 &&
-                segments[i].width < 8.33333 &&
-                detPh1 < 2
-              ) {
-                detPh1 = 2;
-              } else if (segments[i].width <= 5) {
-                detPh1 = 3;
-              }
+                  // 最好的
+                  detPh1 = 1;
+                } else if (
+                  segments[i].width > 5 &&
+                  segments[i].width < 8.33333 &&
+                  detPh1 < 2
+                ) {
+                  detPh1 = 2;
+                } else if (segments[i].width <= 5) {
+                  detPh1 = 3;
+                }
               }
               break;
             case "drive-lane":
