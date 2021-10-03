@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Guide from 'byte-guide'
 import './UserGuide.scss'
+import { useDispatch, useSelector } from 'react-redux'
+import { setIsGuideEnded } from '../store/slices/ui'
 
-const LOCAL_KEY = Math.random().toString(36).slice(-8)
+function UserGuide() {
+  const everythingLoaded = useSelector((state) => state.app.everythingLoaded)
+  const isEnded = useSelector((state) => state.ui.isGuideEnded)
+  const [isStarted, setIsStarted] = useState(false)
+  const dispatch = useDispatch()
 
-function UserGuide({ handleGuideEnd }) {
+  const handleGuideClose = () => {
+    dispatch(setIsGuideEnded())
+  }
+
+  useEffect(() => {
+    if (everythingLoaded) {
+      setIsStarted(true)
+    }
+  }, [everythingLoaded])
 
   const steps = [
     {
@@ -25,17 +39,27 @@ function UserGuide({ handleGuideEnd }) {
       content: '在這裡您可以更換道路的名稱，\n您也可以點選添加位置來搜尋台灣的街道，又或者點選地圖來標記位置。',
       placement: 'bottom'
     },
+    {
+      selector: () => {
+        const tags = Array.from(
+          document.querySelectorAll('.menu-bar-left > li > a')
+        )
+        return tags?.[1]
+      },
+      title: '評語',
+      content: '點選評語，會為您所設計的道路提出建議、評語。',
+      placement: 'bottom'
+    }
   ]
 
-  return (
-    <Guide
-      localKey={LOCAL_KEY}
+  return (isStarted && !isEnded &&
+    (<Guide
       steps={steps}
       stepText={() => { }}
       nextText='下一步'
       okText='開始使用'
-      onClose={handleGuideEnd}
-    />
+      onClose={handleGuideClose}
+    />)
   )
 }
 
