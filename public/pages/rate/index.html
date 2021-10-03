@@ -53,7 +53,7 @@
           console.log(segments[i]);
           switch (segments[i].type) {
             case "sidewalk":
-              if (segments[i].variantString != "empty") {
+              if (segments[i].variantString == "normal") {
                 if (segments[i].width >= 8.33333 && detPh1 < 1) {
                   // 最好的
                   detPh1 = 1;
