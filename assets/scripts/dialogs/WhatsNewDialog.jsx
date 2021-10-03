@@ -13,7 +13,7 @@ const WhatsNewDialog = () => (
           </h1>
         </header>
         <div className="dialog-content dialog-content-bleed">
-          <iframe src="/pages/whats-new/" />
+          <iframe src="/pages/whats-new" />
         </div>
         <button className="dialog-primary-action" onClick={closeDialog}>
           <FormattedMessage id="btn.close" defaultMessage="Close" />
