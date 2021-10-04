@@ -14,7 +14,7 @@ MenuBar.propTypes = {
   onMenuDropdownClick: PropTypes.func.isRequired
 }
 
-function MenuBar(props) {
+function MenuBar (props) {
   const user = useSelector((state) => state.user.signInData?.details || null)
   const offline = useSelector((state) => state.system.offline)
   const upgradeFunnel = useSelector(
@@ -45,19 +45,14 @@ function MenuBar(props) {
    * Pass in the name of this menu, and it returns (curries) a function
    * that handles the event.
    */
-  function handleClickMenuButton(menu) {
+  function handleClickMenuButton (menu) {
     return (event) => {
       const el = event.target.closest('button')
       props.onMenuDropdownClick(menu, el)
     }
   }
 
-  function handleClickUpgrade(event) {
-    event.preventDefault()
-    dispatch(showDialog('UPGRADE'))
-  }
-
-  function handleWindowResize() {
+  function handleWindowResize () {
     // Throw this event so that the StreetName can figure out if it needs
     // to push itself lower than the menubar
     window.dispatchEvent(
@@ -70,18 +65,18 @@ function MenuBar(props) {
     )
   }
 
-  function renderUserAvatar(user) {
+  function renderUserAvatar (user) {
     return user
       ? (
         <li>
           <AvatarMenu user={user} onClick={handleClickMenuButton('identity')} />
         </li>
-      )
+        )
       : (
         <li>
           <SignInButton onClick={doSignIn} />
         </li>
-      )
+        )
   }
 
   return (
@@ -100,6 +95,12 @@ function MenuBar(props) {
           label="Help"
           translation="menu.item.help"
           onClick={handleClickMenuButton('help')}
+        />
+        <MenuBarItem
+          label="Rate"
+          translation="menu.item.rate"
+          url="#"
+          onClick={() => dispatch(showDialog('RATE'))}
         />
       </ul>
       <ul className="menu-bar-right" ref={menuBarRightEl}>

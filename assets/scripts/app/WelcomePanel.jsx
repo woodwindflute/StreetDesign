@@ -5,7 +5,6 @@ import CloseButton from '../ui/CloseButton'
 import {
   setWelcomePanelVisible,
   setWelcomePanelDismissed,
-  setGuideEnd
 } from '../store/slices/ui'
 import { registerKeypress, deregisterKeypress } from './keypress'
 import { MODES, getMode } from './mode'
@@ -13,7 +12,6 @@ import WelcomeNewStreet from './WelcomePanel/NewStreet'
 import WelcomeFirstTimeExistingStreet from './WelcomePanel/FirstTimeExistingStreet'
 import WelcomeFirstTimeNewStreet from './WelcomePanel/FirstTimeNewStreet'
 import './WelcomePanel.scss'
-import UserGuide from './UserGuide'
 
 const WELCOME_NONE = 0
 const WELCOME_NEW_STREET = 1
@@ -49,7 +47,7 @@ function WelcomePanel(props) {
   const {
     welcomePanelVisible: isVisible,
     welcomePanelDismissed: isDismissed,
-    guideEnd: isGuideEnd
+    isGuideEnded: isGuideEnded
   } = useSelector((state) => state.ui)
   const dispatch = useDispatch()
   const [welcomeType, setWelcomeType] = useState(WELCOME_NONE)
@@ -62,17 +60,15 @@ function WelcomePanel(props) {
   // If app has not fully loaded yet
   // If user has dismissed the panel this session
   // If the welcome type is WELCOME_NONE
+  // If the user-guide is ended
   if (
     !readOnly &&
     everythingLoaded &&
     !isDismissed &&
-    welcomeType !== WELCOME_NONE
+    welcomeType !== WELCOME_NONE &&
+    isGuideEnded
   ) {
     dispatch(setWelcomePanelVisible())
-  }
-
-  const handleGuideEnd = () => {
-    dispatch(setGuideEnd())
   }
 
   const handleWelcomeDismissed = useCallback(() => {
@@ -161,17 +157,12 @@ function WelcomePanel(props) {
   if (!isVisible) return null
 
   return (
-    <>
-      <UserGuide
-        handleGuideEnd={handleGuideEnd}
-      />
-      {isVisible && isGuideEnd && <div className="welcome-panel-container">
-        <div className="welcome-panel">
-          <CloseButton onClick={handleWelcomeDismissed} />
-          {welcomeContent}
-        </div>
-      </div>}
-    </>
+    <div className="welcome-panel-container">
+      <div className="welcome-panel">
+        <CloseButton onClick={handleWelcomeDismissed} />
+        {welcomeContent}
+      </div>
+    </div>
   )
 }
 

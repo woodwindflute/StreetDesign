@@ -25,6 +25,7 @@ import PrintContainer from './PrintContainer'
 import WelcomePanel from './WelcomePanel'
 import NotificationBar from './NotificationBar'
 import { setStreetSectionTop } from './window_resize'
+import UserGuide from './UserGuide'
 
 function App() {
   const locale = useSelector((state) => state.locale)
@@ -59,6 +60,7 @@ function App() {
           <StreetNameplateContainer />
           <InfoBubble />
           <DebugHoverPolygon />
+          <UserGuide />
           <WelcomePanel />
           <PaletteContainer />
           <EnvironmentEditor />

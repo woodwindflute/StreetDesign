@@ -1,7 +1,7 @@
 export const DEFAULT_SEGMENTS = {
   false: [
     // Right-hand traffic
-    { type: 'sidewalk', variant: { 'sidewalk-density': 'dense' }, width: 6 },
+    { type: 'sidewalk', variant: { 'sidewalk-density': 'normal' }, width: 6 },
     { type: 'sidewalk-tree', variant: { 'tree-type': 'big' }, width: 2 },
     {
       type: 'transit-shelter',
@@ -121,6 +121,6 @@ export const DEFAULT_SEGMENTS = {
       width: 9
     },
     { type: 'sidewalk-tree', variant: { 'tree-type': 'big' }, width: 2 },
-    { type: 'sidewalk', variant: { 'sidewalk-density': 'dense' }, width: 6 }
+    { type: 'sidewalk', variant: { 'sidewalk-density': 'normal' }, width: 6 }
   ]
 }

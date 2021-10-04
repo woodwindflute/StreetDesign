@@ -247,9 +247,6 @@ function ShareMenu (props) {
           />
         </span>
       </a>
-      <a href="#" onClick={handleClickRate}>
-        <FormattedMessage id="menu.share.rate" defaultMessage="Rate" />
-      </a>
     </Menu>
   )
 }

@@ -14,7 +14,7 @@ const uiSlice = createSlice({
     draggingState: null,
     draggingType: 0,
     resizeGuidesVisible: false,
-    guideEnd: false
+    isGuideEnded: false
   },
 
   reducers: {
@@ -61,8 +61,8 @@ const uiSlice = createSlice({
       state.toolboxVisible = !state.toolboxVisible
     },
 
-    setGuideEnd(state, action) {
-      state.guideEnd = true
+    setIsGuideEnded(state, action) {
+      state.isGuideEnded = true
     }
   }
 })
@@ -76,7 +76,7 @@ export const {
   clearDraggingState,
   setDraggingType,
   toggleToolbox,
-  setGuideEnd
+  setIsGuideEnded
 } = uiSlice.actions
 
 export default uiSlice.reducer

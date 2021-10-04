@@ -499,7 +499,7 @@ export function prepare15mStreet () {
       {
         id: 'hIOgSyH3Vs6paiLDpJ3CZ',
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
         width: 10
       },
       {
@@ -517,7 +517,7 @@ export function prepare15mStreet () {
       {
         id: '2torFDEa69L7ZantLwxNI',
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
         width: 10
       }
     ],
@@ -554,7 +554,7 @@ export function prepare20mStreet () {
       {
         id: 'E7ufFzhQiqFOTZMKLnEKw',
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
         width: 8.33333
       },
       {
@@ -584,7 +584,7 @@ export function prepare20mStreet () {
       {
         id: 'TztR0m2wyFTJv75ww6sYF',
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
         width: 8.33333
       }
     ],
@@ -621,7 +621,7 @@ export function prepare25mStreet () {
       {
         id: 'bvV3VJp9pU0k6Jzeq9Rz3',
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
         width: 6.66667
       },
       {
@@ -693,7 +693,7 @@ export function prepare25mStreet () {
       {
         id: 'KVQ8IiLtO1kMlm1Q38f-u',
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
         width: 6.66667
       }
     ],
@@ -730,7 +730,7 @@ export function prepare30mStreet () {
       {
         id: 'PRVwYIFb9Bh1mJ04BIqJC',
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
         width: 8.33333
       },
       {
@@ -814,7 +814,7 @@ export function prepare30mStreet () {
       {
         id: 'YIc1dHUL_il47haRsz4Pl',
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
         width: 8.33333
       }
     ],
@@ -851,7 +851,7 @@ export function prepare40mStreet () {
       {
         id: 'fCwyqV_FBCyF2jsdK9m2F',
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
         width: 8.33333
       },
       {
@@ -959,7 +959,7 @@ export function prepare40mStreet () {
       {
         id: 'D5nVNA20Mxr6_mVPyv-R4',
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
         width: 8.33333
       }
     ],
