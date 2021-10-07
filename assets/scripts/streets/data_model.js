@@ -511,7 +511,7 @@ export function prepare15mStreet () {
       {
         id: 'joTgUym_kRQfqYU6yubGf',
         type: 'drive-lane',
-        variantString: 'inbound|sharrow',
+        variantString: 'outbound|sharrow',
         width: 15
       },
       {
@@ -565,20 +565,20 @@ export function prepare20mStreet () {
       },
       {
         id: '5sz8uhQBTZHMdxuoLFYhh',
-        type: 'drive-lane',
-        variantString: 'inbound|car',
+        type: 'turn-lane',
+        variantString: 'inbound|left-straight',
         width: 10
       },
       {
         id: 'm4MW-4ckkc2uq1Iia-qH5',
-        type: 'drive-lane',
-        variantString: 'inbound|car',
+        type: 'turn-lane',
+        variantString: 'outbound|left-straight',
         width: 10
       },
       {
         id: 'V6NBjKLJE8BFYMlsbcnB7',
         type: 'drive-lane',
-        variantString: 'inbound|sharrow',
+        variantString: 'outbound|sharrow',
         width: 15
       },
       {
@@ -644,8 +644,8 @@ export function prepare25mStreet () {
       },
       {
         id: 'bRemDAGxGng_G5PrZVpJd',
-        type: 'drive-lane',
-        variantString: 'inbound|car',
+        type: 'turn-lane',
+        variantString: 'inbound|left-straight',
         width: 10
       },
       {
@@ -657,7 +657,7 @@ export function prepare25mStreet () {
       {
         id: 'V8lVXyDmJJPZLBJuEPFQ1',
         type: 'divider',
-        variantString: 'planting-strip',
+        variantString: 'median',
         width: 6.66667
       },
       {
@@ -668,8 +668,8 @@ export function prepare25mStreet () {
       },
       {
         id: 'dukEUdDWsXBNzcIRo9E0g',
-        type: 'drive-lane',
-        variantString: 'outbound|car',
+        type: 'turn-lane',
+        variantString: 'outbound|left-straight',
         width: 10
       },
       {
@@ -746,57 +746,57 @@ export function prepare30mStreet () {
         width: 6.66667
       },
       {
-        id: 'MndtOxKEOQ7X-OIsse_Co',
+        id: 'IMyp7iXCj6mF5h46E8PuM',
         type: 'parking-lane',
         variantString: 'inbound|right',
         width: 3.33333
       },
       {
-        id: 'UWvIOj91PHQ-yKkEIXDjz',
+        id: '92-dDK_0ON6EKphPuzHID',
         type: 'drive-lane',
         variantString: 'inbound|car',
         width: 11.66667
       },
       {
-        id: 'B8huqM4mpn-t8Wac-RR7i',
-        type: 'drive-lane',
-        variantString: 'inbound|car',
+        id: 'bRemDAGxGng_G5PrZVpJd',
+        type: 'turn-lane',
+        variantString: 'inbound|left-straight',
         width: 10
       },
       {
-        id: 'KOkCwv3kZVIWGZnXLQa52',
+        id: 'zv7WR8lNlIQDDGBvqxiHW',
         type: 'parking-lane',
         variantString: 'inbound|right',
         width: 1.66667
       },
       {
-        id: 'zLvaduiMnD_a55a8jgzzv',
+        id: 'V8lVXyDmJJPZLBJuEPFQ1',
         type: 'divider',
         variantString: 'median',
         width: 6.66667
       },
       {
-        id: 'u6vVyRQNloCJ9wPRnNsOq',
+        id: 'V8SFeB2X0riUN09kE6oBg',
         type: 'parking-lane',
         variantString: 'inbound|left',
         width: 1.66667
       },
       {
-        id: 'vPZc4M6G-TVSMEhUK5trk',
-        type: 'drive-lane',
-        variantString: 'outbound|car',
+        id: 'dukEUdDWsXBNzcIRo9E0g',
+        type: 'turn-lane',
+        variantString: 'outbound|left-straight',
         width: 10
       },
       {
-        id: 'TufwnU4vN9n6Lk6G4nNWX',
+        id: 'W4mAMFGXXTyZtU3VOdoPb',
         type: 'drive-lane',
         variantString: 'outbound|car',
         width: 11.66667
       },
       {
-        id: 'Ree5IYbnM3GEE-y2nyokG',
+        id: 'V3M5CyAFm_4LzMeUwOjkW',
         type: 'parking-lane',
-        variantString: 'inbound|right',
+        variantString: 'inbound|left',
         width: 3.33333
       },
       {
@@ -857,7 +857,7 @@ export function prepare40mStreet () {
       {
         id: '5-CuA9gtNozIpddHmNu5Y',
         type: 'divider',
-        variantString: 'planting-strip',
+        variantString: 'median',
         width: 5
       },
       {
@@ -881,7 +881,7 @@ export function prepare40mStreet () {
       {
         id: 'bh6iZ9wiMSqsYkleRaWvu',
         type: 'drive-lane',
-        variantString: 'inbound|car',
+        variantString: 'inbound|sharrow',
         width: 11.66667
       },
       {
@@ -892,8 +892,8 @@ export function prepare40mStreet () {
       },
       {
         id: 'RgLUr89YieCenTdTq22Xa',
-        type: 'drive-lane',
-        variantString: 'inbound|car',
+        type: 'turn-lane',
+        variantString: 'inbound|left-straight',
         width: 10
       },
       {
@@ -916,8 +916,8 @@ export function prepare40mStreet () {
       },
       {
         id: 'SNzezHg0E7bWayHW8LWPg',
-        type: 'drive-lane',
-        variantString: 'outbound|car',
+        type: 'turn-lane',
+        variantString: 'outbound|left-straight',
         width: 10
       },
       {
@@ -929,7 +929,7 @@ export function prepare40mStreet () {
       {
         id: 'Tm-iqHVJ3pdjYlbwx8yuE',
         type: 'drive-lane',
-        variantString: 'outbound|car',
+        variantString: 'outbound|sharrow',
         width: 11.66667
       },
       {
@@ -953,7 +953,7 @@ export function prepare40mStreet () {
       {
         id: 'VZGFl0sol-ZPaDfMq2WNa',
         type: 'divider',
-        variantString: 'planting-strip',
+        variantString: 'median',
         width: 5
       },
       {
