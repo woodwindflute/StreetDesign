@@ -69,7 +69,12 @@
               }
               break;
             case "drive-lane":
-              if (segments[i].width > 11.66667 && detPh2 < 4) {
+              if (
+                segments[i].width > 11.66667 &&
+                detPh2 < 4 &&
+                segments[i].variantString != "inbound|sharrow" &&
+                segments[i].variantString != "outbound|sharrow"
+              ) {
                 if (detPh2 === 3) detPh2 = 4;
                 else detPh2 = 2;
               } else if (
@@ -139,9 +144,9 @@
         document.getElementById("p1").innerHTML = ph1;
         document.getElementById("p2").innerHTML = ph2;
         document.getElementById("p3").innerHTML = ph3;
-        document.getElementById("p1").style = stylePh1
-        document.getElementById("p2").style = stylePh2
-        document.getElementById("p3").style = stylePh3
+        document.getElementById("p1").style = stylePh1;
+        document.getElementById("p2").style = stylePh2;
+        document.getElementById("p3").style = stylePh3;
       }
     </script>
   </head>
