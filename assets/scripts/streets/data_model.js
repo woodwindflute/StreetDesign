@@ -497,25 +497,25 @@ export function prepare15mStreet () {
     schemaVersion: LATEST_SCHEMA_VERSION,
     segments: [
       {
-        id: 'hIOgSyH3Vs6paiLDpJ3CZ',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
         width: 10
       },
       {
-        id: 'ZsoG-iGzb0EsuG4W_DIIi',
+        id: nanoid(),
         type: 'drive-lane',
         variantString: 'inbound|sharrow',
         width: 15
       },
       {
-        id: 'joTgUym_kRQfqYU6yubGf',
+        id: nanoid(),
         type: 'drive-lane',
         variantString: 'outbound|sharrow',
         width: 15
       },
       {
-        id: '2torFDEa69L7ZantLwxNI',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
         width: 10
@@ -552,37 +552,37 @@ export function prepare20mStreet () {
     schemaVersion: LATEST_SCHEMA_VERSION,
     segments: [
       {
-        id: 'E7ufFzhQiqFOTZMKLnEKw',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
         width: 8.33333
       },
       {
-        id: '7LhwG4SCX05N-vOCHNpF2',
+        id: nanoid(),
         type: 'drive-lane',
         variantString: 'inbound|sharrow',
         width: 15
       },
       {
-        id: '5sz8uhQBTZHMdxuoLFYhh',
+        id: nanoid(),
         type: 'turn-lane',
-        variantString: 'inbound|left-straight',
+        variantString: 'inbound|right-straight',
         width: 10
       },
       {
-        id: 'm4MW-4ckkc2uq1Iia-qH5',
+        id: nanoid(),
         type: 'turn-lane',
         variantString: 'outbound|left-straight',
         width: 10
       },
       {
-        id: 'V6NBjKLJE8BFYMlsbcnB7',
+        id: nanoid(),
         type: 'drive-lane',
         variantString: 'outbound|sharrow',
         width: 15
       },
       {
-        id: 'TztR0m2wyFTJv75ww6sYF',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
         width: 8.33333
@@ -619,79 +619,79 @@ export function prepare25mStreet () {
     schemaVersion: LATEST_SCHEMA_VERSION,
     segments: [
       {
-        id: 'bvV3VJp9pU0k6Jzeq9Rz3',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
         width: 6.66667
       },
       {
-        id: 'Hf01jC_9xxFjp-TAjOX-y',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
         width: 5
       },
       {
-        id: 'IMyp7iXCj6mF5h46E8PuM',
+        id: nanoid(),
         type: 'parking-lane',
         variantString: 'inbound|right',
         width: 3.33333
       },
       {
-        id: '92-dDK_0ON6EKphPuzHID',
+        id: nanoid(),
         type: 'drive-lane',
         variantString: 'inbound|car',
         width: 11.66667
       },
       {
-        id: 'bRemDAGxGng_G5PrZVpJd',
+        id: nanoid(),
         type: 'turn-lane',
         variantString: 'inbound|left-straight',
         width: 10
       },
       {
-        id: 'zv7WR8lNlIQDDGBvqxiHW',
+        id: nanoid(),
         type: 'parking-lane',
         variantString: 'inbound|right',
         width: 1.66667
       },
       {
-        id: 'V8lVXyDmJJPZLBJuEPFQ1',
+        id: nanoid(),
         type: 'divider',
         variantString: 'median',
         width: 6.66667
       },
       {
-        id: 'V8SFeB2X0riUN09kE6oBg',
+        id: nanoid(),
         type: 'parking-lane',
         variantString: 'inbound|left',
         width: 1.66667
       },
       {
-        id: 'dukEUdDWsXBNzcIRo9E0g',
+        id: nanoid(),
         type: 'turn-lane',
         variantString: 'outbound|left-straight',
         width: 10
       },
       {
-        id: 'W4mAMFGXXTyZtU3VOdoPb',
+        id: nanoid(),
         type: 'drive-lane',
         variantString: 'outbound|car',
         width: 11.66667
       },
       {
-        id: 'V3M5CyAFm_4LzMeUwOjkW',
+        id: nanoid(),
         type: 'parking-lane',
         variantString: 'inbound|left',
         width: 3.33333
       },
       {
-        id: 'fveWV-or6Z_rpdB0dgmyu',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
         width: 5
       },
       {
-        id: 'KVQ8IiLtO1kMlm1Q38f-u',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
         width: 6.66667
@@ -728,91 +728,91 @@ export function prepare30mStreet () {
     schemaVersion: LATEST_SCHEMA_VERSION,
     segments: [
       {
-        id: 'PRVwYIFb9Bh1mJ04BIqJC',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
         width: 8.33333
       },
       {
-        id: 'JfxL7n-x2abz0UqaJSLsO',
+        id: nanoid(),
         type: 'bike-lane',
         variantString: 'inbound|regular|road',
         width: 5
       },
       {
-        id: '9m22Nbh9In457HRP76WoH',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
         width: 6.66667
       },
       {
-        id: 'IMyp7iXCj6mF5h46E8PuM',
+        id: nanoid(),
         type: 'parking-lane',
         variantString: 'inbound|right',
         width: 3.33333
       },
       {
-        id: '92-dDK_0ON6EKphPuzHID',
+        id: nanoid(),
         type: 'drive-lane',
         variantString: 'inbound|car',
         width: 11.66667
       },
       {
-        id: 'bRemDAGxGng_G5PrZVpJd',
+        id: nanoid(),
         type: 'turn-lane',
         variantString: 'inbound|left-straight',
         width: 10
       },
       {
-        id: 'zv7WR8lNlIQDDGBvqxiHW',
+        id: nanoid(),
         type: 'parking-lane',
         variantString: 'inbound|right',
         width: 1.66667
       },
       {
-        id: 'V8lVXyDmJJPZLBJuEPFQ1',
+        id: nanoid(),
         type: 'divider',
         variantString: 'median',
         width: 6.66667
       },
       {
-        id: 'V8SFeB2X0riUN09kE6oBg',
+        id: nanoid(),
         type: 'parking-lane',
         variantString: 'inbound|left',
         width: 1.66667
       },
       {
-        id: 'dukEUdDWsXBNzcIRo9E0g',
+        id: nanoid(),
         type: 'turn-lane',
         variantString: 'outbound|left-straight',
         width: 10
       },
       {
-        id: 'W4mAMFGXXTyZtU3VOdoPb',
+        id: nanoid(),
         type: 'drive-lane',
         variantString: 'outbound|car',
         width: 11.66667
       },
       {
-        id: 'V3M5CyAFm_4LzMeUwOjkW',
+        id: nanoid(),
         type: 'parking-lane',
         variantString: 'inbound|left',
         width: 3.33333
       },
       {
-        id: '_IleYnJyhMMtHyBDVyN3R',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
         width: 6.66667
       },
       {
-        id: 'QRWR_87jOTSwXzKE0hGfX',
+        id: nanoid(),
         type: 'bike-lane',
         variantString: 'outbound|regular|road',
         width: 5
       },
       {
-        id: 'YIc1dHUL_il47haRsz4Pl',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
         width: 8.33333
@@ -849,115 +849,115 @@ export function prepare40mStreet () {
     schemaVersion: LATEST_SCHEMA_VERSION,
     segments: [
       {
-        id: 'fCwyqV_FBCyF2jsdK9m2F',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
         width: 8.33333
       },
       {
-        id: '5-CuA9gtNozIpddHmNu5Y',
+        id: nanoid(),
         type: 'divider',
         variantString: 'median',
         width: 5
       },
       {
-        id: 'lbnSqNqq0f8FE4CoHF7lx',
+        id: nanoid(),
         type: 'bike-lane',
         variantString: 'inbound|regular|road',
         width: 6.66667
       },
       {
-        id: 'Cwk_Dx0Xnazfl2fGNJV79',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
         width: 5
       },
       {
-        id: 'W-0HxA3DksFk70Wo9neWD',
+        id: nanoid(),
         type: 'parking-lane',
         variantString: 'inbound|right',
         width: 3.33333
       },
       {
-        id: 'bh6iZ9wiMSqsYkleRaWvu',
+        id: nanoid(),
         type: 'drive-lane',
         variantString: 'inbound|sharrow',
         width: 11.66667
       },
       {
-        id: 'VTB87-3G65vVyhoFF1Jv3',
+        id: nanoid(),
         type: 'drive-lane',
         variantString: 'inbound|car',
         width: 11.66667
       },
       {
-        id: 'RgLUr89YieCenTdTq22Xa',
+        id: nanoid(),
         type: 'turn-lane',
         variantString: 'inbound|left-straight',
         width: 10
       },
       {
-        id: 'WZ51Q8rbUSrujXiKT0R13',
+        id: nanoid(),
         type: 'parking-lane',
         variantString: 'inbound|right',
         width: 1.66667
       },
       {
-        id: '2xExFQLYPNPFf9wRXuh3Q',
+        id: nanoid(),
         type: 'divider',
         variantString: 'median',
         width: 6.66667
       },
       {
-        id: 'A46uQwnbeEm0ByRk35Edn',
+        id: nanoid(),
         type: 'parking-lane',
         variantString: 'inbound|left',
         width: 1.66667
       },
       {
-        id: 'SNzezHg0E7bWayHW8LWPg',
+        id: nanoid(),
         type: 'turn-lane',
         variantString: 'outbound|left-straight',
         width: 10
       },
       {
-        id: 'HNRQuYvX5B5fBYwR4VkXh',
+        id: nanoid(),
         type: 'drive-lane',
         variantString: 'outbound|car',
         width: 11.66667
       },
       {
-        id: 'Tm-iqHVJ3pdjYlbwx8yuE',
+        id: nanoid(),
         type: 'drive-lane',
         variantString: 'outbound|sharrow',
         width: 11.66667
       },
       {
-        id: '9xa_orAK5ZMQFjZLDhDMu',
+        id: nanoid(),
         type: 'parking-lane',
         variantString: 'inbound|left',
         width: 3.33333
       },
       {
-        id: 'ZnoKiallgm6bPMcb6gQ_q',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
         width: 5
       },
       {
-        id: 'jzAdI6o9yv7EcEnIdWdzV',
+        id: nanoid(),
         type: 'bike-lane',
         variantString: 'outbound|regular|road',
         width: 6.66667
       },
       {
-        id: 'VZGFl0sol-ZPaDfMq2WNa',
+        id: nanoid(),
         type: 'divider',
         variantString: 'median',
         width: 5
       },
       {
-        id: 'D5nVNA20Mxr6_mVPyv-R4',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
         width: 8.33333
