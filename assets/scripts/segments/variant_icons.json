@@ -117,18 +117,6 @@
     "right": {
       "id": "turn-lane-right",
       "title": "Right"
-    },
-    "both": {
-      "id": "turn-lane-both",
-      "title": "Both"
-    },
-    "left-right-straight": {
-      "id": "turn-lane-left-right-straight",
-      "title": "Left, right and straight"
-    },
-    "shared": {
-      "id": "turn-lane-shared",
-      "title": "Shared"
     }
   },
   "divider-type": {

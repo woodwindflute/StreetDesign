@@ -1317,31 +1317,6 @@
           "repeat": "ground--asphalt"
         }
       },
-      "inbound|both": {
-        "minWidth": 9,
-        "maxWidth": 12,
-        "elevation": 0,
-        "graphics": {
-          "center": [
-            "vehicles--car-inbound-turn-signal-right",
-            "markings--both-inbound"
-          ],
-          "repeat": "ground--asphalt"
-        }
-      },
-      "inbound|shared": {
-        "name": "Center turn lane",
-        "nameKey": "turn-lane-center",
-        "minWidth": 9,
-        "maxWidth": 12,
-        "elevation": 0,
-        "graphics": {
-          "center": "markings--shared-inbound",
-          "repeat": "ground--asphalt",
-          "left": "markings--center-lane-left",
-          "right": "markings--center-lane-right"
-        }
-      },
       "outbound|left": {
         "minWidth": 9,
         "maxWidth": 12,
@@ -1399,32 +1374,6 @@
             "markings--right-outbound"
           ],
           "repeat": "ground--asphalt"
-        }
-      },
-      "outbound|both": {
-        "minWidth": 9,
-        "maxWidth": 12,
-        "elevation": 0,
-        "graphics": {
-          "center": [
-            "vehicles--car-outbound-turn-signal-left",
-            "markings--both-outbound"
-          ],
-          "repeat": "ground--asphalt"
-        }
-      },
-      "outbound|shared": {
-        "name": "Center turn lane",
-        "nameKey": "turn-lane-center",
-        "minWidth": 10,
-        "maxWidth": 16,
-        "defaultWidth": 12,
-        "elevation": 0,
-        "graphics": {
-          "center": "markings--shared-outbound",
-          "repeat": "ground--asphalt",
-          "left": "markings--center-lane-left",
-          "right": "markings--center-lane-right"
         }
       }
     }
