@@ -44,7 +44,8 @@
         "someone-elses-street-unnamed": "快來看看 {streetCreator} 創建的街道吧！",
         "anonymous-creator-street": "快來看看這條我創建的 {streetName} 吧！",
         "anonymous-creator-street-unnamed": "快來看看這條我創建的街道吧！"
-      }
+      },
+      "resources": "使用資源"
     },
     "contact": {
       "forums": "在Streetmix論壇上討論",

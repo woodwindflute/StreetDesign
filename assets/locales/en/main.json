@@ -42,7 +42,8 @@
         "someone-elses-street-unnamed": "Check out this street by {streetCreator}!",
         "anonymous-creator-street": "Check out {streetName}!",
         "anonymous-creator-street-unnamed": "Check out this street!"
-      }
+      },
+      "resources": "Resources"
     },
     "contact": {
       "forums": "Discuss on the forums",

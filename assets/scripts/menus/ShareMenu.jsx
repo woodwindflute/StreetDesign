@@ -107,9 +107,9 @@ function ShareMenu (props) {
     dispatch(showDialog('SAVE_AS_IMAGE'))
   }
 
-  function handleClickRate (event) {
+  function handleClickResources (event) {
     event.preventDefault()
-    dispatch(showDialog('RATE'))
+    dispatch(showDialog('RESOURCES'))
   }
 
   function handleClickSignIn (event) {
@@ -246,6 +246,12 @@ function ShareMenu (props) {
             defaultMessage="For including in a report, blog, etc."
           />
         </span>
+      </a>
+      <a id="resources" href="#" onClick={handleClickResources}>
+        <FormattedMessage
+          id="menu.share.resources"
+          defaultMessage="Resources"
+        />
       </a>
     </Menu>
   )
