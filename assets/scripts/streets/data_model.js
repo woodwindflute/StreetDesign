@@ -33,7 +33,7 @@ const DEFAULT_STREET_WIDTH = 80
 
 let _lastStreet
 
-export function setLastStreet () {
+export function setLastStreet() {
   _lastStreet = trimStreetData(store.getState().street)
 }
 
@@ -64,7 +64,7 @@ const LATEST_SCHEMA_VERSION = 25
 // 24: remove random seed from any segment
 // 25: add bus type
 
-function incrementSchemaVersion (street) {
+function incrementSchemaVersion(street) {
   let segment, variant
 
   if (!street.schemaVersion) {
@@ -321,7 +321,7 @@ function incrementSchemaVersion (street) {
  *
  * @param {Object} street
  */
-export function updateToLatestSchemaVersion (street) {
+export function updateToLatestSchemaVersion(street) {
   let updated = false
   while (
     !street.schemaVersion ||
@@ -344,14 +344,14 @@ export function updateToLatestSchemaVersion (street) {
   return updated
 }
 
-export function setStreetCreatorId (newId) {
+export function setStreetCreatorId(newId) {
   store.dispatch(saveCreatorId(newId))
 
   unifyUndoStack()
   updateLastStreetInfo()
 }
 
-export function setUpdateTimeToNow () {
+export function setUpdateTimeToNow() {
   const updateTime = new Date().toISOString()
   store.dispatch(setUpdateTime(updateTime))
   unifyUndoStack()
@@ -359,11 +359,11 @@ export function setUpdateTimeToNow () {
 
 let ignoreStreetChanges = false
 
-export function setIgnoreStreetChanges (value) {
+export function setIgnoreStreetChanges(value) {
   ignoreStreetChanges = value
 }
 
-export function saveStreetToServerIfNecessary () {
+export function saveStreetToServerIfNecessary() {
   if (ignoreStreetChanges || store.getState().errors.abortEverything) {
     return
   }
@@ -390,7 +390,7 @@ export function saveStreetToServerIfNecessary () {
 }
 
 // Copies only the data necessary for save/undo.
-export function trimStreetData (street) {
+export function trimStreetData(street) {
   const newData = {
     schemaVersion: street.schemaVersion,
     showAnalytics: street.showAnalytics,
@@ -429,7 +429,7 @@ export function trimStreetData (street) {
   return newData
 }
 
-function fillDefaultSegments (units) {
+function fillDefaultSegments(units) {
   const segments = []
   const leftHandTraffic = getLeftHandTraffic()
 
@@ -448,7 +448,7 @@ function fillDefaultSegments (units) {
   return segments
 }
 
-export function prepareDefaultStreet () {
+export function prepareDefaultStreet() {
   const units = store.getState().settings.units
   const currentDate = new Date().toISOString()
   const defaultStreet = {
@@ -478,7 +478,7 @@ export function prepareDefaultStreet () {
   }
 }
 
-export function prepare15mStreet () {
+export function prepare15mStreet() {
   const units = store.getState().settings.units
   const currentDate = new Date().toISOString()
   const defaultStreet = {
@@ -497,27 +497,33 @@ export function prepare15mStreet () {
     schemaVersion: LATEST_SCHEMA_VERSION,
     segments: [
       {
-        id: 'hIOgSyH3Vs6paiLDpJ3CZ',
+        id: nanoid(),
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
+        warnings: [],
         width: 10
       },
       {
-        id: 'ZsoG-iGzb0EsuG4W_DIIi',
+        id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'inbound', 'car-type': 'sharrow' },
         variantString: 'inbound|sharrow',
+        warnings: [],
         width: 15
       },
       {
-        id: 'joTgUym_kRQfqYU6yubGf',
+        id: nanoid(),
         type: 'drive-lane',
-        variantString: 'inbound|sharrow',
+        variant: { direction: 'outbound', 'car-type': 'sharrow' },
+        variantString: 'outbound|sharrow',
+        warnings: [],
         width: 15
       },
       {
-        id: '2torFDEa69L7ZantLwxNI',
+        id: nanoid(),
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
+        warnings: [],
         width: 10
       }
     ],
@@ -533,7 +539,7 @@ export function prepare15mStreet () {
   }
 }
 
-export function prepare20mStreet () {
+export function prepare20mStreet() {
   const units = store.getState().settings.units
   const currentDate = new Date().toISOString()
   const defaultStreet = {
@@ -552,39 +558,47 @@ export function prepare20mStreet () {
     schemaVersion: LATEST_SCHEMA_VERSION,
     segments: [
       {
-        id: 'E7ufFzhQiqFOTZMKLnEKw',
+        id: nanoid(),
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
         width: 8.33333
       },
       {
-        id: '7LhwG4SCX05N-vOCHNpF2',
+        id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'inbound', 'car-type': 'sharrow' },
         variantString: 'inbound|sharrow',
+        warnings: [],
         width: 15
       },
       {
-        id: '5sz8uhQBTZHMdxuoLFYhh',
-        type: 'drive-lane',
-        variantString: 'inbound|car',
+        id: nanoid(),
+        type: 'turn-lane',
+        variant: { direction: 'inbound', 'turn-lane-orientation': 'right-straight' },
+        variantString: 'inbound|right-straight',
+        warnings: [],
         width: 10
       },
       {
-        id: 'm4MW-4ckkc2uq1Iia-qH5',
-        type: 'drive-lane',
-        variantString: 'inbound|car',
+        id: nanoid(),
+        type: 'turn-lane',
+        variant: { direction: 'outbound', 'turn-lane-orientation': 'left-straight' },
+        variantString: 'outbound|left-straight',
+        warnings: [],
         width: 10
       },
       {
-        id: 'V6NBjKLJE8BFYMlsbcnB7',
+        id: nanoid(),
         type: 'drive-lane',
-        variantString: 'inbound|sharrow',
+        variant: { direction: 'outbound', 'car-type': 'sharrow' },
+        variantString: 'outbound|sharrow',
+        warnings: [],
         width: 15
       },
       {
-        id: 'TztR0m2wyFTJv75ww6sYF',
+        id: nanoid(),
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
         width: 8.33333
       }
     ],
@@ -600,7 +614,7 @@ export function prepare20mStreet () {
   }
 }
 
-export function prepare25mStreet () {
+export function prepare25mStreet() {
   const units = store.getState().settings.units
   const currentDate = new Date().toISOString()
   const defaultStreet = {
@@ -619,81 +633,101 @@ export function prepare25mStreet () {
     schemaVersion: LATEST_SCHEMA_VERSION,
     segments: [
       {
-        id: 'bvV3VJp9pU0k6Jzeq9Rz3',
+        id: nanoid(),
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
         width: 6.66667
       },
       {
-        id: 'Hf01jC_9xxFjp-TAjOX-y',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
         width: 5
       },
       {
-        id: 'IMyp7iXCj6mF5h46E8PuM',
+        id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'right' },
         variantString: 'inbound|right',
+        warnings: [],
         width: 3.33333
       },
       {
-        id: '92-dDK_0ON6EKphPuzHID',
+        id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'inbound', 'car-type': 'car' },
         variantString: 'inbound|car',
+        warnings: [],
         width: 11.66667
       },
       {
-        id: 'bRemDAGxGng_G5PrZVpJd',
-        type: 'drive-lane',
-        variantString: 'inbound|car',
+        id: nanoid(),
+        type: 'turn-lane',
+        variant: { direction: 'inbound', 'turn-lane-orientation': 'left-straight' },
+        variantString: 'inbound|left-straight',
+        warnings: [],
         width: 10
       },
       {
-        id: 'zv7WR8lNlIQDDGBvqxiHW',
+        id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'right' },
         variantString: 'inbound|right',
+        warnings: [],
         width: 1.66667
       },
       {
-        id: 'V8lVXyDmJJPZLBJuEPFQ1',
+        id: nanoid(),
         type: 'divider',
-        variantString: 'planting-strip',
+        variant: { 'divider-type': 'median' },
+        variantString: 'median',
+        warnings: [],
         width: 6.66667
       },
       {
-        id: 'V8SFeB2X0riUN09kE6oBg',
+        id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'left' },
         variantString: 'inbound|left',
+        warnings: [],
         width: 1.66667
       },
       {
-        id: 'dukEUdDWsXBNzcIRo9E0g',
-        type: 'drive-lane',
-        variantString: 'outbound|car',
+        id: nanoid(),
+        type: 'turn-lane',
+        variant: { direction: 'outbound', 'turn-lane-orientation': 'left-straight' },
+        variantString: 'outbound|left-straight',
+        warnings: [],
         width: 10
       },
       {
-        id: 'W4mAMFGXXTyZtU3VOdoPb',
+        id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'outbound', 'car-type': 'car' },
         variantString: 'outbound|car',
+        warnings: [],
         width: 11.66667
       },
       {
-        id: 'V3M5CyAFm_4LzMeUwOjkW',
+        id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'left' },
         variantString: 'inbound|left',
+        warnings: [],
         width: 3.33333
       },
       {
-        id: 'fveWV-or6Z_rpdB0dgmyu',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
+        warnings: [],
         width: 5
       },
       {
-        id: 'KVQ8IiLtO1kMlm1Q38f-u',
+        id: nanoid(),
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
+        warnings: [],
         width: 6.66667
       }
     ],
@@ -709,7 +743,7 @@ export function prepare25mStreet () {
   }
 }
 
-export function prepare30mStreet () {
+export function prepare30mStreet() {
   const units = store.getState().settings.units
   const currentDate = new Date().toISOString()
   const defaultStreet = {
@@ -728,93 +762,119 @@ export function prepare30mStreet () {
     schemaVersion: LATEST_SCHEMA_VERSION,
     segments: [
       {
-        id: 'PRVwYIFb9Bh1mJ04BIqJC',
+        id: nanoid(),
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
+        warnings: [],
         width: 8.33333
       },
       {
-        id: 'JfxL7n-x2abz0UqaJSLsO',
+        id: nanoid(),
         type: 'bike-lane',
+        variant: { direction: 'inbound', 'bike-asphalt': 'regular', elevation: 'road' },
         variantString: 'inbound|regular|road',
+        warnings: [],
         width: 5
       },
       {
-        id: '9m22Nbh9In457HRP76WoH',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
+        warnings: [],
         width: 6.66667
       },
       {
-        id: 'MndtOxKEOQ7X-OIsse_Co',
+        id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'right' },
         variantString: 'inbound|right',
+        warnings: [],
         width: 3.33333
       },
       {
-        id: 'UWvIOj91PHQ-yKkEIXDjz',
+        id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'inbound', 'car-type': 'car' },
         variantString: 'inbound|car',
+        warnings: [],
         width: 11.66667
       },
       {
-        id: 'B8huqM4mpn-t8Wac-RR7i',
-        type: 'drive-lane',
-        variantString: 'inbound|car',
+        id: nanoid(),
+        type: 'turn-lane',
+        variant: { direction: 'inbound', 'turn-lane-orientation': 'left-straight' },
+        variantString: 'inbound|left-straight',
+        warnings: [],
         width: 10
       },
       {
-        id: 'KOkCwv3kZVIWGZnXLQa52',
+        id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'right' },
         variantString: 'inbound|right',
+        warnings: [],
         width: 1.66667
       },
       {
-        id: 'zLvaduiMnD_a55a8jgzzv',
+        id: nanoid(),
         type: 'divider',
+        variant: { 'divider-type': 'median' },
         variantString: 'median',
+        warnings: [],
         width: 6.66667
       },
       {
-        id: 'u6vVyRQNloCJ9wPRnNsOq',
+        id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'left' },
         variantString: 'inbound|left',
+        warnings: [],
         width: 1.66667
       },
       {
-        id: 'vPZc4M6G-TVSMEhUK5trk',
-        type: 'drive-lane',
-        variantString: 'outbound|car',
+        id: nanoid(),
+        type: 'turn-lane',
+        variant: { direction: 'outbound', 'turn-lane-orientation': 'left-straight' },
+        variantString: 'outbound|left-straight',
+        warnings: [],
         width: 10
       },
       {
-        id: 'TufwnU4vN9n6Lk6G4nNWX',
+        id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'outbound', 'car-type': 'car' },
         variantString: 'outbound|car',
+        warnings: [],
         width: 11.66667
       },
       {
-        id: 'Ree5IYbnM3GEE-y2nyokG',
+        id: nanoid(),
         type: 'parking-lane',
-        variantString: 'inbound|right',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'left' },
+        variantString: 'inbound|left',
+        warnings: [],
         width: 3.33333
       },
       {
-        id: '_IleYnJyhMMtHyBDVyN3R',
+        id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
+        warnings: [],
         width: 6.66667
       },
       {
-        id: 'QRWR_87jOTSwXzKE0hGfX',
+        id: nanoid(),
         type: 'bike-lane',
+        variant: { direction: 'outbound', 'bike-asphalt': 'regualr', elevation: 'road' },
         variantString: 'outbound|regular|road',
+        warnings: [],
         width: 5
       },
       {
-        id: 'YIc1dHUL_il47haRsz4Pl',
+        id: nanoid(),
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
+        warnings: [],
         width: 8.33333
       }
     ],
@@ -830,7 +890,7 @@ export function prepare30mStreet () {
   }
 }
 
-export function prepare40mStreet () {
+export function prepare40mStreet() {
   const units = store.getState().settings.units
   const currentDate = new Date().toISOString()
   const defaultStreet = {
@@ -849,117 +909,151 @@ export function prepare40mStreet () {
     schemaVersion: LATEST_SCHEMA_VERSION,
     segments: [
       {
-        id: 'fCwyqV_FBCyF2jsdK9m2F',
+        id: nanoid(),
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
+        warnings: [],
         width: 8.33333
       },
       {
-        id: '5-CuA9gtNozIpddHmNu5Y',
+        id: nanoid(),
         type: 'divider',
-        variantString: 'planting-strip',
-        width: 5
-      },
-      {
-        id: 'lbnSqNqq0f8FE4CoHF7lx',
-        type: 'bike-lane',
-        variantString: 'inbound|regular|road',
-        width: 6.66667
-      },
-      {
-        id: 'Cwk_Dx0Xnazfl2fGNJV79',
-        type: 'sidewalk',
-        variantString: 'empty',
-        width: 5
-      },
-      {
-        id: 'W-0HxA3DksFk70Wo9neWD',
-        type: 'parking-lane',
-        variantString: 'inbound|right',
-        width: 3.33333
-      },
-      {
-        id: 'bh6iZ9wiMSqsYkleRaWvu',
-        type: 'drive-lane',
-        variantString: 'inbound|car',
-        width: 11.66667
-      },
-      {
-        id: 'VTB87-3G65vVyhoFF1Jv3',
-        type: 'drive-lane',
-        variantString: 'inbound|car',
-        width: 11.66667
-      },
-      {
-        id: 'RgLUr89YieCenTdTq22Xa',
-        type: 'drive-lane',
-        variantString: 'inbound|car',
-        width: 10
-      },
-      {
-        id: 'WZ51Q8rbUSrujXiKT0R13',
-        type: 'parking-lane',
-        variantString: 'inbound|right',
-        width: 1.66667
-      },
-      {
-        id: '2xExFQLYPNPFf9wRXuh3Q',
-        type: 'divider',
+        variant: { 'divider-type': 'median' },
         variantString: 'median',
+        warnings: [],
+        width: 5
+      },
+      {
+        id: nanoid(),
+        type: 'bike-lane',
+        variant: { direction: 'inbound', 'bike-asphalt': 'regular', elevation: 'road' },
+        variantString: 'inbound|regular|road',
+        warnings: [],
         width: 6.66667
       },
       {
-        id: 'A46uQwnbeEm0ByRk35Edn',
+        id: nanoid(),
+        type: 'sidewalk',
+        variantString: 'empty',
+        warnings: [],
+        width: 5
+      },
+      {
+        id: nanoid(),
         type: 'parking-lane',
-        variantString: 'inbound|left',
-        width: 1.66667
-      },
-      {
-        id: 'SNzezHg0E7bWayHW8LWPg',
-        type: 'drive-lane',
-        variantString: 'outbound|car',
-        width: 10
-      },
-      {
-        id: 'HNRQuYvX5B5fBYwR4VkXh',
-        type: 'drive-lane',
-        variantString: 'outbound|car',
-        width: 11.66667
-      },
-      {
-        id: 'Tm-iqHVJ3pdjYlbwx8yuE',
-        type: 'drive-lane',
-        variantString: 'outbound|car',
-        width: 11.66667
-      },
-      {
-        id: '9xa_orAK5ZMQFjZLDhDMu',
-        type: 'parking-lane',
-        variantString: 'inbound|left',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'right' },
+        variantString: 'inbound|right',
+        warnings: [],
         width: 3.33333
       },
       {
-        id: 'ZnoKiallgm6bPMcb6gQ_q',
-        type: 'sidewalk',
-        variantString: 'empty',
-        width: 5
+        id: nanoid(),
+        type: 'drive-lane',
+        variant: { direction: 'inbound', 'car-type': 'sharrow' },
+        variantString: 'inbound|sharrow',
+        warnings: [],
+        width: 11.66667
       },
       {
-        id: 'jzAdI6o9yv7EcEnIdWdzV',
-        type: 'bike-lane',
-        variantString: 'outbound|regular|road',
+        id: nanoid(),
+        type: 'drive-lane',
+        variant: { direction: 'inbound', 'car-type': 'car' },
+        variantString: 'inbound|car',
+        warnings: [],
+        width: 11.66667
+      },
+      {
+        id: nanoid(),
+        type: 'turn-lane',
+        variant: { direction: 'inbound', 'turn-lane-orientation': 'left-straight' },
+        variantString: 'inbound|left-straight',
+        warnings: [],
+        width: 10
+      },
+      {
+        id: nanoid(),
+        type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'right' },
+        variantString: 'inbound|right',
+        warnings: [],
+        width: 1.66667
+      },
+      {
+        id: nanoid(),
+        type: 'divider',
+        variant: { 'divider-type': 'mdeian' },
+        variantString: 'median',
+        warnings: [],
         width: 6.66667
       },
       {
-        id: 'VZGFl0sol-ZPaDfMq2WNa',
-        type: 'divider',
-        variantString: 'planting-strip',
+        id: nanoid(),
+        type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'left' },
+        variantString: 'inbound|left',
+        warnings: [],
+        width: 1.66667
+      },
+      {
+        id: nanoid(),
+        type: 'turn-lane',
+        variant: { direction: 'outbound', 'turn-lane-orientation': 'left-straight' },
+        variantString: 'outbound|left-straight',
+        warnings: [],
+        width: 10
+      },
+      {
+        id: nanoid(),
+        type: 'drive-lane',
+        variant: { direction: 'outbound', 'car-type': 'car' },
+        variantString: 'outbound|car',
+        warnings: [],
+        width: 11.66667
+      },
+      {
+        id: nanoid(),
+        type: 'drive-lane',
+        variant: { direction: 'outbound', 'car-type': 'sharrow' },
+        variantString: 'outbound|sharrow',
+        warnings: [],
+        width: 11.66667
+      },
+      {
+        id: nanoid(),
+        type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'left' },
+        variantString: 'inbound|left',
+        warnings: [],
+        width: 3.33333
+      },
+      {
+        id: nanoid(),
+        type: 'sidewalk',
+        variantString: 'empty',
+        warnings: [],
         width: 5
       },
       {
-        id: 'D5nVNA20Mxr6_mVPyv-R4',
+        id: nanoid(),
+        type: 'bike-lane',
+        variant: { direction: 'outbound', 'bike-asphalt': 'regualr', elevaiton: 'road' },
+        variantString: 'outbound|regular|road',
+        warnings: [],
+        width: 6.66667
+      },
+      {
+        id: nanoid(),
+        type: 'divider',
+        variant: { 'divider-type': 'median' },
+        variantString: 'median',
+        warnings: [],
+        width: 5
+      },
+      {
+        id: nanoid(),
         type: 'sidewalk',
-        variantString: 'dense',
+        variantString: 'normal',
+        warnings: [],
         width: 8.33333
       }
     ],
@@ -975,7 +1069,7 @@ export function prepare40mStreet () {
   }
 }
 
-export function prepareEmptyStreet () {
+export function prepareEmptyStreet() {
   const units = store.getState().settings.units
   const currentDate = new Date().toISOString()
   const emptyStreet = {
@@ -1013,7 +1107,7 @@ export function prepareEmptyStreet () {
  *          cause a re-save of street to the server. (e.g. in the case of
  *          live update feature.) Default is `true`.
  */
-export function updateEverything (dontScroll, save = true) {
+export function updateEverything(dontScroll, save = true) {
   setIgnoreStreetChanges(true)
   // TODO Verify that we don't need to dispatch an update width event here
   segmentsChanged()
