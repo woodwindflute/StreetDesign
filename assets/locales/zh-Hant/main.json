@@ -336,7 +336,8 @@
   },
   "street": {
     "default-name": "無名街",
-    "rename": "點擊此處更改名字"
+    "rename": "點擊此處更改名字",
+    "example": "範例街道"
   },
   "building": {
     "floors-count": "{count, plural, other {# 層}}"

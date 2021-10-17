@@ -16,6 +16,7 @@ import UpgradeDialog from './UpgradeDialog'
 import SentimentSurveyDialog from './SentimentSurveyDialog'
 import ErrorDialog from './ErrorDialog'
 import RateDialog from './RateDialog'
+import StreetExampleDialog from './StreetExampleDialog'
 
 const DIALOG_COMPONENTS = {
   ABOUT: {
@@ -53,6 +54,9 @@ const DIALOG_COMPONENTS = {
   },
   RATE: {
     id: RateDialog
+  },
+  STREET_EXAMPLE: {
+    id: StreetExampleDialog
   }
 }
 
@@ -65,7 +69,7 @@ class DialogRoot extends Component {
     error: false
   }
 
-  static getDerivedStateFromError () {
+  static getDerivedStateFromError() {
     return {
       error: true
     }
@@ -77,7 +81,7 @@ class DialogRoot extends Component {
     })
   }
 
-  render () {
+  render() {
     const { name } = this.props
 
     // Bail if no dialog name is provided

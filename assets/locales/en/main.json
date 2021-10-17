@@ -343,7 +343,8 @@
   },
   "street": {
     "default-name": "Unnamed St",
-    "rename": "Click to rename"
+    "rename": "Click to rename",
+    "example": "Example Street"
   },
   "building": {
     "floors-count": "{count, plural, one {# floor} other {# floors}}"
