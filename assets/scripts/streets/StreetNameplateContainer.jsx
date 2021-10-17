@@ -4,7 +4,9 @@ import { useIntl } from 'react-intl'
 import { saveStreetName } from '../store/slices/street'
 import StreetName from './StreetName'
 import StreetMeta from './StreetMeta'
+import StreetExample from './StreetExample'
 import './StreetNameplateContainer.scss'
+
 
 function StreetNameplateContainer(props) {
   const isVisible = useSelector((state) => !state.ui.welcomePanelVisible)
@@ -116,6 +118,7 @@ function StreetNameplateContainer(props) {
         onClick={handleClickStreetName}
       />
       <StreetMeta />
+      <StreetExample />
     </div>
   )
 }

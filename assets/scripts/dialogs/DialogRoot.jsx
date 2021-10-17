@@ -17,6 +17,7 @@ import SentimentSurveyDialog from './SentimentSurveyDialog'
 import ErrorDialog from './ErrorDialog'
 import RateDialog from './RateDialog'
 import ResourcesDialog from './ResourcesDialog'
+import StreetExampleDialog from './StreetExampleDialog'
 
 const DIALOG_COMPONENTS = {
   ABOUT: {
@@ -57,6 +58,9 @@ const DIALOG_COMPONENTS = {
   },
   RESOURCES: {
     id: ResourcesDialog
+  },
+  STREET_EXAMPLE: {
+    id: StreetExampleDialog
   }
 }
 

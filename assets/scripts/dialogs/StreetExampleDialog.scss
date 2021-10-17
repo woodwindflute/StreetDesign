@@ -1,0 +1,38 @@
+.street-example-dialog {
+  width: 45vw;
+   height: 20vh;
+   max-height: 1000px;
+
+  ul {
+    display: inline-block;
+    list-style: none;
+    margin-bottom: 5px;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 10px 2px 0;
+  }
+
+  input[type="radio"] {
+    display: none;
+    border: 0;
+    background: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  input[type="radio"]:checked + label {
+    color: black;
+    font-weight: bold;
+  }
+
+  input[type="radio"]:not(:checked) + label {
+    text-decoration: underline;
+  }
+}
+

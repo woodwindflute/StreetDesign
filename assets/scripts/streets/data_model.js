@@ -500,24 +500,30 @@ export function prepare15mStreet () {
         id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
+        warnings: [],
         width: 10
       },
       {
         id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'inbound', 'car-type': 'sharrow' },
         variantString: 'inbound|sharrow',
+        warnings: [],
         width: 15
       },
       {
         id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'outbound', 'car-type': 'sharrow' },
         variantString: 'outbound|sharrow',
+        warnings: [],
         width: 15
       },
       {
         id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
+        warnings: [],
         width: 10
       }
     ],
@@ -560,25 +566,33 @@ export function prepare20mStreet () {
       {
         id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'inbound', 'car-type': 'sharrow' },
         variantString: 'inbound|sharrow',
+        warnings: [],
         width: 15
       },
       {
         id: nanoid(),
         type: 'turn-lane',
+        variant: { direction: 'inbound', 'turn-lane-orientation': 'right-straight' },
         variantString: 'inbound|right-straight',
+        warnings: [],
         width: 10
       },
       {
         id: nanoid(),
         type: 'turn-lane',
+        variant: { direction: 'outbound', 'turn-lane-orientation': 'left-straight' },
         variantString: 'outbound|left-straight',
+        warnings: [],
         width: 10
       },
       {
         id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'outbound', 'car-type': 'sharrow' },
         variantString: 'outbound|sharrow',
+        warnings: [],
         width: 15
       },
       {
@@ -633,67 +647,87 @@ export function prepare25mStreet () {
       {
         id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'right' },
         variantString: 'inbound|right',
+        warnings: [],
         width: 3.33333
       },
       {
         id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'inbound', 'car-type': 'car' },
         variantString: 'inbound|car',
+        warnings: [],
         width: 11.66667
       },
       {
         id: nanoid(),
         type: 'turn-lane',
+        variant: { direction: 'inbound', 'turn-lane-orientation': 'left-straight' },
         variantString: 'inbound|left-straight',
+        warnings: [],
         width: 10
       },
       {
         id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'right' },
         variantString: 'inbound|right',
+        warnings: [],
         width: 1.66667
       },
       {
         id: nanoid(),
         type: 'divider',
+        variant: { 'divider-type': 'median' },
         variantString: 'median',
+        warnings: [],
         width: 6.66667
       },
       {
         id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'left' },
         variantString: 'inbound|left',
+        warnings: [],
         width: 1.66667
       },
       {
         id: nanoid(),
         type: 'turn-lane',
+        variant: { direction: 'outbound', 'turn-lane-orientation': 'left-straight' },
         variantString: 'outbound|left-straight',
+        warnings: [],
         width: 10
       },
       {
         id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'outbound', 'car-type': 'car' },
         variantString: 'outbound|car',
+        warnings: [],
         width: 11.66667
       },
       {
         id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'left' },
         variantString: 'inbound|left',
+        warnings: [],
         width: 3.33333
       },
       {
         id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
+        warnings: [],
         width: 5
       },
       {
         id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
+        warnings: [],
         width: 6.66667
       }
     ],
@@ -731,90 +765,116 @@ export function prepare30mStreet () {
         id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
+        warnings: [],
         width: 8.33333
       },
       {
         id: nanoid(),
         type: 'bike-lane',
+        variant: { direction: 'inbound', 'bike-asphalt': 'regular', elevation: 'road' },
         variantString: 'inbound|regular|road',
+        warnings: [],
         width: 5
       },
       {
         id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
+        warnings: [],
         width: 6.66667
       },
       {
         id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'right' },
         variantString: 'inbound|right',
+        warnings: [],
         width: 3.33333
       },
       {
         id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'inbound', 'car-type': 'car' },
         variantString: 'inbound|car',
+        warnings: [],
         width: 11.66667
       },
       {
         id: nanoid(),
         type: 'turn-lane',
+        variant: { direction: 'inbound', 'turn-lane-orientation': 'left-straight' },
         variantString: 'inbound|left-straight',
+        warnings: [],
         width: 10
       },
       {
         id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'right' },
         variantString: 'inbound|right',
+        warnings: [],
         width: 1.66667
       },
       {
         id: nanoid(),
         type: 'divider',
+        variant: { 'divider-type': 'median' },
         variantString: 'median',
+        warnings: [],
         width: 6.66667
       },
       {
         id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'left' },
         variantString: 'inbound|left',
+        warnings: [],
         width: 1.66667
       },
       {
         id: nanoid(),
         type: 'turn-lane',
+        variant: { direction: 'outbound', 'turn-lane-orientation': 'left-straight' },
         variantString: 'outbound|left-straight',
+        warnings: [],
         width: 10
       },
       {
         id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'outbound', 'car-type': 'car' },
         variantString: 'outbound|car',
+        warnings: [],
         width: 11.66667
       },
       {
         id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'left' },
         variantString: 'inbound|left',
+        warnings: [],
         width: 3.33333
       },
       {
         id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
+        warnings: [],
         width: 6.66667
       },
       {
         id: nanoid(),
         type: 'bike-lane',
+        variant: { direction: 'outbound', 'bike-asphalt': 'regualr', elevation: 'road' },
         variantString: 'outbound|regular|road',
+        warnings: [],
         width: 5
       },
       {
         id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
+        warnings: [],
         width: 8.33333
       }
     ],
@@ -852,114 +912,148 @@ export function prepare40mStreet () {
         id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
+        warnings: [],
         width: 8.33333
       },
       {
         id: nanoid(),
         type: 'divider',
+        variant: { 'divider-type': 'median' },
         variantString: 'median',
+        warnings: [],
         width: 5
       },
       {
         id: nanoid(),
         type: 'bike-lane',
+        variant: { direction: 'inbound', 'bike-asphalt': 'regular', elevation: 'road' },
         variantString: 'inbound|regular|road',
+        warnings: [],
         width: 6.66667
       },
       {
         id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
+        warnings: [],
         width: 5
       },
       {
         id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'right' },
         variantString: 'inbound|right',
+        warnings: [],
         width: 3.33333
       },
       {
         id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'inbound', 'car-type': 'sharrow' },
         variantString: 'inbound|sharrow',
+        warnings: [],
         width: 11.66667
       },
       {
         id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'inbound', 'car-type': 'car' },
         variantString: 'inbound|car',
+        warnings: [],
         width: 11.66667
       },
       {
         id: nanoid(),
         type: 'turn-lane',
+        variant: { direction: 'inbound', 'turn-lane-orientation': 'left-straight' },
         variantString: 'inbound|left-straight',
+        warnings: [],
         width: 10
       },
       {
         id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'right' },
         variantString: 'inbound|right',
+        warnings: [],
         width: 1.66667
       },
       {
         id: nanoid(),
         type: 'divider',
+        variant: { 'divider-type': 'mdeian' },
         variantString: 'median',
+        warnings: [],
         width: 6.66667
       },
       {
         id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'left' },
         variantString: 'inbound|left',
+        warnings: [],
         width: 1.66667
       },
       {
         id: nanoid(),
         type: 'turn-lane',
+        variant: { direction: 'outbound', 'turn-lane-orientation': 'left-straight' },
         variantString: 'outbound|left-straight',
+        warnings: [],
         width: 10
       },
       {
         id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'outbound', 'car-type': 'car' },
         variantString: 'outbound|car',
+        warnings: [],
         width: 11.66667
       },
       {
         id: nanoid(),
         type: 'drive-lane',
+        variant: { direction: 'outbound', 'car-type': 'sharrow' },
         variantString: 'outbound|sharrow',
+        warnings: [],
         width: 11.66667
       },
       {
         id: nanoid(),
         type: 'parking-lane',
+        variant: { 'parking-lane-direction': 'inbound', 'parking-lane-orientation': 'left' },
         variantString: 'inbound|left',
+        warnings: [],
         width: 3.33333
       },
       {
         id: nanoid(),
         type: 'sidewalk',
         variantString: 'empty',
+        warnings: [],
         width: 5
       },
       {
         id: nanoid(),
         type: 'bike-lane',
+        variant: { direction: 'outbound', 'bike-asphalt': 'regualr', elevaiton: 'road' },
         variantString: 'outbound|regular|road',
+        warnings: [],
         width: 6.66667
       },
       {
         id: nanoid(),
         type: 'divider',
+        variant: { 'divider-type': 'median' },
         variantString: 'median',
+        warnings: [],
         width: 5
       },
       {
         id: nanoid(),
         type: 'sidewalk',
         variantString: 'normal',
+        warnings: [],
         width: 8.33333
       }
     ],
