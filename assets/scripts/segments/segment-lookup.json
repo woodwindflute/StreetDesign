@@ -893,10 +893,24 @@
     "nameKey": "divider",
     "owner": "NATURE",
     "zIndex": 20,
-    "defaultWidth": 2,
-    "paletteIcon": "planting-strip",
+    "defaultWidth": 4,
+    "paletteIcon": "median",
     "variants": ["divider-type"],
     "details": {
+      "median": {
+        "name": "Median",
+        "nameKey": "median",
+        "components": {
+          "lanes": [
+            {
+              "id": "sidewalk",
+              "variants": {
+                "color": "regular"
+              }
+            }
+          ]
+        }
+      },
       "planting-strip": {
         "name": "Planting strip",
         "nameKey": "planting-strip",
@@ -914,53 +928,6 @@
               "id": "planting-strip",
               "variants": {
                 "type": "grass"
-              }
-            }
-          ]
-        }
-      },
-      "planter-box": {
-        "name": "Planter box",
-        "nameKey": "planter-box",
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "markings": [
-            {
-              "id": "markings--stripes-diagonal"
-            },
-            {
-              "id": "markings--lane-left"
-            },
-            {
-              "id": "markings--lane-right"
-            }
-          ],
-          "objects": [
-            {
-              "id": "planter-box",
-              "variants": {
-                "type": "default"
-              }
-            }
-          ]
-        }
-      },
-      "median": {
-        "name": "Median",
-        "nameKey": "median",
-        "components": {
-          "lanes": [
-            {
-              "id": "sidewalk",
-              "variants": {
-                "color": "regular"
               }
             }
           ]
@@ -990,8 +957,19 @@
             }
           ]
         }
-      },
-      "bush": {
+      }
+    }
+  },
+  "public-zone": {
+    "name": "Public zone",
+    "nameKey": "public-zone",
+    "owner": "NATURE",
+    "zIndex": 20,
+    "defaultWidth": 4,
+    "paletteIcon": "planting-strip",
+    "variants": ["public-type"],
+    "details": {
+      "planting-strip": {
         "name": "Planting strip",
         "nameKey": "planting-strip",
         "components": {
@@ -1008,162 +986,6 @@
               "id": "planting-strip",
               "variants": {
                 "type": "grass"
-              }
-            },
-            {
-              "id": "planting-strip",
-              "variants": {
-                "type": "bush"
-              }
-            }
-          ]
-        }
-      },
-      "flowers": {
-        "name": "Planting strip",
-        "nameKey": "planting-strip",
-        "components": {
-          "lanes": [
-            {
-              "id": "sidewalk",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "objects": [
-            {
-              "id": "planting-strip",
-              "variants": {
-                "type": "grass"
-              }
-            },
-            {
-              "id": "planting-strip",
-              "variants": {
-                "type": "flowers"
-              }
-            }
-          ]
-        }
-      },
-      "big-tree": {
-        "name": "Planting strip",
-        "nameKey": "planting-strip",
-        "components": {
-          "lanes": [
-            {
-              "id": "sidewalk",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "objects": [
-            {
-              "id": "planting-strip",
-              "variants": {
-                "type": "grass"
-              }
-            },
-            {
-              "id": "tree",
-              "variants": {
-                "type": "big"
-              }
-            }
-          ]
-        }
-      },
-      "palm-tree": {
-        "name": "Planting strip",
-        "nameKey": "planting-strip",
-        "components": {
-          "lanes": [
-            {
-              "id": "sidewalk",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "objects": [
-            {
-              "id": "planting-strip",
-              "variants": {
-                "type": "grass"
-              }
-            },
-            {
-              "id": "tree",
-              "variants": {
-                "type": "palm-tree"
-              }
-            }
-          ]
-        }
-      },
-      "bollard": {
-        "name": "Bollard",
-        "nameKey": "bollard",
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "markings": [
-            {
-              "id": "markings--stripes-diagonal"
-            },
-            {
-              "id": "markings--lane-left"
-            },
-            {
-              "id": "markings--lane-right"
-            }
-          ],
-          "objects": [
-            {
-              "id": "bollard",
-              "variants": {
-                "type": "default"
-              }
-            }
-          ]
-        }
-      },
-      "dome": {
-        "name": "Traffic exclusion dome",
-        "nameKey": "dome",
-        "components": {
-          "lanes": [
-            {
-              "id": "asphalt",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "markings": [
-            {
-              "id": "markings--stripes-diagonal"
-            },
-            {
-              "id": "markings--lane-left"
-            },
-            {
-              "id": "markings--lane-right"
-            }
-          ],
-          "objects": [
-            {
-              "id": "dome",
-              "variants": {
-                "type": "default"
               }
             }
           ]
