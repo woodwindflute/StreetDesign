@@ -19,30 +19,6 @@
     "inbound": {
       "id": "direction-inbound",
       "title": "Inbound"
-    },
-    "outbound": {
-      "id": "direction-outbound",
-      "title": "Outbound"
-    },
-    "sideways": {
-      "id": "direction-both",
-      "title": "Perpendicular"
-    },
-    "angled-front-left": {
-      "id": "direction-down-left",
-      "title": "Angled"
-    },
-    "angled-front-right": {
-      "id": "direction-down-right",
-      "title": "Angled"
-    },
-    "angled-rear-left": {
-      "id": "direction-up-left",
-      "title": "Angled"
-    },
-    "angled-rear-right": {
-      "id": "direction-up-right",
-      "title": "Angled"
     }
   },
   "tree-type": {
@@ -117,18 +93,6 @@
     "right": {
       "id": "turn-lane-right",
       "title": "Right"
-    },
-    "both": {
-      "id": "turn-lane-both",
-      "title": "Both"
-    },
-    "left-right-straight": {
-      "id": "turn-lane-left-right-straight",
-      "title": "Left, right and straight"
-    },
-    "shared": {
-      "id": "turn-lane-shared",
-      "title": "Shared"
     }
   },
   "divider-type": {

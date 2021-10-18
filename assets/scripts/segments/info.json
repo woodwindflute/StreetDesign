@@ -1016,139 +1016,6 @@
           "repeat": "ground--asphalt",
           "left": "markings--parking-right"
         }
-      },
-      "outbound|left": {
-        "elevation": 0,
-        "minWidth": 7,
-        "maxWidth": 10,
-        "graphics": {
-          "left": {
-            "id": "vehicles--car-outbound",
-            "offsetX": 6
-          },
-          "repeat": "ground--asphalt",
-          "right": "markings--parking-left"
-        }
-      },
-      "outbound|right": {
-        "elevation": 0,
-        "minWidth": 7,
-        "maxWidth": 10,
-        "graphics": {
-          "right": "vehicles--car-outbound",
-          "repeat": "ground--asphalt",
-          "left": "markings--parking-right"
-        }
-      },
-      "sideways|left": {
-        "elevation": 0,
-        "name": "Perpendicular parking",
-        "nameKey": "perpendicular-parking",
-        "minWidth": 14,
-        "maxWidth": 20,
-        "graphics": {
-          "left": "vehicles--car-sideways-left",
-          "repeat": "ground--asphalt"
-        }
-      },
-      "sideways|right": {
-        "elevation": 0,
-        "name": "Perpendicular parking",
-        "nameKey": "perpendicular-parking",
-        "minWidth": 14,
-        "maxWidth": 20,
-        "graphics": {
-          "right": "vehicles--car-sideways-right",
-          "repeat": "ground--asphalt"
-        }
-      },
-      "angled-front-left|left": {
-        "elevation": 0,
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "minWidth": 14,
-        "maxWidth": 18,
-        "graphics": {
-          "left": "vehicles--car-angled-front-left",
-          "repeat": "ground--asphalt"
-        }
-      },
-      "angled-front-right|left": {
-        "elevation": 0,
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "minWidth": 14,
-        "maxWidth": 18,
-        "graphics": {
-          "left": "vehicles--car-angled-front-right",
-          "repeat": "ground--asphalt"
-        }
-      },
-      "angled-rear-left|left": {
-        "elevation": 0,
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "minWidth": 14,
-        "maxWidth": 18,
-        "graphics": {
-          "left": "vehicles--car-angled-rear-left",
-          "repeat": "ground--asphalt"
-        }
-      },
-      "angled-rear-right|left": {
-        "elevation": 0,
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "minWidth": 14,
-        "maxWidth": 18,
-        "graphics": {
-          "left": "vehicles--car-angled-rear-right",
-          "repeat": "ground--asphalt"
-        }
-      },
-      "angled-front-left|right": {
-        "elevation": 0,
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "minWidth": 14,
-        "maxWidth": 18,
-        "graphics": {
-          "right": "vehicles--car-angled-front-left",
-          "repeat": "ground--asphalt"
-        }
-      },
-      "angled-front-right|right": {
-        "elevation": 0,
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "minWidth": 14,
-        "maxWidth": 18,
-        "graphics": {
-          "right": "vehicles--car-angled-front-right",
-          "repeat": "ground--asphalt"
-        }
-      },
-      "angled-rear-left|right": {
-        "elevation": 0,
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "minWidth": 14,
-        "maxWidth": 18,
-        "graphics": {
-          "right": "vehicles--car-angled-rear-left",
-          "repeat": "ground--asphalt"
-        }
-      },
-      "angled-rear-right|right": {
-        "elevation": 0,
-        "name": "Angled parking",
-        "nameKey": "angled-parking",
-        "minWidth": 14,
-        "maxWidth": 18,
-        "graphics": {
-          "right": "vehicles--car-angled-rear-right",
-          "repeat": "ground--asphalt"
-        }
       }
     }
   },
@@ -1317,31 +1184,6 @@
           "repeat": "ground--asphalt"
         }
       },
-      "inbound|both": {
-        "minWidth": 9,
-        "maxWidth": 12,
-        "elevation": 0,
-        "graphics": {
-          "center": [
-            "vehicles--car-inbound-turn-signal-right",
-            "markings--both-inbound"
-          ],
-          "repeat": "ground--asphalt"
-        }
-      },
-      "inbound|shared": {
-        "name": "Center turn lane",
-        "nameKey": "turn-lane-center",
-        "minWidth": 9,
-        "maxWidth": 12,
-        "elevation": 0,
-        "graphics": {
-          "center": "markings--shared-inbound",
-          "repeat": "ground--asphalt",
-          "left": "markings--center-lane-left",
-          "right": "markings--center-lane-right"
-        }
-      },
       "outbound|left": {
         "minWidth": 9,
         "maxWidth": 12,
@@ -1399,32 +1241,6 @@
             "markings--right-outbound"
           ],
           "repeat": "ground--asphalt"
-        }
-      },
-      "outbound|both": {
-        "minWidth": 9,
-        "maxWidth": 12,
-        "elevation": 0,
-        "graphics": {
-          "center": [
-            "vehicles--car-outbound-turn-signal-left",
-            "markings--both-outbound"
-          ],
-          "repeat": "ground--asphalt"
-        }
-      },
-      "outbound|shared": {
-        "name": "Center turn lane",
-        "nameKey": "turn-lane-center",
-        "minWidth": 10,
-        "maxWidth": 16,
-        "defaultWidth": 12,
-        "elevation": 0,
-        "graphics": {
-          "center": "markings--shared-outbound",
-          "repeat": "ground--asphalt",
-          "left": "markings--center-lane-left",
-          "right": "markings--center-lane-right"
         }
       }
     }

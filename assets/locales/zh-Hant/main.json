@@ -44,7 +44,8 @@
         "someone-elses-street-unnamed": "快來看看 {streetCreator} 創建的街道吧！",
         "anonymous-creator-street": "快來看看這條我創建的 {streetName} 吧！",
         "anonymous-creator-street-unnamed": "快來看看這條我創建的街道吧！"
-      }
+      },
+      "resources": "使用資源"
     },
     "contact": {
       "forums": "在Streetmix論壇上討論",
@@ -336,7 +337,8 @@
   },
   "street": {
     "default-name": "無名街",
-    "rename": "點擊此處更改名字"
+    "rename": "點擊此處更改名字",
+    "example": "範例街道"
   },
   "building": {
     "floors-count": "{count, plural, other {# 層}}"

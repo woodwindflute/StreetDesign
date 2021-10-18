@@ -42,7 +42,8 @@
         "someone-elses-street-unnamed": "Check out this street by {streetCreator}!",
         "anonymous-creator-street": "Check out {streetName}!",
         "anonymous-creator-street-unnamed": "Check out this street!"
-      }
+      },
+      "resources": "Resources"
     },
     "contact": {
       "forums": "Discuss on the forums",
@@ -343,7 +344,8 @@
   },
   "street": {
     "default-name": "Unnamed St",
-    "rename": "Click to rename"
+    "rename": "Click to rename",
+    "example": "Example Street"
   },
   "building": {
     "floors-count": "{count, plural, one {# floor} other {# floors}}"
