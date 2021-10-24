@@ -221,56 +221,38 @@
         material="src:#grass-texture;repeat:5 5;roughness:1"
       ></a-entity>
 
-      <!--雙黃線-->
+      <!--單黃線-->
       <a-entity
-        position="0.5 0.01 -83"
-        rotation="-90 0 7.125"
-        atlas-uvs="totalColumns: 4; column: 3"
-        scale="1 1 1"
-        material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
-        geometry="primitive: plane; buffer: false; skipCache: true; width:0.5; height:16.1"
-      ></a-entity>
-
-      <a-entity
-        position="-0.5 0.01 -99"
+        position="-1.525 0.01 -91"
         rotation="-90 0 0"
-        atlas-uvs="totalColumns: 4; column: 3"
-        scale="1 1 1"
-        material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
-        geometry="primitive: plane; buffer: false; skipCache: true; width:0.5; height:16"
-      ></a-entity>
-
-      <a-entity
-        position="8.65 0.01 -83"
-        rotation="-90 0 -3.6"
-        atlas-uvs="totalColumns: 4; column: 3"
-        scale="1 1 1"
-        material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
-        geometry="primitive: plane; buffer: false; skipCache: true; width:0.5; height:16.1"
-      ></a-entity>
-
-      <a-entity
-        position="9.15 0.01 -99"
-        rotation="-90 0 0"
-        atlas-uvs="totalColumns: 4; column: 3"
-        scale="1 1 1"
-        material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
-        geometry="primitive: plane; buffer: false; skipCache: true; width:0.5; height:16"
-      ></a-entity>
-      <!--雙黃線結束-->
-
-      <!--馬路實線-->
-      <a-entity
-        position="-8.1 0.01 -91"
-        rotation="-90 0 0"
-        atlas-uvs="totalColumns: 8; column: 3"
+        atlas-uvs="totalColumns: 8; column: 5"
         scale="1 1 1"
         material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
         geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:32;"
       ></a-entity>
 
       <a-entity
-        position="-1.525 0.01 -91"
+        position="0.5 0.01 -83"
+        rotation="-90 0 7.125"
+        atlas-uvs="totalColumns: 8; column: 5"
+        scale="1 1 1"
+        material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+        geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16.1"
+      ></a-entity>
+
+      <a-entity
+        position="-0.5 0.01 -99"
+        rotation="-90 0 0"
+        atlas-uvs="totalColumns: 8; column: 5"
+        scale="1 1 1"
+        material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+        geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16"
+      ></a-entity>
+      <!--雙黃線結束-->
+
+      <!--馬路實線-->
+      <a-entity
+        position="-8.1 0.01 -91"
         rotation="-90 0 0"
         atlas-uvs="totalColumns: 8; column: 3"
         scale="1 1 1"
@@ -294,6 +276,24 @@
         scale="1 1 1"
         material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
         geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16.1"
+      ></a-entity>
+      
+      <a-entity
+        position="8.65 0.01 -83"
+        rotation="-90 0 -3.6"
+        atlas-uvs="totalColumns: 8; column: 3"
+        scale="1 1 1"
+        material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+        geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16.1"
+      ></a-entity>
+
+      <a-entity
+        position="9.15 0.01 -99"
+        rotation="-90 0 0"
+        atlas-uvs="totalColumns: 8; column: 3"
+        scale="1 1 1"
+        material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+        geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16"
       ></a-entity>
       <!--馬路實線結束-->
 
@@ -347,12 +347,12 @@
           {"id":"MndtOxKEOQ7X-OIsse_Co","type":"parking-lane","variantString":"inbound|right","width":3.33333},
           {"id":"EfOAxrtrQS41skrUKcxjh","type":"turn-lane","variantString":"inbound|straight","width":11.66667},
           {"id":"m8EUEbC-7QIACUWUMB7vS","type":"turn-lane","variantString":"inbound|right-straight","width":10},
-          {"id":"KOkCwv3kZVIWGZnXLQa52","type":"parking-lane","variantString":"inbound|right","width":1.66667},
+          {"id":"KOkCwv3kZVIWGZnXLQa52","type":"parking-lane","variantString":"outbound|right","width":1.66667},
           {"id":"zLvaduiMnD_a55a8jgzzv","type":"divider","variantString":"median","width":6.66667},
           {"id":"u6vVyRQNloCJ9wPRnNsOq","type":"parking-lane","variantString":"inbound|left","width":1.66667},
           {"id":"g4lzfMkGRgALt146ipScD","type":"turn-lane","variantString":"outbound|left-straight","width":10},
           {"id":"T6wNmAkwfH0hRRMxJ-siv","type":"turn-lane","variantString":"outbound|straight","width":11.66667},
-          {"id":"Ree5IYbnM3GEE-y2nyokG","type":"parking-lane","variantString":"inbound|left","width":3.33333},
+          {"id":"Ree5IYbnM3GEE-y2nyokG","type":"parking-lane","variantString":"outbound|left","width":3.33333},
           {"id":"_IleYnJyhMMtHyBDVyN3R","type":"sidewalk","variantString":"empty","width":6.66667},
           {"id":"QRWR_87jOTSwXzKE0hGfX","type":"bike-lane","variantString":"outbound|regular|road","width":5},
           {"id":"0EDvDDhGWf5U3Ekax9pql","type":"sidewalk","variantString":"normal","width":8.33333}]
@@ -375,7 +375,7 @@
           {"id":"w7LCHKeH5ZmscwvmHsQTZ","type":"turn-lane","variantString":"outbound|left","width":10},
           {"id":"h3b4u3cRAgdTeZRfwVx6R","type":"turn-lane","variantString":"outbound|straight","width":10},
           {"id":"F-begF_liIBdY_CpAjGN3","type":"turn-lane","variantString":"outbound|straight","width":11.66667},
-          {"id":"Ree5IYbnM3GEE-y2nyokG","type":"parking-lane","variantString":"inbound|right","width":1.66667},
+          {"id":"Ree5IYbnM3GEE-y2nyokG","type":"parking-lane","variantString":"outbound|right","width":1.66667},
           {"id":"_IleYnJyhMMtHyBDVyN3R","type":"sidewalk","variantString":"empty","width":5},
           {"id":"QRWR_87jOTSwXzKE0hGfX","type":"bike-lane","variantString":"outbound|regular|road","width":5},
           {"id":"YIc1dHUL_il47haRsz4Pl","type":"sidewalk","variantString":"normal","width":8.33333}]
