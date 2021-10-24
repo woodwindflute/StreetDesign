@@ -107,34 +107,6 @@
     "planting-strip": {
       "id": "grass",
       "title": "Planting strip"
-    },
-    "planter-box": {
-      "id": "planter-box",
-      "title": "Planter box"
-    },
-    "bush": {
-      "id": "bush",
-      "title": "Planting strip with a bush"
-    },
-    "flowers": {
-      "id": "flowers",
-      "title": "Planting strip with flowers"
-    },
-    "big-tree": {
-      "id": "tree",
-      "title": "Planting strip with a tree"
-    },
-    "palm-tree": {
-      "id": "palm-tree",
-      "title": "Planting strip with a palm tree"
-    },
-    "bollard": {
-      "id": "bollard",
-      "title": "Bollard"
-    },
-    "dome": {
-      "id": "dome",
-      "title": "Traffic exclusion dome"
     }
   },
   "orientation": {
@@ -332,14 +304,10 @@
       "title": "Small"
     }
   },
-  "flex-type": {
-    "taxi": {
-      "id": "taxi",
-      "title": "Taxi"
-    },
-    "rideshare": {
-      "id": "rideshare",
-      "title": "Rideshare"
+  "public-type": {
+    "planting-strip": {
+      "id": "grass",
+      "title": "Planting strip"
     }
   },
   "waiting-area": {
