@@ -131,56 +131,38 @@
         material="src:#grass-texture;repeat:5 5;roughness:1"
       ></a-entity>
 
-      <!--雙黃線-->
+      <!--單黃線-->
+      <a-entity
+      position="-1.525 0.01 -91"
+      rotation="-90 0 0"
+      atlas-uvs="totalColumns: 8; column: 5"
+      scale="1 1 1"
+      material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+      geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:32;"
+    ></a-entity>
+
       <a-entity
         position="0.5 0.01 -83"
         rotation="-90 0 7.125"
-        atlas-uvs="totalColumns: 4; column: 3"
+        atlas-uvs="totalColumns: 8; column: 5"
         scale="1 1 1"
         material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
-        geometry="primitive: plane; buffer: false; skipCache: true; width:0.5; height:16.1"
+        geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16.1"
       ></a-entity>
 
       <a-entity
         position="-0.5 0.01 -99"
         rotation="-90 0 0"
-        atlas-uvs="totalColumns: 4; column: 3"
+        atlas-uvs="totalColumns: 8; column: 5"
         scale="1 1 1"
         material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
-        geometry="primitive: plane; buffer: false; skipCache: true; width:0.5; height:16"
-      ></a-entity>
-
-      <a-entity
-        position="8.65 0.01 -83"
-        rotation="-90 0 -3.6"
-        atlas-uvs="totalColumns: 4; column: 3"
-        scale="1 1 1"
-        material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
-        geometry="primitive: plane; buffer: false; skipCache: true; width:0.5; height:16.1"
-      ></a-entity>
-
-      <a-entity
-        position="9.15 0.01 -99"
-        rotation="-90 0 0"
-        atlas-uvs="totalColumns: 4; column: 3"
-        scale="1 1 1"
-        material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
-        geometry="primitive: plane; buffer: false; skipCache: true; width:0.5; height:16"
+        geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16"
       ></a-entity>
       <!--雙黃線結束-->
 
       <!--馬路實線-->
       <a-entity
         position="-8.125 0.01 -91"
-        rotation="-90 0 0"
-        atlas-uvs="totalColumns: 8; column: 3"
-        scale="1 1 1"
-        material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
-        geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:32;"
-      ></a-entity>
-
-      <a-entity
-        position="-1.525 0.01 -91"
         rotation="-90 0 0"
         atlas-uvs="totalColumns: 8; column: 3"
         scale="1 1 1"
@@ -204,6 +186,24 @@
         scale="1 1 1"
         material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
         geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16.1"
+      ></a-entity>
+
+      <a-entity
+        position="8.65 0.01 -83"
+        rotation="-90 0 -3.6"
+        atlas-uvs="totalColumns: 8; column: 3"
+        scale="1 1 1"
+        material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+        geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16.1"
+      ></a-entity>
+
+      <a-entity
+        position="9.15 0.01 -99"
+        rotation="-90 0 0"
+        atlas-uvs="totalColumns: 8; column: 3"
+        scale="1 1 1"
+        material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+        geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16"
       ></a-entity>
       <!--馬路實線結束-->
 
@@ -255,12 +255,12 @@
           {"id":"IMyp7iXCj6mF5h46E8PuM","type":"parking-lane","variantString":"inbound|right","width":3.33333},
           {"id":"w7ihvJf2rc5H4F6jBYVJN","type":"turn-lane","variantString":"inbound|straight","width":11.66667},
           {"id":"iuZyc555ANxzlDUGWReap","type":"turn-lane","variantString":"inbound|right-straight","width":10},
-          {"id":"zv7WR8lNlIQDDGBvqxiHW","type":"parking-lane","variantString":"inbound|right","width":1.66667},
+          {"id":"zv7WR8lNlIQDDGBvqxiHW","type":"parking-lane","variantString":"outbound|right","width":1.66667},
           {"id":"V8lVXyDmJJPZLBJuEPFQ1","type":"divider","variantString":"planting-strip","width":6.66667},
           {"id":"V8SFeB2X0riUN09kE6oBg","type":"parking-lane","variantString":"inbound|left","width":1.66667},
           {"id":"dukEUdDWsXBNzcIRo9E0g","type":"drive-lane","variantString":"outbound|car","width":10},
           {"id":"W4mAMFGXXTyZtU3VOdoPb","type":"drive-lane","variantString":"outbound|car","width":11.66667},
-          {"id":"V3M5CyAFm_4LzMeUwOjkW","type":"parking-lane","variantString":"inbound|left","width":3.33333},
+          {"id":"V3M5CyAFm_4LzMeUwOjkW","type":"parking-lane","variantString":"outbound|left","width":3.33333},
           {"id":"fveWV-or6Z_rpdB0dgmyu","type":"sidewalk","variantString":"empty","width":5},
           {"id":"KVQ8IiLtO1kMlm1Q38f-u","type":"sidewalk","variantString":"normal","width":6.66667}]
         }'></a-entity>
@@ -280,7 +280,7 @@
           {"id":"beILepCP9XUSbwO5bFH5I","type":"turn-lane","variantString":"outbound|left","width":10},
           {"id":"RZIKbeJj18uWI3jxDr6wj","type":"turn-lane","variantString":"outbound|straight","width":10},
           {"id":"W4mAMFGXXTyZtU3VOdoPb","type":"drive-lane","variantString":"outbound|car","width":11.66667},
-          {"id":"V3M5CyAFm_4LzMeUwOjkW","type":"parking-lane","variantString":"inbound|left","width":1.66667},
+          {"id":"V3M5CyAFm_4LzMeUwOjkW","type":"parking-lane","variantString":"outbound|left","width":1.66667},
           {"id":"fveWV-or6Z_rpdB0dgmyu","type":"sidewalk","variantString":"empty","width":3.33333},
           {"id":"KVQ8IiLtO1kMlm1Q38f-u","type":"sidewalk","variantString":"normal","width":6.66667}]
         }
