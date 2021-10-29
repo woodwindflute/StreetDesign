@@ -918,8 +918,8 @@ export function prepare40mStreet () {
       {
         id: nanoid(),
         type: 'divider',
-        variant: { 'divider-type': 'median' },
-        variantString: 'median',
+        variant: { 'divider-type': 'planting-strip' },
+        variantString: 'planting-strip',
         warnings: [],
         width: 5
       },
@@ -1044,8 +1044,8 @@ export function prepare40mStreet () {
       {
         id: nanoid(),
         type: 'divider',
-        variant: { 'divider-type': 'median' },
-        variantString: 'median',
+        variant: { 'divider-type': 'planting-strip' },
+        variantString: 'planting-strip',
         warnings: [],
         width: 5
       },
