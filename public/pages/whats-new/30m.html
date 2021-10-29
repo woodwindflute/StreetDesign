@@ -3,6 +3,8 @@
   <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="./dist/aframe-street-component.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
 
     <!-- ocean, ground, sky -->
     <script src="src/components/ocean-plane.js"></script>
@@ -14,6 +16,7 @@
       renderer="colorManagement: true; highRefreshRate: true; foveationLevel: 3; physicallyCorrectLights: true; logarithmicDepthBuffer: false;"
       fogoff="type: linear; color: #D5C69B; far: 200"
       gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/;"
+      cursor="rayOrigin: mouse"
     >
       <a-assets>
         <streetmix-assets url="./"></streetmix-assets>
@@ -46,16 +49,17 @@
           src="assets/materials/TexturesCom_Roads0086_1_seamless_S_rotate.jpg"
           crossorigin="anonymous"
         />
-        <img id="hatched-base" src="assets/materials/hatched_Base_Color.jpg" crossorigin="anonymous">
-        <img id="hatched-normal" src="assets/materials/hatched_Normal.jpg" crossorigin="anonymous">
       </a-assets>
 
-      <a-entity id="cameraRig" position="0 20 -60">
-        <a-entity id="camera" camera="far: 1000" wasd-controls look-controls="reverseMouseDrag:true"></a-entity>
-        <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: lowPoly; color: #ccffcc" teleport-controls="cameraRig: #cameraRig; button: trigger"></a-entity>
-        <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: lowPoly; color: #ccffcc" teleport-controls="cameraRig: #cameraRig; button: trigger"></a-entity>
+      <a-entity id="cameraRig" position="0 20 50">
+        <a-entity id="camera" camera wasd-controls look-controls></a-entity>
       </a-entity>
+      <a-entity light="type: ambient; color: #FFF; intensity: 2"></a-entity>
+      <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="0.5 1 -1"></a-entity>
+      <a-ocean-plane height="100" width="100" position="0 -1 0" material="envMap: #skycube;"></a-ocean-plane>
+      <a-entity id="skybox" cubemap="folder: assets/images/skybox/"></a-entity>
 
+      <a-entity id="main" position="0 0 114.5">
       <!--馬路 由左至右-->
       <a-entity position="0 0 -76" >
         <a-triangle vertex-a="-12.7 0 1" vertex-b="-12.7 0 -31" vertex-c="-11.2 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
@@ -77,11 +81,9 @@
         
         <a-plane position="-1 0 -23" rotation="-90 0 0" material="side:double;repeat:0.2 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:0.5; height:16.1"></a-plane>
         
-        <a-plane position="1 0 -23" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:3.5; height:16.1"></a-plane>
-        
-        <a-plane position="4.1 0 -23" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:3; height:16.1"></a-plane>
-        
-        <a-plane position="7.3 0 -23" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:3.5; height:16.1"></a-plane>
+        <a-plane display-meter text-value="3.5" position="1 0 -23" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:3.5; height:16.1"></a-plane>        
+        <a-plane display-meter text-value="3" position="4.1 0 -23" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:3; height:16.1"></a-plane>        
+        <a-plane display-meter text-value="3.5" position="7.3 0 -23" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:3.5; height:16.1"></a-plane>
         
         <a-plane position="9.2 0 -23" rotation="-90 0 -0.8" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:0.75; height:16.1"></a-plane>
       
@@ -116,34 +118,19 @@
       <a-plane position="13.7 0 -99" rotation="-90 0 0" material="side:double;repeat:1.5 10;offset:0.55 0" src="#sidewalk-texture" geometry="width:1; height:16"></a-plane>
       <!--人行道結束-->
 
+      <!--漸變帶兩邊地板-->
+      <a-entity
+      position="0 -0.5 0"
+      rotation="-90 0 0"
+      geometry="primitive:plane;height:350;width:350"
+      material="src:#grass-texture;repeat:5 5;roughness:1"
+    ></a-entity>
+
       <!--分隔島開始-->
       <a-entity rotation="0 0 180">
         <a-triangle position="17 0 -76" vertex-a="-17.9 0 1" vertex-b="-16 0 -15" vertex-c="-16 0 1" material="side:double;repeat:1 16;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#hatched-normal" src="#hatched-base"></a-triangle>
       </a-entity>
       <!--分隔島結束-->
-
-      <a-entity light="type: ambient; color: #FFF; intensity: 2"></a-entity>
-      <a-entity
-        light="type: directional; color: #FFF; intensity: 0.6"
-        position="0.5 1 -1"
-      ></a-entity>
-
-      <a-ocean-plane
-        height="100"
-        width="100"
-        position="0 -1 0"
-        material="envMap: #skycube;"
-      ></a-ocean-plane>
-
-      <a-entity id="skybox" cubemap="folder: assets/images/skybox/"></a-entity>
-
-      
-      <a-entity
-        position="0 -0.5 -100"
-        rotation="-90 0 0"
-        geometry="primitive:plane;height:350;width:350"
-        material="src:#grass-texture;repeat:5 5;roughness:1"
-      ></a-entity>
 
       <!--單黃線-->
       <a-entity
@@ -265,47 +252,291 @@
         street='left: grass; right: grass; JSON:
         {
           "streetmixSegmentsFeet": [
-          {"id":"NaMd9oWXfygs-vwiv_SoC","type":"sidewalk","variantString":"normal","width":8.33333},
-          {"id":"JfxL7n-x2abz0UqaJSLsO","type":"bike-lane","variantString":"inbound|regular|road","width":5},
-          {"id":"MNHKUUw9dTEKQxjq2S0qR","type":"sidewalk","variantString":"empty","width":6.66667},
-          {"id":"MndtOxKEOQ7X-OIsse_Co","type":"parking-lane","variantString":"inbound|right","width":3.33333},
-          {"id":"EfOAxrtrQS41skrUKcxjh","type":"turn-lane","variantString":"inbound|straight","width":11.66667},
-          {"id":"m8EUEbC-7QIACUWUMB7vS","type":"turn-lane","variantString":"inbound|right-straight","width":10},
-          {"id":"KOkCwv3kZVIWGZnXLQa52","type":"parking-lane","variantString":"outbound|right","width":1.66667},
-          {"id":"zLvaduiMnD_a55a8jgzzv","type":"divider","variantString":"median","width":6.66667},
-          {"id":"u6vVyRQNloCJ9wPRnNsOq","type":"parking-lane","variantString":"inbound|left","width":1.66667},
-          {"id":"g4lzfMkGRgALt146ipScD","type":"turn-lane","variantString":"outbound|left-straight","width":10},
-          {"id":"T6wNmAkwfH0hRRMxJ-siv","type":"turn-lane","variantString":"outbound|straight","width":11.66667},
-          {"id":"Ree5IYbnM3GEE-y2nyokG","type":"parking-lane","variantString":"outbound|left","width":3.33333},
-          {"id":"_IleYnJyhMMtHyBDVyN3R","type":"sidewalk","variantString":"empty","width":6.66667},
-          {"id":"QRWR_87jOTSwXzKE0hGfX","type":"bike-lane","variantString":"outbound|regular|road","width":5},
-          {"id":"0EDvDDhGWf5U3Ekax9pql","type":"sidewalk","variantString":"normal","width":8.33333}]
-        }'></a-entity>
+          {"type":"sidewalk","variantString":"normal","width":8.33333},
+          {"type":"bike-lane","variantString":"inbound|regular|road","width":5},
+          {"type":"sidewalk","variantString":"empty","width":6.66667},
+          {"type":"parking-lane","variantString":"inbound|right","width":3.33333},
+          {"type":"turn-lane","variantString":"inbound|straight","width":11.66667},
+          {"type":"turn-lane","variantString":"inbound|right-straight","width":10},
+          {"type":"parking-lane","variantString":"outbound|right","width":1.66667},
+          {"type":"divider","variantString":"median","width":6.66667},
+          {"type":"parking-lane","variantString":"inbound|left","width":1.66667},
+          {"type":"turn-lane","variantString":"outbound|left-straight","width":10},
+          {"type":"turn-lane","variantString":"outbound|straight","width":11.66667},
+          {"type":"parking-lane","variantString":"outbound|left","width":3.33333},
+          {"type":"sidewalk","variantString":"empty","width":6.66667},
+          {"type":"bike-lane","variantString":"outbound|regular|road","width":5},
+          {"type":"sidewalk","variantString":"normal","width":8.33333}]
+        }'>
+      </a-entity>
+      <a-plane display-meter text-value="2.5" position="-14 0.01 -99" rotation="-90 0 0" material="side:double;repeat:1.5 10;offset:0.55 0" src="#sidewalk-texture" geometry="width:2.5; height:16"></a-plane>
+      <a-plane display-meter text-value="1.5" position="-12 0.01 -99" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:1.5; height:16"></a-plane>
+      <a-plane display-meter text-value="2" position="-10.16 0.01 -99" rotation="-90 0 0" material="side:double;repeat:1.5 10;offset:0.55 0" src="#sidewalk-texture" geometry="width:2; height:16"></a-plane>
+      <a-plane display-meter text-value="3.5" position="-6.313 0.01 -99" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:3.5; height:16"></a-plane>
+      <a-plane display-meter text-value="3" position="-3 0.01 -99" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:2.8; height:16"></a-plane>
+      <a-plane display-meter text-value="2" position="10.254 0.01 -99" rotation="-90 0 0" material="side:double;repeat:1.5 10;offset:0.55 0" src="#sidewalk-texture" geometry="width:1.9; height:16"></a-plane>
+      <a-plane display-meter text-value="1.5" position="12 0.01 -99" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:1.5; height:16"></a-plane>
+      <a-plane display-meter text-value="2.5" position="14 0.01 -99" rotation="-90 0 0" material="side:double;repeat:1.5 10;offset:0.55 0" src="#sidewalk-texture" geometry="width:2.4; height:16"></a-plane>
+      </a-entity>
 
-      <!--路口-->
-      <a-entity
-        position="0 0 -182"
-        id="street-parent"
-        street='left: grass; right: grass; JSON:
+      <a-entity position="0 0 -114.5" rotation="0 180 0">
+        <!--馬路 由左至右-->
+        <a-entity position="0 0 -76" >
+          <a-triangle vertex-a="-12.7 0 1" vertex-b="-12.7 0 -31" vertex-c="-11.2 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          <a-triangle vertex-a="-11.2 0 1" vertex-b="-12.7 0 -31" vertex-c="-11.2 0 -31" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          
+          <a-triangle vertex-a="-9.15 0 1" vertex-b="-9.15 0 -31" vertex-c="-8.2 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          <a-triangle vertex-a="-8.2 0 1" vertex-b="-9.15 0 -31" vertex-c="-8.2 0 -31" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          
+          <a-triangle vertex-a="-8.2 0 1" vertex-b="-8.2 0 -31" vertex-c="-4.7 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          <a-triangle vertex-a="-4.7 0 1" vertex-b="-8.2 0 -31" vertex-c="-4.7 0 -31" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          
+          <a-triangle vertex-a="-4.7 0 1" vertex-b="-4.7 0 -31" vertex-c="-1.6 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          <a-triangle vertex-a="-1.6 0 1" vertex-b="-4.7 0 -31" vertex-c="-1.6 0 -31" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          
+          <a-triangle vertex-a="-1.6 0 1" vertex-b="-1.6 0 -31" vertex-c="-1 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          <a-triangle vertex-a="-1 0 1" vertex-b="-1.6 0 -31" vertex-c="-1 0 -31" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          
+          <a-plane position="0.323 0 -7" rotation="-90 0 7.125" material="side:double;repeat:0.2 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:0.5; height:16.1"></a-plane>
+          
+          <a-plane position="-1 0 -23" rotation="-90 0 0" material="side:double;repeat:0.2 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:0.5; height:16.1"></a-plane>
+          
+          <a-plane display-meter text-value="3.5" position="1 0 -23" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:3.5; height:16.1"></a-plane>        
+          <a-plane display-meter text-value="3" position="4.1 0 -23" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:3; height:16.1"></a-plane>        
+          <a-plane display-meter text-value="3.5" position="7.3 0 -23" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:3.5; height:16.1"></a-plane>
+          
+          <a-plane position="9.2 0 -23" rotation="-90 0 -0.8" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:0.75; height:16.1"></a-plane>
+        
+          <a-triangle vertex-a="1 0 1" vertex-b="-0.5 0 -15" vertex-c="2.7 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          <a-triangle vertex-a="2.7 0 1" vertex-b="-0.5 0 -15" vertex-c="2.7 0 -15" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+        
+          <a-triangle vertex-a="2.5 0 1" vertex-b="2.5 0 -15" vertex-c="4.6 0 1" material="side:double;repeat:0 2;offset:0.6 0" src="#drive-lane-texture"></a-triangle>
+          <a-triangle vertex-a="4.6 0 1" vertex-b="2.5 0 -15" vertex-c="5.7 0 -15" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+        
+          <a-plane position="7 0 -7" rotation="-90 0 -3.6" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:3.8; height:16.3"></a-plane>
+        
+          <a-triangle vertex-a="8.38 0 1" vertex-b="9.38 0 -16" vertex-c="9.2 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          
+          <a-triangle vertex-a="12.7 0 1" vertex-b="12.7 0 -31" vertex-c="11.2 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          <a-triangle vertex-a="11.2 0 1" vertex-b="12.7 0 -31" vertex-c="11.2 0 -31" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+        </a-entity>
+        <!--馬路結束-->
+  
+        <!--人行道 由左至右-->
+        <a-triangle vertex-a="-15.2 0 1" vertex-b="-15.2 0 -31" vertex-c="-12.7 0 1" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
+        <a-triangle vertex-a="-12.7 0 1" vertex-b="-15.2 0 -31" vertex-c="-12.7 0 -31" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
+        
+        <a-triangle vertex-a="-11.2 0 1" vertex-b="-11.2 0 -31" vertex-c="-9.2 0 1" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
+        <a-triangle vertex-a="-9.2 0 1" vertex-b="-11.2 0 -31" vertex-c="-9.2 0 -31" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
+        
+        <a-triangle vertex-a="11.2 0 1" vertex-b="11.2 0 -31" vertex-c="9.2 0 1" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
+        <a-triangle vertex-a="9.2 0 1" vertex-b="11.2 0 -31" vertex-c="9.75 0 -31" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
+        
+        <a-triangle vertex-a="15.2 0 1" vertex-b="15.2 0 -31" vertex-c="12.7 0 1" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
+        <a-triangle vertex-a="12.7 0 1" vertex-b="15.2 0 -31" vertex-c="12.7 0 -31" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
+        
+        <a-plane position="13.7 0 -99" rotation="-90 0 0" material="side:double;repeat:1.5 10;offset:0.55 0" src="#sidewalk-texture" geometry="width:1; height:16"></a-plane>
+        <!--人行道結束-->
+  
+        <!--分隔島開始-->
+        <a-entity rotation="0 0 180">
+          <a-triangle position="17 0 -76" vertex-a="-17.9 0 1" vertex-b="-16 0 -15" vertex-c="-16 0 1" material="side:double;repeat:1 16;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#hatched-normal" src="#hatched-base"></a-triangle>
+        </a-entity>
+        <!--分隔島結束-->
+  
+        <!--單黃線-->
+        <a-entity
+          position="-1.525 0.01 -91"
+          rotation="-90 0 0"
+          atlas-uvs="totalColumns: 8; column: 5"
+          scale="1 1 1"
+          material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+          geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:32;"
+        ></a-entity>
+  
+        <a-entity
+          position="0.5 0.01 -83"
+          rotation="-90 0 7.125"
+          atlas-uvs="totalColumns: 8; column: 5"
+          scale="1 1 1"
+          material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+          geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16.1"
+        ></a-entity>
+  
+        <a-entity
+          position="-0.5 0.01 -99"
+          rotation="-90 0 0"
+          atlas-uvs="totalColumns: 8; column: 5"
+          scale="1 1 1"
+          material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+          geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16"
+        ></a-entity>
+        <!--單黃線結束-->
+  
+        <!--馬路實線-->
+        <a-entity
+          position="-8.1 0.01 -91"
+          rotation="-90 0 0"
+          atlas-uvs="totalColumns: 8; column: 3"
+          scale="1 1 1"
+          material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+          geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:32;"
+        ></a-entity>
+  
+        <a-entity
+          position="-1 0.01 -83"
+          rotation="-90 0 0"
+          atlas-uvs="totalColumns: 8; column: 3"
+          scale="1 1 1"
+          material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+          geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16"
+        ></a-entity>
+  
+        <a-entity
+          position="0 0.01 -83"
+          rotation="-90 0 7.125"
+          atlas-uvs="totalColumns: 8; column: 3"
+          scale="1 1 1"
+          material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+          geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16.1"
+        ></a-entity>
+        
+        <a-entity
+          position="8.65 0.01 -83"
+          rotation="-90 0 -3.6"
+          atlas-uvs="totalColumns: 8; column: 3"
+          scale="1 1 1"
+          material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+          geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16.1"
+        ></a-entity>
+  
+        <a-entity
+          position="9.15 0.01 -99"
+          rotation="-90 0 0"
+          atlas-uvs="totalColumns: 8; column: 3"
+          scale="1 1 1"
+          material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;"
+          geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:16"
+        ></a-entity>
+        <!--馬路實線結束-->
+  
+        <!--馬路虛線-->
+        <a-entity
+          position="-4.5 0.01 -91"
+          rotation="-90 0 0"
+          atlas-uvs="totalColumns: 8; column: 4"
+          scale="1 1 1"
+          material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 5;"
+          geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:32;"
+        ></a-entity>
+  
+        <a-entity
+          position="2.6 0.01 -93.5"
+          rotation="-90 0 0"
+          atlas-uvs="totalColumns: 8; column: 4"
+          scale="1 1 1"
+          material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 4;"
+          geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:28;"
+        ></a-entity>
+  
+        <a-entity
+          position="5.6 0.01 -97"
+          rotation="-90 0 0"
+          atlas-uvs="totalColumns: 8; column: 4"
+          scale="1 1 1"
+          material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 3;"
+          geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:21;"
+        ></a-entity>
+  
+        <a-entity
+          position="5.16 0.01 -82"
+          rotation="-90 0 -3.6"
+          atlas-uvs="totalColumns: 8; column: 4"
+          scale="1 1 1"
+          material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 2.5;"
+          geometry="primitive: plane; buffer: false; skipCache: true; width:0.2; height:14"
+        ></a-entity>
+        <!--馬路虛線結束-->
+  
+        <!--斷面-->
+        <a-entity
+          id="street-parent"
+          street='left: grass; right: grass; JSON:
+          {
+            "streetmixSegmentsFeet": [
+            {"type":"sidewalk","variantString":"normal","width":8.33333},
+            {"type":"bike-lane","variantString":"inbound|regular|road","width":5},
+            {"type":"sidewalk","variantString":"empty","width":6.66667},
+            {"type":"parking-lane","variantString":"inbound|right","width":3.33333},
+            {"type":"turn-lane","variantString":"inbound|straight","width":11.66667},
+            {"type":"turn-lane","variantString":"inbound|right-straight","width":10},
+            {"type":"parking-lane","variantString":"outbound|right","width":1.66667},
+            {"type":"divider","variantString":"median","width":6.66667},
+            {"type":"parking-lane","variantString":"inbound|left","width":1.66667},
+            {"type":"turn-lane","variantString":"outbound|left-straight","width":10},
+            {"type":"turn-lane","variantString":"outbound|straight","width":11.66667},
+            {"type":"parking-lane","variantString":"outbound|left","width":3.33333},
+            {"type":"sidewalk","variantString":"empty","width":6.66667},
+            {"type":"bike-lane","variantString":"outbound|regular|road","width":5},
+            {"type":"sidewalk","variantString":"normal","width":8.33333}]
+          }'>
+        </a-entity>
+        <a-plane display-meter text-value="2.5" position="-14 0.01 -99" rotation="-90 0 0" material="side:double;repeat:1.5 10;offset:0.55 0" src="#sidewalk-texture" geometry="width:2.5; height:16"></a-plane>
+        <a-plane display-meter text-value="1.5" position="-12 0.01 -99" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:1.5; height:16"></a-plane>
+        <a-plane display-meter text-value="2" position="-10.16 0.01 -99" rotation="-90 0 0" material="side:double;repeat:1.5 10;offset:0.55 0" src="#sidewalk-texture" geometry="width:2; height:16"></a-plane>
+        <a-plane display-meter text-value="3.5" position="-6.313 0.01 -99" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:3.5; height:16"></a-plane>
+        <a-plane display-meter text-value="3" position="-3 0.01 -99" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:2.8; height:16"></a-plane>
+        <a-plane display-meter text-value="2" position="10.254 0.01 -99" rotation="-90 0 0" material="side:double;repeat:1.5 10;offset:0.55 0" src="#sidewalk-texture" geometry="width:1.9; height:16"></a-plane>
+        <a-plane display-meter text-value="1.5" position="12 0.01 -99" rotation="-90 0 0" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture" geometry="width:1.5; height:16"></a-plane>
+        <a-plane display-meter text-value="2.5" position="14 0.01 -99" rotation="-90 0 0" material="side:double;repeat:1.5 10;offset:0.55 0" src="#sidewalk-texture" geometry="width:2.4; height:16"></a-plane>
+      </a-entity>
+
+      <!--不重要道路(上下)-->
+      <a-entity id="unimportant" position="0 -0.1 0">
+        <a-entity
+          position="-75 0 0"
+          rotation="0 90 0"
+          id="up"
+          street='showGround: false; left: none; right: none; JSON:
         {
           "streetmixSegmentsFeet": [
-          {"id":"PRVwYIFb9Bh1mJ04BIqJC","type":"sidewalk","variantString":"normal","width":8.33333},
-          {"id":"JfxL7n-x2abz0UqaJSLsO","type":"bike-lane","variantString":"inbound|regular|road","width":5},
-          {"id":"9m22Nbh9In457HRP76WoH","type":"sidewalk","variantString":"empty","width":6.66667},
-          {"id":"MndtOxKEOQ7X-OIsse_Co","type":"parking-lane","variantString":"inbound|right","width":3.33333},
-          {"id":"eq-v6TgurjlitRWicFdPz","type":"turn-lane","variantString":"inbound|straight","width":11.66667},
-          {"id":"dU-XlfcgtwkHtf4MX1iEk","type":"turn-lane","variantString":"inbound|right-straight","width":10},
-          {"id":"zLvaduiMnD_a55a8jgzzv","type":"divider","variantString":"median","width":3.33333},
-          {"id":"w7LCHKeH5ZmscwvmHsQTZ","type":"turn-lane","variantString":"outbound|left","width":10},
-          {"id":"h3b4u3cRAgdTeZRfwVx6R","type":"turn-lane","variantString":"outbound|straight","width":10},
-          {"id":"F-begF_liIBdY_CpAjGN3","type":"turn-lane","variantString":"outbound|straight","width":11.66667},
-          {"id":"Ree5IYbnM3GEE-y2nyokG","type":"parking-lane","variantString":"outbound|right","width":1.66667},
-          {"id":"_IleYnJyhMMtHyBDVyN3R","type":"sidewalk","variantString":"empty","width":5},
-          {"id":"QRWR_87jOTSwXzKE0hGfX","type":"bike-lane","variantString":"outbound|regular|road","width":5},
-          {"id":"YIc1dHUL_il47haRsz4Pl","type":"sidewalk","variantString":"normal","width":8.33333}]
-        }
-        '
-      ></a-entity>
+          {"width":10,"type":"sidewalk","variantString":"dense"},
+          {"width":15,"type":"drive-lane","variantString":"inbound|car"},
+          {"width":15,"type":"drive-lane","variantString":"outbound|car"},
+          {"width":10,"type":"sidewalk","variantString":"dense"}
+          ]
+        }'
+        ></a-entity>
+
+        <a-entity
+          position="75 0 0"
+          rotation="0 90 0"
+          id="down"
+          street='showGround: false; left: none; right: none; JSON:
+        {
+          "streetmixSegmentsFeet": [
+          {"width":10,"type":"sidewalk","variantString":"dense"},
+          {"width":15,"type":"drive-lane","variantString":"inbound|car"},
+          {"width":15,"type":"drive-lane","variantString":"outbound|car"},
+          {"width":10,"type":"sidewalk","variantString":"dense"}
+          ]
+        }'
+        ></a-entity>
+
+        <a-plane id="panel" position="0 0.1 0" rotation="-90 0 0" width="15" height="15" color="#545f59"></a-plane>
+        <a-text id='text' align="center" position="0 5 0" side="double" value="3m" color="white" scale="15 15 15" visible="false"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 5000 fill: forwards;" ></a-text>
+      </a-entity>
     </a-scene>
   </body>
+  <script>
+    let totalWidth = 100 * 0.3048;
+    document.getElementById("panel").setAttribute("width", totalWidth);
+    document
+      .getElementById("up")
+      .setAttribute("position", -75 - totalWidth / 2 + " 0 0");
+    document
+      .getElementById("down")
+      .setAttribute("position", 75 + totalWidth / 2 + " 0 0");
+  </script>
 </html>
