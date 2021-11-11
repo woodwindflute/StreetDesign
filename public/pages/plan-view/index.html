@@ -3,8 +3,8 @@
   <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="./dist/aframe-street-component.js"></script>
-    <script src="https://unpkg.com/aframe-presentation-component/dist/aframe-presentation-component.min.js"></script>
-    <script src="https://raw.githack.com/dbradleyfl/aframe-gridhelper/master/dist/aframe-gridhelper-component.min.js"></script> 
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
     
     <script>
       const settings = JSON.parse(localStorage.getItem("settings"));
@@ -12,8 +12,8 @@
       const streetId = settings.lastStreetNamespacedId;
       let streetmixAPIURL =
         creator != undefined
-          ? "https://" + location.host + "/" + creator + "/" + streetId
-          : "https://" + location.host + "/-/" + streetId;
+          ? "http://" + location.host + "/" + creator + "/" + streetId
+          : "http://" + location.host + "/-/" + streetId;
       console.log(streetmixAPIURL);
     </script>
   </head>
