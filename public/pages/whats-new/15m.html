@@ -77,6 +77,8 @@
 
         <a-triangle position="0 0 -76" material="side:double;repeat:1.5 15;offset:0.55 0" src="#sidewalk-texture" vertex-a="4.6 0 1" vertex-b="5.1 0 -23" vertex-c="7.6 0 1"></a-triangle>
         <a-triangle position="0 0 -76" material="side:double;repeat:1.5 15;offset:0.55 0" src="#sidewalk-texture" vertex-a="5.1 0 -23" vertex-b="7.6 0 -23" vertex-c="7.6 0 1"></a-triangle>
+        <a-plane position="6.32 0.02 -130.584" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="2.5"></a-plane>
+        <a-plane position="6.32 0.02 -118.422" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="2.5"></a-plane>
         <!--人行道結束-->
 
         <!--漸變帶兩邊地板-->
@@ -157,6 +159,9 @@
 
         <a-triangle position="0 0 -76" material="side:double;repeat:1.5 15;offset:0.55 0" src="#sidewalk-texture" vertex-a="4.6 0 1" vertex-b="5.1 0 -23" vertex-c="7.6 0 1"></a-triangle>
         <a-triangle position="0 0 -76" material="side:double;repeat:1.5 15;offset:0.55 0" src="#sidewalk-texture" vertex-a="5.1 0 -23" vertex-b="7.6 0 -23" vertex-c="7.6 0 1"></a-triangle>
+
+        <a-plane position="6.32 0.02 -130.584" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="2.5"></a-plane>
+        <a-plane position="6.32 0.02 -118.422" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="2.5"></a-plane>
         <!--人行道結束-->
 
         <!--雙黃線-->
@@ -254,14 +259,4 @@
       </a-entity>
     </a-scene>
   </body>
-  <script>
-    let totalWidth = 50 * 0.3048;
-    document.getElementById("panel").setAttribute("width", totalWidth);
-    document
-      .getElementById("up")
-      .setAttribute("position", -75 - totalWidth / 2 + " 0 0");
-    document
-      .getElementById("down")
-      .setAttribute("position", 75 + totalWidth / 2 + " 0 0");
-  </script>
 </html>
