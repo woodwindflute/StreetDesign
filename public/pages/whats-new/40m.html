@@ -648,6 +648,28 @@
         <a-text id='text' align="center" position="0 5 0" side="double" value="3m" color="white" scale="15 15 15" visible="false"
           animation="property: rotation; to: 0 360 0; loop: true; dur: 5000 fill: forwards;" ></a-text>
       </a-entity>
+
+      <!--11/11 營建署需求新增-->
+      <!--人行道方塊-->
+      <a-plane position="16.478 0.02 -6.123" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="7.7"></a-plane>
+      <a-plane position="-16.8 0.02 -6.02" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="7.2"></a-plane>
+      <a-plane position="16.8 0.02 6.123" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="7.2"></a-plane>
+      <a-plane position="-16.478 0.02 6.02" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="7.7"></a-plane>
+      <!--停止線-->
+      <a-entity  position="-20.45 0.02 2.3" rotation="-90 0 0" atlas-uvs="totalColumns: 8; column: 3" material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;" geometry="primitive: plane; buffer: false; skipCache: true; width:0.3; height:4.5;"></a-entity>
+      <a-entity  position="20.45 0.02 -2.3" rotation="-90 0 0" atlas-uvs="totalColumns: 8; column: 3" material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;" geometry="primitive: plane; buffer: false; skipCache: true; width:0.3; height:4.5;"></a-entity>
+      <a-entity  position="-6 0.02 -7.628" rotation="-90 -90 0" atlas-uvs="totalColumns: 8; column: 3" material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;" geometry="primitive: plane; buffer: false; skipCache: true; width:0.3; height:13;"></a-entity>
+      <a-entity  position="6 0.02 7.62" rotation="-90 -90 0" atlas-uvs="totalColumns: 8; column: 3" material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;" geometry="primitive: plane; buffer: false; skipCache: true; width:0.3; height:13;"></a-entity>
+      <!--direction sign-->
+      <a-entity  position="11 0.02 11.6" rotation="-90 0 0" atlas-uvs="totalRows: 4; totalColumns: 4; column: 2; row: 4" scale="4 6 2" material="src: #stencils-atlas;alphaTest: 0;transparent:true;" geometry="primitive: plane; buffer: false; skipCache: true"></a-entity>
+      <a-entity  position="7.4 0.02 11.6" rotation="-90 0 0" atlas-uvs="totalRows: 4; totalColumns: 4; column: 2; row: 4" scale="4 6 2" material="src: #stencils-atlas;alphaTest: 0;transparent:true;" geometry="primitive: plane; buffer: false; skipCache: true"></a-entity>
+      <a-entity  position="4.05 0.02 11.6" rotation="-90 0 0" atlas-uvs="totalRows: 4; totalColumns: 4; column: 2; row: 4" scale="4 6 2" material="src: #stencils-atlas;alphaTest: 0;transparent:true;" geometry="primitive: plane; buffer: false; skipCache: true"></a-entity>
+      <a-entity  position="1 0.02 11.27" rotation="-90 0 0" atlas-uvs="totalRows: 4; totalColumns: 4; column: 3; row: 3" scale="3 5 2" material="src: #stencils-atlas;alphaTest: 0;transparent:true;" geometry="primitive: plane; buffer: false; skipCache: true"></a-entity>
+      <a-entity  position="-11 0.02 -11.6" rotation="-90 -180 0" atlas-uvs="totalRows: 4; totalColumns: 4; column: 2; row: 4" scale="4 6 2" material="src: #stencils-atlas;alphaTest: 0;transparent:true;" geometry="primitive: plane; buffer: false; skipCache: true"></a-entity>
+      <a-entity  position="-7.4 0.02 -11.6" rotation="-90 -180 0" atlas-uvs="totalRows: 4; totalColumns: 4; column: 2; row: 4" scale="4 6 2" material="src: #stencils-atlas;alphaTest: 0;transparent:true;" geometry="primitive: plane; buffer: false; skipCache: true"></a-entity>
+      <a-entity  position="-4.05 0.02 -11.6" rotation="-90 -180 0" atlas-uvs="totalRows: 4; totalColumns: 4; column: 2; row: 4" scale="4 6 2" material="src: #stencils-atlas;alphaTest: 0;transparent:true;" geometry="primitive: plane; buffer: false; skipCache: true"></a-entity>
+      <a-entity  position="-1 0.02 -11.27" rotation="-90 -180 0" atlas-uvs="totalRows: 4; totalColumns: 4; column: 3; row: 3" scale="3 5 2" material="src: #stencils-atlas;alphaTest: 0;transparent:true;" geometry="primitive: plane; buffer: false; skipCache: true"></a-entity>
+      
     </a-scene>
   </body>
   <script>
