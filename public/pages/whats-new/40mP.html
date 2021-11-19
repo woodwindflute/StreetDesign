@@ -133,7 +133,7 @@
         <a-triangle position="34 0 -76" vertex-a="-17.7 0 1" vertex-b="-17.7 0 -31" vertex-c="-16.2 0 1" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
         <a-triangle position="34 0 -76" vertex-a="-16.2 0 1" vertex-b="-17.7 0 -31" vertex-c="-16.2 0 -31" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
       
-        <a-triangle position="17 0 -76" vertex-a="-17.9 0 1" vertex-b="-16 0 -15" vertex-c="-16 0 1" material="side:double;repeat:1 16;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#hatched-normal" src="#hatched-base"></a-triangle>
+        <a-triangle position="17 0 -76" vertex-a="-17.9 0 1" vertex-b="-16 0 -15" vertex-c="-16 0 1" material="side:double;repeat:1 16;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
         
         <a-triangle position="0 0 -76" vertex-a="-17.8 0 1" vertex-b="-17.8 0 -31" vertex-c="-16.3 0 1" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
         <a-triangle position="0 0 -76" vertex-a="-16.3 0 1" vertex-b="-17.8 0 -31" vertex-c="-16.3 0 -31" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
@@ -313,7 +313,7 @@
           {"type":"drive-lane","variantString":"inbound|car","width":11.66667},
           {"type":"turn-lane","variantString":"inbound|right-straight","width":10},
           {"type":"parking-lane","variantString":"outbound|right","width":1.66667},
-          {"type":"divider","variantString":"median","width":6.66667},
+          {"type":"divider","variantString":"planting-strip","width":6.66667},
           {"type":"parking-lane","variantString":"inbound|left","width":1.66667},
           {"type":"turn-lane","variantString":"outbound|left-straight","width":10},
           {"type":"drive-lane","variantString":"outbound|car","width":11.66667},
@@ -408,7 +408,7 @@
           <a-triangle position="34 0 -76" vertex-a="-17.7 0 1" vertex-b="-17.7 0 -31" vertex-c="-16.2 0 1" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
           <a-triangle position="34 0 -76" vertex-a="-16.2 0 1" vertex-b="-17.7 0 -31" vertex-c="-16.2 0 -31" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
         
-          <a-triangle position="17 0 -76" vertex-a="-17.9 0 1" vertex-b="-16 0 -15" vertex-c="-16 0 1" material="side:double;repeat:1 16;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#hatched-normal" src="#hatched-base"></a-triangle>
+          <a-triangle position="17 0 -76" vertex-a="-17.9 0 1" vertex-b="-16 0 -15" vertex-c="-16 0 1" material="side:double;repeat:1 16;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
           
           <a-triangle position="0 0 -76" vertex-a="-17.8 0 1" vertex-b="-17.8 0 -31" vertex-c="-16.3 0 1" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
           <a-triangle position="0 0 -76" vertex-a="-16.3 0 1" vertex-b="-17.8 0 -31" vertex-c="-16.3 0 -31" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
@@ -588,7 +588,7 @@
             {"type":"drive-lane","variantString":"inbound|car","width":11.66667},
             {"type":"turn-lane","variantString":"inbound|right-straight","width":10},
             {"type":"parking-lane","variantString":"outbound|right","width":1.66667},
-            {"type":"divider","variantString":"median","width":6.66667},
+            {"type":"divider","variantString":"planting-strip","width":6.66667},
             {"type":"parking-lane","variantString":"inbound|left","width":1.66667},
             {"type":"turn-lane","variantString":"outbound|left-straight","width":10},
             {"type":"drive-lane","variantString":"outbound|car","width":11.66667},
@@ -648,7 +648,7 @@
         <a-text id='text' align="center" position="0 5 0" side="double" value="3m" color="white" scale="15 15 15" visible="false"
           animation="property: rotation; to: 0 360 0; loop: true; dur: 5000 fill: forwards;" ></a-text>
       </a-entity>
-
+      
       <!--11/11 營建署需求新增-->
       <!--人行道方塊-->
       <a-plane position="16.478 0.02 -6.123" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="7.7"></a-plane>
