@@ -44,15 +44,7 @@ function SegmentLabelContainer (props) {
       <div className="segment-label">
         <p className="segment-name">{label}</p>
         {showCapacity && capacity !== null && (
-          <p className="segment-capacity">
-            <FormattedMessage
-              id="capacity.ppl-per-hour"
-              defaultMessage="{capacity} people/hr"
-              values={{
-                capacity: formatNumber(capacity, locale)
-              }}
-            />
-          </p>
+          <p className="segment-capacity" />
         )}
       </div>
     </div>
