@@ -157,8 +157,8 @@
     "welcome": {
       "heading": "歡迎來到 StreetDesign",
       "new": {
-        "intro": "重新設計並分享你所在社區的街道。在添加行道樹，自行車道，拓寬人行道或車道的過程中，探索和發現這些改變對社區的影響。",
-        "instruction": "",
+        "intro": "重新設計並分享你所在社區的街道。",
+        "instruction": "移動街道的各個部分來開始",
         "instruct": "開始用{pointer}來移動街道的各個部分",
         "instruct-pointer-finger": "你的手指",
         "instruct-pointer-mouse": "你的滑鼠"
@@ -166,7 +166,7 @@
       "existing": {
         "intro": "這是由{creator}創建的{streetName}。",
         "intro-without-creator": "這是{streetName}。",
-        "instruct": "通過移動街道里的各個元素來重組街道，或創建你自己的街道{startYourOwnStreet}。",
+        "instruct": "通過移動街道裡的各個元素來重組街道，或創建你自己的街道{startYourOwnStreet}。",
         "instruct-start-own-street": "創建你的街道。"
       }
     },
