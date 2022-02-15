@@ -12,20 +12,19 @@ const settingsSlice = createSlice({
     saveAsImageTransparentSky: false,
     saveAsImageSegmentNamesAndWidths: false,
     saveAsImageStreetName: false,
-    saveAsImageWatermark: true,
     locale: null,
     units: null
   },
 
   reducers: {
-    updateSettings (state, action) {
+    updateSettings(state, action) {
       return {
         ...state,
         ...action.payload
       }
     },
 
-    setUserUnits (state, action) {
+    setUserUnits(state, action) {
       const units = action.payload
       state.units = units
     }

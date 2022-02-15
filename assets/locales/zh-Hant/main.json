@@ -214,7 +214,6 @@
       "option-labels": "各部分名稱與寬度",
       "option-name": "街道名稱",
       "option-sky": "無天空背景",
-      "option-watermark": "",
       "loading": "加載中…",
       "save-button": "保存到電腦上…",
       "license": "根據{licenseLink}條例，這張圖片可以被用於任何位置，任何目的。",
@@ -376,9 +375,6 @@
   "users": {
     "anonymous": "匿名",
     "byline": "來自{user}"
-  },
-  "export": {
-    "watermark": ""
   },
   "meta": {
     "description": "重新設計并分享你所在社區的街道 —— 只需要一個網頁！你可以添加行道樹和自行車道，拓寬人行道或机动車道，并从中探索你的设计将如何影响你的社區。",
