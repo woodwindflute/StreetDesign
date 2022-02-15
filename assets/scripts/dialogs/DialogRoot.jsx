@@ -18,6 +18,7 @@ import ErrorDialog from './ErrorDialog'
 import RateDialog from './RateDialog'
 import ResourcesDialog from './ResourcesDialog'
 import StreetExampleDialog from './StreetExampleDialog'
+import WelcomeDialog from './WelcomeDialog'
 
 const DIALOG_COMPONENTS = {
   ABOUT: {
@@ -61,6 +62,9 @@ const DIALOG_COMPONENTS = {
   },
   STREET_EXAMPLE: {
     id: StreetExampleDialog
+  },
+  WELCOME: {
+    id: WelcomeDialog
   }
 }
 

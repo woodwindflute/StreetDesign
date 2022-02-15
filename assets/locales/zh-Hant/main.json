@@ -155,10 +155,10 @@
       "text": "發生了一個意外的故障 😢。我們已經將這個問題存檔, 但如果你記得發生故障時的操作 <a>請告訴我們</a>。 這也有可能只是一個小問題，你可以再試一次。"
     },
     "welcome": {
-      "heading": "歡迎來到 StreetDesign",
+      "heading": "歡迎來到內政部營建署【道路斷面設計網站】",
       "new": {
-        "intro": "重新設計並分享你所在社區的街道。",
-        "instruction": "移動街道的各個部分來開始",
+        "intro": "在這裡可以自由設計你(妳)心目中理想的道路斷面",
+        "instruction": "並檢視所設計的道路特色及配置情形，也可登入帳號以儲存或分享創作的成果哦~",
         "instruct": "開始用{pointer}來移動街道的各個部分",
         "instruct-pointer-finger": "你的手指",
         "instruct-pointer-mouse": "你的滑鼠"

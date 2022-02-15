@@ -89,7 +89,8 @@ function MenuBar (props) {
         <MenuBarItem
           label="營建署人本道路設計"
           translation="營建署人本道路設計"
-          url={'http://' + location.host}
+          url="#"
+          onClick={() => dispatch(showDialog('WELCOME'))}
         />
         <MenuBarItem
           label="Help"
