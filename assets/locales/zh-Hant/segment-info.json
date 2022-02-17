@@ -46,7 +46,8 @@
     "inception-train": "“盗梦空间”列車",
     "magic-carpet": "",
     "bus-stop": "公車站",
-    "transformer-box": "電箱"
+    "transformer-box": "電箱",
+    "parking-zone": "停車彎"
   },
   "descriptions": {
     "wayfinding-sign": {
@@ -134,7 +135,7 @@
     "public-type|lamp": "路燈",
     "public-type|transformer-box": "電箱",
     "public-type|bus-stop": "公車亭",
-    "public-type|empty": "空",
+    "public-type|parking-zone": "停車彎",
     "lamp-orientation|left": "向左",
     "lamp-orientation|both": "左右雙向",
     "lamp-orientation|right": "向右",

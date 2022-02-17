@@ -6,7 +6,7 @@
     "zIndex": 30,
     "defaultWidth": 6,
     "rules": {
-      "minWidth": 3
+      "minWidth": 5
     },
     "variants": ["sidewalk-density"],
     "details": {
@@ -865,7 +865,7 @@
     "nameKey": "public-zone",
     "owner": "NATURE",
     "zIndex": 20,
-    "defaultWidth": 4,
+    "defaultWidth": 6.67,
     "paletteIcon": "planting-strip",
     "variants": ["public-type"],
     "details": {
@@ -979,7 +979,12 @@
           ]
         }
       },
-      "empty": {
+      "parking-zone": {
+        "name": "Parking zone",
+        "nameKey": "parking-zone",
+        "rules": {
+          "minWidth": 6.66
+        },
         "components": {
           "lanes": [
             {
