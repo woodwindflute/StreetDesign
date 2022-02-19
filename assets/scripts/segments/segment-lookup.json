@@ -29,106 +29,6 @@
             }
           ]
         }
-      },
-      "tree": {
-        "name": "Tree",
-        "nameKey": "sidewalk-tree",
-        "components": {
-          "lanes": [
-            {
-              "id": "sidewalk",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "objects": [
-            {
-              "id": "tree",
-              "variants": {
-                "type": "big"
-              }
-            }
-          ]
-        }
-      },
-      "lamp": {
-        "name": "Lamp",
-        "nameKey": "sidewalk-lamp",
-        "components": {
-          "lanes": [
-            {
-              "id": "sidewalk",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "objects": [
-            {
-              "id": "lamp",
-              "variants": {
-                "type|orientation": ["modern", "both"]
-              }
-            }
-          ]
-        }
-      },
-      "transformer-box": {
-        "name": "Transformer box",
-        "nameKey": "transformer-box",
-        "components": {
-          "lanes": [
-            {
-              "id": "sidewalk",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "objects": [
-            {
-              "id": "transformer-box",
-              "variants": {
-                "type": "default"
-              }
-            }
-          ]
-        }
-      },
-      "bus-stop": {
-        "name": "Bus stop",
-        "nameKey": "bus-stop",
-        "components": {
-          "lanes": [
-            {
-              "id": "sidewalk",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ],
-          "objects": [
-            {
-              "id": "bus-stop",
-              "variants": {
-                "type": "default"
-              }
-            }
-          ]
-        }
-      },
-      "empty": {
-        "components": {
-          "lanes": [
-            {
-              "id": "sidewalk",
-              "variants": {
-                "color": "regular"
-              }
-            }
-          ]
-        }
       }
     }
   },
@@ -986,6 +886,106 @@
               "id": "planting-strip",
               "variants": {
                 "type": "grass"
+              }
+            }
+          ]
+        }
+      },
+      "tree": {
+        "name": "Tree",
+        "nameKey": "sidewalk-tree",
+        "components": {
+          "lanes": [
+            {
+              "id": "sidewalk",
+              "variants": {
+                "color": "regular"
+              }
+            }
+          ],
+          "objects": [
+            {
+              "id": "tree",
+              "variants": {
+                "type": "big"
+              }
+            }
+          ]
+        }
+      },
+      "lamp": {
+        "name": "Lamp",
+        "nameKey": "sidewalk-lamp",
+        "components": {
+          "lanes": [
+            {
+              "id": "sidewalk",
+              "variants": {
+                "color": "regular"
+              }
+            }
+          ],
+          "objects": [
+            {
+              "id": "lamp",
+              "variants": {
+                "type|orientation": ["modern", "both"]
+              }
+            }
+          ]
+        }
+      },
+      "transformer-box": {
+        "name": "Transformer box",
+        "nameKey": "transformer-box",
+        "components": {
+          "lanes": [
+            {
+              "id": "sidewalk",
+              "variants": {
+                "color": "regular"
+              }
+            }
+          ],
+          "objects": [
+            {
+              "id": "transformer-box",
+              "variants": {
+                "type": "default"
+              }
+            }
+          ]
+        }
+      },
+      "bus-stop": {
+        "name": "Bus stop",
+        "nameKey": "bus-stop",
+        "components": {
+          "lanes": [
+            {
+              "id": "sidewalk",
+              "variants": {
+                "color": "regular"
+              }
+            }
+          ],
+          "objects": [
+            {
+              "id": "bus-stop",
+              "variants": {
+                "type": "default"
+              }
+            }
+          ]
+        }
+      },
+      "empty": {
+        "components": {
+          "lanes": [
+            {
+              "id": "sidewalk",
+              "variants": {
+                "color": "regular"
               }
             }
           ]
@@ -2849,6 +2849,7 @@
         }
       },
       "inbound|left-straight": {
+        "nameKey": "turn-lane-straight",
         "components": {
           "lanes": [
             {
@@ -2901,6 +2902,7 @@
         }
       },
       "inbound|right-straight": {
+        "nameKey": "turn-lane-straight",
         "components": {
           "lanes": [
             {
@@ -2976,6 +2978,7 @@
         }
       },
       "outbound|left-straight": {
+        "nameKey": "turn-lane-straight",
         "components": {
           "lanes": [
             {
@@ -3028,6 +3031,7 @@
         }
       },
       "outbound|right-straight": {
+        "nameKey": "turn-lane-straight",
         "components": {
           "lanes": [
             {

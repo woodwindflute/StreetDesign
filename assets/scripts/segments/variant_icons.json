@@ -258,26 +258,6 @@
     "normal": {
       "id": "sidewalk-density-normal",
       "title": "Normal"
-    },
-    "tree": {
-      "id": "tree",
-      "title": "Tree"
-    },
-    "lamp": {
-      "id": "lamp-modern",
-      "title": "Lamp"
-    },
-    "transformer-box": {
-      "id": "transformer-box",
-      "title": "Transformer box"
-    },
-    "bus-stop": {
-      "id": "bus-stop",
-      "title": "Bus stop(left)"
-    },
-    "empty": {
-      "id": "",
-      "title": "Empty"
     }
   },
   "parking-lane-orientation": {
@@ -308,6 +288,26 @@
     "planting-strip": {
       "id": "grass",
       "title": "Planting strip"
+    },
+    "tree": {
+      "id": "tree",
+      "title": "Tree"
+    },
+    "lamp": {
+      "id": "lamp-modern",
+      "title": "Lamp"
+    },
+    "transformer-box": {
+      "id": "transformer-box",
+      "title": "Transformer box"
+    },
+    "bus-stop": {
+      "id": "bus-stop",
+      "title": "Bus stop(left)"
+    },
+    "empty": {
+      "id": "",
+      "title": "Empty"
     }
   },
   "waiting-area": {

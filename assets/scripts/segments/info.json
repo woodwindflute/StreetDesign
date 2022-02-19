@@ -1138,6 +1138,7 @@
         }
       },
       "inbound|left-straight": {
+        "nameKey": "turn-lane-straight",
         "elevation": 0,
         "minWidth": 9,
         "maxWidth": 12,
@@ -1161,6 +1162,7 @@
         }
       },
       "inbound|right-straight": {
+        "nameKey": "turn-lane-straight",
         "minWidth": 9,
         "maxWidth": 12,
         "elevation": 0,
@@ -1197,6 +1199,7 @@
         }
       },
       "outbound|left-straight": {
+        "nameKey": "turn-lane-straight",
         "minWidth": 9,
         "maxWidth": 12,
         "elevation": 0,
@@ -1220,6 +1223,7 @@
         }
       },
       "outbound|right-straight": {
+        "nameKey": "turn-lane-straight",
         "minWidth": 9,
         "maxWidth": 12,
         "elevation": 0,

@@ -32,15 +32,13 @@ class SaveAsImageDialog extends React.Component {
     transparentSky: PropTypes.bool.isRequired,
     segmentNames: PropTypes.bool.isRequired,
     streetName: PropTypes.bool.isRequired,
-    watermark: PropTypes.bool.isRequired,
     street: PropTypes.object.isRequired,
     name: PropTypes.string,
     allowCustomDpi: PropTypes.bool,
-    allowControlWatermark: PropTypes.bool,
     updateSettings: PropTypes.func
   }
 
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -56,11 +54,11 @@ class SaveAsImageDialog extends React.Component {
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.updatePreview()
   }
 
-  componentDidUpdate (prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) {
     if (this.state.isLoading === true) {
       // Update preview when props change; make a slight delay because there is
       // a slight lag on image creation, but it's so short it feels weird.
@@ -88,11 +86,6 @@ class SaveAsImageDialog extends React.Component {
 
   handleChangeOptionStreetName = (event) => {
     this.props.updateSettings({ saveAsImageStreetName: event.target.checked })
-    this.setState({ isLoading: true })
-  }
-
-  handleChangeOptionWatermark = (event) => {
-    this.props.updateSettings({ saveAsImageWatermark: event.target.checked })
     this.setState({ isLoading: true })
   }
 
@@ -154,7 +147,6 @@ class SaveAsImageDialog extends React.Component {
       this.props.segmentNames,
       this.props.streetName,
       dpi,
-      this.props.watermark
     )
   }
 
@@ -192,7 +184,7 @@ class SaveAsImageDialog extends React.Component {
     return filename
   }
 
-  render () {
+  render() {
     return (
       <Dialog>
         {() => (
@@ -234,17 +226,6 @@ class SaveAsImageDialog extends React.Component {
                   <FormattedMessage
                     id="dialogs.save.option-sky"
                     defaultMessage="Transparent sky"
-                  />
-                </Checkbox>
-
-                <Checkbox
-                  onChange={this.handleChangeOptionWatermark}
-                  checked={this.props.watermark}
-                  disabled={!this.props.allowControlWatermark}
-                >
-                  <FormattedMessage
-                    id="dialogs.save.option-watermark"
-                    defaultMessage="Watermark"
                   />
                 </Checkbox>
               </div>
@@ -329,20 +310,15 @@ class SaveAsImageDialog extends React.Component {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   return {
     locale: state.locale.locale,
     transparentSky: state.settings.saveAsImageTransparentSky,
     segmentNames: state.settings.saveAsImageSegmentNamesAndWidths,
     streetName: state.settings.saveAsImageStreetName,
-    // Even if watermarks are off, override with flag value if EXPORT_WATERMARK is `false`.
-    watermark:
-      state.settings.saveAsImageWatermark ||
-      !state.flags.EXPORT_WATERMARK.value,
     street: state.street,
     name: state.street.name,
     allowCustomDpi: state.flags.SAVE_AS_IMAGE_CUSTOM_DPI.value,
-    allowControlWatermark: state.flags.EXPORT_WATERMARK.value
   }
 }
 

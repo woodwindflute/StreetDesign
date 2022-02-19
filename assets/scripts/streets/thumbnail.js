@@ -20,86 +20,6 @@ import { SAVE_AS_IMAGE_NAMES_WIDTHS_PADDING } from './image'
 const BOTTOM_BACKGROUND = 'rgb(216, 211, 203)'
 const BACKGROUND_DIRT_COLOUR = 'rgb(53, 45, 39)'
 
-const WATERMARK_TEXT_SIZE = 24
-const WATERMARK_RIGHT_MARGIN = 15
-const WATERMARK_BOTTOM_MARGIN = 20
-const WATERMARK_DARK_COLOR = '#333333'
-const WATERMARK_LIGHT_COLOR = '#cccccc'
-
-const WORDMARK_MARGIN = 4
-
-/**
- * Draws a "made with Streetmix" watermark on the lower right of the image.
- *
- * @todo Make it work with rtl
- * @param {CanvasRenderingContext2D} ctx - the canvas context to draw on.
- * @param {Number} dpi - scale factor of image.
- * @param {Boolean} invert - if `true`, render light text for dark background
- * @modifies {CanvasRenderingContext2D}
- */
-function drawWatermark(ctx, dpi, invert) {
-  const text = formatMessage(
-    'export.watermark',
-    'Made with {streetmixWordmark}',
-    {
-      // Replace the {placeholder} with itself. Later, this is used to
-      // render the logo image in place of the text.
-      streetmixWordmark: '{streetmixWordmark}'
-    }
-  )
-  const wordmarkImage = invert
-    ? images.get('/images/wordmark_white.svg')
-    : images.get('/images/wordmark_black.svg')
-
-  // Separate string so that we can render a wordmark with an image
-  const strings = text.replace(/{/g, '||{').replace(/}/g, '}||').split('||')
-
-  // Set text render options
-  ctx.textAlign = 'right'
-  ctx.textBaseline = 'alphabetic'
-  ctx.font = `normal 600 ${WATERMARK_TEXT_SIZE * dpi}px Rubik,sans-serif`
-  ctx.fillStyle = invert ? WATERMARK_LIGHT_COLOR : WATERMARK_DARK_COLOR
-
-  // Set starting X/Y positions so that watermark is aligned right and bottom of image
-  const startRightX = ctx.canvas.width - WATERMARK_RIGHT_MARGIN * dpi
-  const startBottomY = ctx.canvas.height - WATERMARK_BOTTOM_MARGIN * dpi
-
-  // Set wordmark width and height based on image scale (dpi)
-  const logoWidth = wordmarkImage.width * dpi
-  const logoHeight = wordmarkImage.height * dpi
-
-  // Keep track of where we are on the X-position.
-  let currentRightX = startRightX
-
-  // Render each part of the string.
-  for (let i = strings.length - 1; i >= 0; i--) {
-    const string = strings[i]
-
-    // If we see the wordmark placeholder, render the image.
-    if (string === '{streetmixWordmark}') {
-      const margin = WORDMARK_MARGIN * dpi
-      const logoLeftX = currentRightX - logoWidth - margin
-      const logoTopY = startBottomY - logoHeight + dpi // Additional adjustment for visual alignment
-
-      ctx.drawImage(
-        wordmarkImage.img,
-        logoLeftX,
-        logoTopY,
-        logoWidth,
-        logoHeight
-      )
-
-      // Update X position.
-      currentRightX = logoLeftX - margin
-    } else {
-      ctx.fillText(string, currentRightX, startBottomY)
-
-      // Update X position.
-      currentRightX = currentRightX - ctx.measureText(string).width
-    }
-  }
-}
-
 /**
  * Draws a layer of background color
  *
@@ -280,7 +200,6 @@ export function drawStreetThumbnail(
   transparentSky,
   segmentNamesAndWidths,
   streetName,
-  watermark = true
 ) {
   // Calculations
 
@@ -616,14 +535,5 @@ export function drawStreetThumbnail(
     ctx.strokeStyle = 'transparent'
     ctx.fillStyle = 'black'
     ctx.fillText(text, x, y)
-  }
-
-  // Watermark
-  if (watermark) {
-    if (segmentNamesAndWidths) {
-      drawWatermark(ctx, dpi)
-    } else {
-      drawWatermark(ctx, dpi, true)
-    }
   }
 }
