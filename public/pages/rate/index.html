@@ -85,12 +85,12 @@
                 { 
                   SIDEWALKDET = 1;
                 } else if (
-                  segments[i].width > 5 &&
+                  segments[i].width >= 5 &&
                   segments[i].width < 8.33333 &&
                   SIDEWALKDET < 2 // 人行道寬度1.5~2.5m
                 ) {
                   SIDEWALKDET = 2;
-                } else if (segments[i].width <= 5) { // 人行道寬度≦1.5m
+                } else if (segments[i].width < 5) { // 人行道寬度≦1.5m
                   SIDEWALKDET = 3;
                 }
               }
