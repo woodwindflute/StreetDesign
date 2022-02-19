@@ -305,9 +305,9 @@
       "id": "bus-stop",
       "title": "Bus stop(left)"
     },
-    "empty": {
-      "id": "",
-      "title": "Empty"
+    "parking-zone": {
+      "id": "parking-zone",
+      "title": "Parking zone"
     }
   },
   "waiting-area": {

@@ -641,7 +641,7 @@ export function prepare25mStreet () {
       {
         id: nanoid(),
         type: 'sidewalk',
-        variantString: 'empty',
+        variantString: 'normal',
         width: 5
       },
       {
@@ -719,7 +719,7 @@ export function prepare25mStreet () {
       {
         id: nanoid(),
         type: 'sidewalk',
-        variantString: 'empty',
+        variantString: 'normal',
         warnings: [],
         width: 5
       },
@@ -779,7 +779,7 @@ export function prepare30mStreet () {
       {
         id: nanoid(),
         type: 'sidewalk',
-        variantString: 'empty',
+        variantString: 'normal',
         warnings: [],
         width: 6.66667
       },
@@ -858,7 +858,7 @@ export function prepare30mStreet () {
       {
         id: nanoid(),
         type: 'sidewalk',
-        variantString: 'empty',
+        variantString: 'normal',
         warnings: [],
         width: 6.66667
       },
@@ -934,7 +934,7 @@ export function prepare40mStreet () {
       {
         id: nanoid(),
         type: 'sidewalk',
-        variantString: 'empty',
+        variantString: 'normal',
         warnings: [],
         width: 5
       },
@@ -1029,7 +1029,7 @@ export function prepare40mStreet () {
       {
         id: nanoid(),
         type: 'sidewalk',
-        variantString: 'empty',
+        variantString: 'normal',
         warnings: [],
         width: 5
       },

@@ -816,6 +816,11 @@
           }
         }
       }
+    },
+    "parking-zone":{
+      "graphics": {
+        "repeat": "ground--concrete"
+      }
     }
   },
   "vehicles": {

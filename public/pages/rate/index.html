@@ -31,130 +31,257 @@
         );
       };
       request.send();
-      let ph1 = "";
-      let ph2 = "";
-      let ph3 = "";
-      let stylePh1 = "color: black ";
-      let stylePh2 = "color: black ";
-      let stylePh3 = "color: black ";
+      let SIDEWALKCONTENT = "";
+      let STRAIGHTCONTENT = "";
+      let STRAIGHTRIGHTCONTENT = "";
+      let TURNCONTENT = "";
+      let TURNLEFTCONTENT = "";
+      let PUBLICCONTENT = "";
+      
       function Rating(props) {
-        let detPh1 = 0;
-        let detPh2 = 0;
-        let detPh3 = 0;
-        stylePh1 = "color: black ";
-        stylePh2 = "color: black ";
-        stylePh3 = "color: black ";
-        ph1 = "";
-        ph2 = "";
-        ph3 = "";
+        let SIDEWALKDET = 0;
+        let STRAIGHTDET = 0;
+        let STRAIGHTRIGHTDET = 0;
+        let TURNDET = 0;
+        let TURNLEFTDET = 0;
+        let PUBLICDET = 0;
+
+        //stylePh1 = "color: black ";
+        //stylePh2 = "color: black ";
+        //stylePh3 = "color: black ";
+
+        SIDEWALKCONTENT = "";
+        STRAIGHTCONTENT = "";
+        STRAIGHTRIGHTCONTENT = "";
+        TURNCONTENT = "";
+        TURNLEFTCONTENT = "";
+        PUBLICCONTENT = "";
+
         const segments = props.data.street.segments;
+
+        const STRAIGHTELEMENT = ['inbound|car','outbound|car','inbound|truck','outbound|truck',
+                                'inbound|motorcycle-sidecar','outbound|motorcycle-sidecar',
+                                'inbound|straight','outbound|straight','inbound|left-straight','outbound|left-straight'];
+
+        const STRAIGHTRIGHTELEMENT = ['inbound|right-straight','outbound|right-straight']
+
+        const TURNELEMENT = ['inbound|right','outbound|right','inbound|left','outbound|left']
+
+        const TURNLEFTELEMENT = ['inbound|left','outbound|left']
+
         console.log(segments);
+
         for (let i = 0; i < segments.length; i = i + 1) {
+
           console.log(segments[i]);
+
           switch (segments[i].type) {
+
             case "sidewalk":
               if (segments[i].variantString == "normal") {
-                if (segments[i].width >= 8.33333 && detPh1 < 1) {
-                  // 最好的
-                  detPh1 = 1;
+                if (
+                  segments[i].width >= 8.33333 && 
+                  SIDEWALKDET < 1) // 人行道寬度≧2.5m
+                { 
+                  SIDEWALKDET = 1;
                 } else if (
                   segments[i].width > 5 &&
                   segments[i].width < 8.33333 &&
-                  detPh1 < 2
+                  SIDEWALKDET < 2 // 人行道寬度1.5~2.5m
                 ) {
-                  detPh1 = 2;
-                } else if (segments[i].width <= 5) {
-                  detPh1 = 3;
+                  SIDEWALKDET = 2;
+                } else if (segments[i].width <= 5) { // 人行道寬度≦1.5m
+                  SIDEWALKDET = 3;
                 }
               }
               break;
+
             case "drive-lane":
-              if (
-                segments[i].width > 11.66667 &&
-                detPh2 < 4 &&
-                segments[i].variantString != "inbound|sharrow" &&
-                segments[i].variantString != "outbound|sharrow"
-              ) {
-                if (detPh2 === 3) detPh2 = 4;
-                else detPh2 = 2;
-              } else if (
-                segments[i].width >= 10 &&
-                segments[i].width <= 11.66667 &&
-                detPh2 < 1
-              ) {
-                detPh2 = 1;
-              } else if (segments[i].width < 10 && detPh2 < 4) {
-                if (detPh2 === 2) detPh2 = 4;
-                else detPh2 = 3;
+              if(STRAIGHTELEMENT.includes(segments[i].variantString)) {
+                if (segments[i].width > 11.66667) {
+                  if (STRAIGHTDET == 3) STRAIGHTDET = 5
+                  else STRAIGHTDET = 4
+                } else if (
+                  segments[i].width <= 11.66667 &&  
+                  segments[i].width > 10.83333 &&
+                  STRAIGHTDET < 2
+                ) {
+                  STRAIGHTDET = 2
+                } else if (
+                  segments[i].width <= 10.83333 &&
+                  segments[i].width >= 10 && 
+                  STRAIGHTDET < 1
+                ) {
+                  STRAIGHTDET = 1;
+                } else if (
+                  segments[i].width < 10
+                ) {
+                  if (STRAIGHTDET == 4) STRAIGHTDET = 5
+                  else STRAIGHTDET = 3
+                }
               }
               break;
+
             case "turn-lane":
-              if (segments[i].width >= 10 && detPh3 < 1) {
-                detPh3 = 1;
-              } else if (segments[i].width < 10 < 2) {
-                detPh3 = 2;
+              if(STRAIGHTELEMENT.includes(segments[i].variantString)) {
+                if (segments[i].width > 11.66667) {
+                  if (STRAIGHTDET == 3) STRAIGHTDET = 5
+                  else STRAIGHTDET = 4
+                } else if (
+                  segments[i].width <= 11.66667 &&  
+                  segments[i].width > 10.83333 &&
+                  STRAIGHTDET < 2
+                ) {
+                  STRAIGHTDET = 2
+                } else if (
+                  segments[i].width <= 10.83333 &&
+                  segments[i].width >= 10 && 
+                  STRAIGHTDET < 1
+                ) {
+                  STRAIGHTDET = 1;
+                } else if (
+                  segments[i].width < 10
+                ) {
+                  if (STRAIGHTDET == 4) STRAIGHTDET = 5
+                  else STRAIGHTDET = 3
+                }
+              }
+              if(STRAIGHTRIGHTELEMENT.includes(segments[i].variantString)) {
+                if (segments[i].width > 15) {
+                  if (STRAIGHTRIGHTDET == 2) STRAIGHTRIGHTDET = 4
+                  else STRAIGHTRIGHTDET = 3
+                } else if (
+                  segments[i].width <= 15 &&
+                  segments[i].width > 10 && 
+                  STRAIGHTRIGHTDET < 1
+                ) {
+                  STRAIGHTRIGHTDET = 1;
+                } else if (
+                  segments[i].width < 10
+                ) {
+                  if (STRAIGHTRIGHTDET == 3) STRAIGHTRIGHTDET = 4
+                  else STRAIGHTRIGHTDET = 2
+                }
+              }
+              if(TURNELEMENT.includes(segments[i].variantString)) {
+                if (segments[i].width >= 9.33333 &&
+                    TURNDET < 1 ) {
+                  TURNDET = 1
+                } else if (
+                  segments[i].width < 9.33333 
+                ) {
+                  TURNDET = 2
+                }
+              }
+              if(TURNLEFTELEMENT.includes(segments[i].variantString)) {
+                TURNLEFTDET = 1
               }
               break;
+            
+            case "public-zone":
+              PUBLICDET = 1;
           }
         }
-        switch (detPh1) {
+        
+        switch (SIDEWALKDET) {
           case 0:
-            stylePh1 = "color: red";
-            ph1 = "無設立人行道，未考量行人及弱勢族群使用。";
+            //stylePh1 = "color: red";
+            SIDEWALKCONTENT = "未考量行人通行需求及安全性，請再重新檢討斷面配置。";
             break;
           case 1:
-            ph1 = "有設立人行道且寬度 ≧ 2.5m，感謝您設計優質的人本道路！";
+            SIDEWALKCONTENT = "人行道淨寬達2.5公尺以上，是優質的人本道路。";
             break;
           case 2:
-            ph1 = "有設立人行道且寬度介於 1.5~2.5m，這是符合標準的人本道路。";
+            SIDEWALKCONTENT = "人行道淨寬介於1.5~2.5公尺，符合人行道淨寬標準。";
             break;
           case 3:
-            ph1 = "有設立人行道且寬度 ≦ 1.5m，這是以車為主的人本道路。";
+            SIDEWALKCONTENT = "人行道淨寬不足1.5公尺，行人通行不便。";
             break;
         }
 
-        switch (detPh2) {
+        switch (STRAIGHTDET) {
           case 1:
-            ph2 = "車道寬度介於 3.0~3.5m，感謝您提供良好的車行環境！";
+            STRAIGHTCONTENT = "合適的市區道路車道寬。";
             break;
           case 2:
-            stylePh2 = "color: red";
-            ph2 =
-              "車道 > 3.5m 過寬。容易導致汽機車併排搶道，可能增加事故發生。";
+            //stylePh2 = "color: red";
+            STRAIGHTCONTENT =
+              "市區道路速限若在50公里以下時，車道寬度建議不要超過3.25公尺，請再檢討評估。";
             break;
           case 3:
-            stylePh2 = "color: red";
-            ph2 = "車道 < 3m 過窄。可能導致車行困難。";
+            //stylePh2 = "color: red";
+            STRAIGHTCONTENT = "車道寬度未達3公尺，不符合規範。";
             break;
           case 4:
-            stylePh2 = "color: red";
-            ph2 =
-              "車道 > 3.5m 過寬。容易導致汽機車併排搶道，可能增加事故發生。車道 < 3m 過窄。可能導致車行困難。";
+            //stylePh2 = "color: red";
+            STRAIGHTCONTENT =
+              "車道寬達3.5公尺以上，車道過寬容易導致汽機車併排搶道，可能增加事故發生機率，建議可評估縮小車道寬度並增設或拓寬人行道。";
+          case 5:
+            STRAIGHTCONTENT = 
+              "車道寬度未達3公尺，不符合規範 且 車道寬達3.5公尺以上，車道過寬容易導致汽機車併排搶道，可能增加事故發生機率，建議可評估縮小車道寬度並增設或拓寬人行道。"
             break;
         }
 
-        switch (detPh3) {
+        switch (STRAIGHTRIGHTDET) {
           case 1:
-            ph3 = "有設立轉向車道且寬度 ≧ 3m，感謝您提供舒適的車行轉彎環境！";
+            STRAIGHTRIGHTCONTENT = "合適的市區道路最外側車道寬。";
             break;
           case 2:
-            ph3 = "有設立轉向車道且寬度 < 3m，這是有考慮到轉向車輛的道路設計。";
+            //stylePh2 = "color: red";
+            STRAIGHTRIGHTCONTENT =
+              "外側車道寬度未達3公尺，不符合規範。";
+            break;
+          case 3:
+            //stylePh2 = "color: red";
+            STRAIGHTRIGHTCONTENT = "據分析交事故資料，最外側車道寬度超過4.5公尺時將大幅增加事故發生機率，建議可評估縮小車道寬度並增設或拓寬人行道。";
+            break;
+          case 4:
+            //stylePh2 = "color: red";
+            STRAIGHTRIGHTCONTENT =
+              "據分析交事故資料，最外側車道寬度超過4.5公尺時將大幅增加事故發生機率，建議可評估縮小車道寬度並增設或拓寬人行道 且 外側車道寬度未達3公尺，不符合規範。";
             break;
         }
-        document.getElementById("p1").innerHTML = ph1;
-        document.getElementById("p2").innerHTML = ph2;
-        document.getElementById("p3").innerHTML = ph3;
-        document.getElementById("p1").style = stylePh1;
-        document.getElementById("p2").style = stylePh2;
-        document.getElementById("p3").style = stylePh3;
+
+        switch (TURNDET) {
+          case 1:
+            TURNCONTENT = "轉向車道寬度符合規範。"
+            break;
+          case 2:
+            TURNCONTENT = "轉向車道寬度未達2.8公尺，不符合規範。"
+            break;
+        }
+
+        switch (TURNLEFTDET) {
+          case 0:
+            TURNLEFTCONTENT = "左轉車道可避免直行車與左轉車衝突，建議再評估增設的可能性。"
+            break;
+        }
+
+        switch (PUBLICDET) {
+          case 0:
+            PUBLICCONTENT = "請再評估是否需要規劃路側收納桿件及箱體的公共設施帶。"
+            break;
+        }
+        document.getElementById("p1").innerHTML = SIDEWALKCONTENT;
+        document.getElementById("p2").innerHTML = STRAIGHTCONTENT;
+        document.getElementById("p3").innerHTML = STRAIGHTRIGHTCONTENT;
+        document.getElementById("p4").innerHTML = TURNCONTENT;
+        document.getElementById("p5").innerHTML = TURNLEFTCONTENT;
+        document.getElementById("p6").innerHTML = PUBLICCONTENT;
+        //document.getElementById("p1").style = stylePh1;
+        //document.getElementById("p2").style = stylePh2;
+        //document.getElementById("p3").style = stylePh3;
       }
     </script>
   </head>
   <body>
-    <div style="font-size: 18px; text-align: center">
-      <p id="p1"></p>
-      <p id="p2"></p>
-      <p id="p3"></p>
+    <div style = "font-size: 16px; text-align: center">
+      <p id = "p1"></p>
+      <p id = "p2"></p>
+      <p id = "p3"></p>
+      <p id = "p4"></p>
+      <p id = "p5"></p>
+      <p id = "p6"></p>
     </div>
   </body>
 </html>

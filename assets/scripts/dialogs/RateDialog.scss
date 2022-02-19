@@ -1,12 +1,12 @@
 .rate-dialog {
-  width: 45vw;
-  height:45vh;
+  width: 60vw;
+  height:60vh;
   max-height: 1000px;
 }
 
 .rate-dialog iframe {
   position: absolute; /* We need this to make height actually be 100% */
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   border: 0;
 }
