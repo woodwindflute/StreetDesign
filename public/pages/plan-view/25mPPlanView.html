@@ -766,7 +766,7 @@
         <!--不重要道路(上下)-->
         <a-entity id="unimportant" position="0 -0.1 0">
           <a-entity
-            position="-75 0 0"
+            position="-87.7 0 0"
             rotation="0 90 0"
             id="up"
             street='showGround: false; left: none; right: none; JSON:
@@ -781,7 +781,7 @@
           ></a-entity>
 
           <a-entity
-            position="75 0 0"
+            position="87.7 0 0"
             rotation="0 90 0"
             id="down"
             street='showGround: false; left: none; right: none; JSON:
@@ -799,7 +799,7 @@
             id="panel"
             position="0 0.1 0"
             rotation="-90 0 0"
-            width="15"
+            width="25.4"
             height="15"
             color="#545f59"
           ></a-plane>
@@ -817,10 +817,10 @@
 
         <!--11/11 營建署需求新增-->
       <!--人行道方塊-->
-      <a-plane position="10.964 0.02 -6.123" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="3.5"></a-plane>
-      <a-plane position="-11.234 0.02 -6.02" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="3.5"></a-plane>
-      <a-plane position="11.126 0.02 6.123" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="3.5"></a-plane>
-      <a-plane position="-10.934 0.02 6.02" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="3.5"></a-plane>
+      <a-entity scale="1 1.16 1" position="12.665 0.02 -7.588" rotation="90 270 0" geometry="primitive:circle; radius:3;  thetaLength:90" material="repeat:3 3;src:#sidewalk-texture;side:double;"></a-entity>
+      <a-entity scale="1.16 1 1" position="-12.665 0.02 -7.588" rotation="90 0 0" geometry="primitive:circle; radius:3;  thetaLength:90" material="repeat:3 3;src:#sidewalk-texture;side:double;"></a-entity>
+      <a-entity scale="1.16 1 1" position="12.665 0.02 7.588" rotation="90 180 0" geometry="primitive:circle; radius:3;  thetaLength:90" material="repeat:3 3;src:#sidewalk-texture;side:double;"></a-entity>
+      <a-entity scale="1 1.16 1" position="-12.665 0.02 7.588" rotation="90 90 0" geometry="primitive:circle; radius:3;  thetaLength:90" material="repeat:3 3;src:#sidewalk-texture;side:double;"></a-entity>
       <!--停止線-->
       <a-entity  position="-12.85 0.02 2.261" rotation="-90 0 0" atlas-uvs="totalColumns: 8; column: 3" material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;" geometry="primitive: plane; buffer: false; skipCache: true; width:0.3; height:4.5;"></a-entity>
       <a-entity  position="12.85 0.02 -2.261" rotation="-90 0 0" atlas-uvs="totalColumns: 8; column: 3" material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;" geometry="primitive: plane; buffer: false; skipCache: true; width:0.3; height:4.5;"></a-entity>
