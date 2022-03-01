@@ -917,8 +917,8 @@ export function prepare40mStreet () {
       },
       {
         id: nanoid(),
-        type: 'divider',
-        variant: { 'divider-type': 'planting-strip' },
+        type: 'public-zone',
+        variant: { 'public-type': 'planting-strip' },
         variantString: 'planting-strip',
         warnings: [],
         width: 5
@@ -1043,8 +1043,8 @@ export function prepare40mStreet () {
       },
       {
         id: nanoid(),
-        type: 'divider',
-        variant: { 'divider-type': 'planting-strip' },
+        type: 'public-zone',
+        variant: { 'public-type': 'planting-strip' },
         variantString: 'planting-strip',
         warnings: [],
         width: 5

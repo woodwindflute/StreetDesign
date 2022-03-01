@@ -494,7 +494,7 @@
       <!--不重要道路(上下)-->
       <a-entity id="unimportant" position="0 -0.1 0">
         <a-entity
-          position="-75 0 0"
+          position="-90.24 0 0"
           rotation="0 90 0"
           id="up"
           street='showGround: false; left: none; right: none; JSON:
@@ -509,7 +509,7 @@
         ></a-entity>
 
         <a-entity
-          position="75 0 0"
+          position="90.24 0 0"
           rotation="0 90 0"
           id="down"
           street='showGround: false; left: none; right: none; JSON:
@@ -523,17 +523,17 @@
         }'
         ></a-entity>
 
-        <a-plane id="panel" position="0 0.1 0" rotation="-90 0 0" width="15" height="15" color="#545f59"></a-plane>
+        <a-plane id="panel" position="0 0.1 0" rotation="-90 0 0" width="30.48" height="15" color="#545f59"></a-plane>
         <a-text id='text' align="center" position="0 5 0" side="double" value="3m" color="white" scale="15 15 15" visible="false"
           animation="property: rotation; to: 0 360 0; loop: true; dur: 5000 fill: forwards;" ></a-text>
       </a-entity>
 
       <!--11/11 營建署需求新增-->
       <!--人行道方塊-->
-      <a-plane position="12.266 0.02 -6.123" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="6"></a-plane>
-      <a-plane position="-12.266 0.02 -6.02" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="6"></a-plane>
-      <a-plane position="12.266 0.02 6.123" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="6"></a-plane>
-      <a-plane position="-12.266 0.02 6.02" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="6"></a-plane>
+      <a-entity scale="1 0.83 1" position="15.225 0.02 -7.588" rotation="90 270 0" geometry="primitive:circle; radius:3;  thetaLength:90" material="repeat:3 3;src:#sidewalk-texture;side:double;"></a-entity>
+      <a-entity scale="0.83 1 1" position="-15.225 0.02 -7.588" rotation="90 0 0" geometry="primitive:circle; radius:3;  thetaLength:90" material="repeat:3 3;src:#sidewalk-texture;side:double;"></a-entity>
+      <a-entity scale="0.83 1 1" position="15.225 0.02 7.588" rotation="90 180 0" geometry="primitive:circle; radius:3;  thetaLength:90" material="repeat:3 3;src:#sidewalk-texture;side:double;"></a-entity>
+      <a-entity scale="1 0.83 1" position="-15.225 0.02 7.588" rotation="90 90 0" geometry="primitive:circle; radius:3;  thetaLength:90" material="repeat:3 3;src:#sidewalk-texture;side:double;"></a-entity>
       <!--停止線-->
       <a-entity  position="-15.4 0.02 2.261" rotation="-90 0 0" atlas-uvs="totalColumns: 8; column: 3" material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;" geometry="primitive: plane; buffer: false; skipCache: true; width:0.3; height:4.5;"></a-entity>
       <a-entity  position="15.4 0.02 -2.261" rotation="-90 0 0" atlas-uvs="totalColumns: 8; column: 3" material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;" geometry="primitive: plane; buffer: false; skipCache: true; width:0.3; height:4.5;"></a-entity>
@@ -549,14 +549,4 @@
       
     </a-scene>
   </body>
-  <script>
-    let totalWidth = 100 * 0.3048;
-    document.getElementById("panel").setAttribute("width", totalWidth);
-    document
-      .getElementById("up")
-      .setAttribute("position", -75 - totalWidth / 2 + " 0 0");
-    document
-      .getElementById("down")
-      .setAttribute("position", 75 + totalWidth / 2 + " 0 0");
-  </script>
 </html>

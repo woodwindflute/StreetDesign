@@ -75,7 +75,7 @@
 
         <a-entity
           position="75 0 0"
-          rotation="0 90 0"
+          rotation="0 270 0"
           id="down"
           street='showGround: false; left: none; right: none; JSON:
         {
@@ -88,7 +88,7 @@
         }'
         ></a-entity>
 
-        <a-plane id="panel" position="0 0.1 0" rotation="-90 0 0" width="15" height="15" color="#545f59"></a-plane>
+        <a-plane id="panel" position="0 0.07 0" rotation="-90 0 0" width="15" height="15" color="#545f59"></a-plane>
         <a-text id='text' align="center" position="0 5 0" side="double" value="3m" color="white" scale="15 15 15"
           visible="false" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000 fill: forwards;" ></a-text>
       </a-entity>
@@ -114,6 +114,7 @@
         .getElementById("main")
         .getAttribute("totalWidth");
       console.log(totalWidth);
+      if(totalWidth === undefined) location.reload(); 
       document.getElementById("panel").setAttribute("width", totalWidth);
       document
         .getElementById("up")

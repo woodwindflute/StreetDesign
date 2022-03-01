@@ -62,8 +62,8 @@
       <a-entity id="main" position="0 0 114.5">
       <!--馬路 由左至右-->
       <a-entity position="0 0 -76" >
-        <a-triangle vertex-a="-16.2 0 1" vertex-b="-16.2 0 -31" vertex-c="-14.2 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
-        <a-triangle vertex-a="-14.2 0 1" vertex-b="-16.2 0 -31" vertex-c="-14.2 0 -31" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+        <a-triangle position="0 0.05 0" vertex-a="-16.2 0 1" vertex-b="-16.2 0 -31" vertex-c="-14.2 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+        <a-triangle position="0 0.05 0" vertex-a="-14.2 0 1" vertex-b="-16.2 0 -31" vertex-c="-14.2 0 -31" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
         
         <a-triangle vertex-a="-12.7 0 1" vertex-b="-12.7 0 -31" vertex-c="-11.7 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
         <a-triangle vertex-a="-11.7 0 1" vertex-b="-12.7 0 -31" vertex-c="-11.7 0 -31" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
@@ -110,8 +110,8 @@
       <!--馬路結束-->
 
       <!--人行道 由左至右-->
-      <a-triangle vertex-a="-20.3 0 1" vertex-b="-20.3 0 -31" vertex-c="-17.8 0 1" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
-      <a-triangle vertex-a="-17.8 0 1" vertex-b="-20.3 0 -31" vertex-c="-17.8 0 -31" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
+      <a-triangle vertex-a="-20.3 0 1" vertex-b="-20.3 0 -31" vertex-c="-17.8 0 1" position="0 0.05 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
+      <a-triangle vertex-a="-17.8 0 1" vertex-b="-20.3 0 -31" vertex-c="-17.8 0 -31" position="0 0.05 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
       
       <a-triangle vertex-a="-14.2 0 1" vertex-b="-14.2 0 -31" vertex-c="-12.7 0 1" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
       <a-triangle vertex-a="-12.7 0 1" vertex-b="-14.2 0 -31" vertex-c="-12.7 0 -31" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
@@ -122,7 +122,7 @@
       <a-triangle vertex-a="12.7 0 1" vertex-b="13.2 0 -15" vertex-c="14.2 0 1" position="0 0 -76" material="side:double;repeat:1.5 10;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
       <a-triangle vertex-a="14.2 0 1" vertex-b="13.2 0 -15" vertex-c="14.2 0 -15" position="0 0 -76" material="side:double;repeat:1.5 10;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
       
-      <a-plane position="13.7 0 -99" rotation="-90 0 0" material="side:double;repeat:1.5 10;offset:0.55 0" src="#sidewalk-texture" geometry="width:1; height:16"></a-plane>
+      <a-plane position="13.7 0.05 -99" rotation="-90 0 0" material="side:double;repeat:1.5 10;offset:0.55 0" src="#sidewalk-texture" geometry="width:1; height:16"></a-plane>
       <!--人行道結束-->
 
       <!--漸變帶兩邊地板-->
@@ -130,13 +130,13 @@
 
       <!--分隔島開始-->
       <a-entity rotation="0 0 180">
-        <a-triangle position="34 0 -76" vertex-a="-17.7 0 1" vertex-b="-17.7 0 -31" vertex-c="-16.2 0 1" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
-        <a-triangle position="34 0 -76" vertex-a="-16.2 0 1" vertex-b="-17.7 0 -31" vertex-c="-16.2 0 -31" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
+        <a-triangle position="34 -0.05 -76" vertex-a="-17.7 0 1" vertex-b="-17.7 0 -31" vertex-c="-16.2 0 1" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
+        <a-triangle position="34 -0.05 -76" vertex-a="-16.2 0 1" vertex-b="-17.7 0 -31" vertex-c="-16.2 0 -31" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
       
         <a-triangle position="17 0 -76" vertex-a="-17.9 0 1" vertex-b="-16 0 -15" vertex-c="-16 0 1" material="side:double;repeat:1 16;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#hatched-normal" src="#hatched-base"></a-triangle>
         
-        <a-triangle position="0 0 -76" vertex-a="-17.8 0 1" vertex-b="-17.8 0 -31" vertex-c="-16.3 0 1" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
-        <a-triangle position="0 0 -76" vertex-a="-16.3 0 1" vertex-b="-17.8 0 -31" vertex-c="-16.3 0 -31" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
+        <a-triangle position="0 -0.05 -76" vertex-a="-17.8 0 1" vertex-b="-17.8 0 -31" vertex-c="-16.3 0 1" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
+        <a-triangle position="0 -0.05 -76" vertex-a="-16.3 0 1" vertex-b="-17.8 0 -31" vertex-c="-16.3 0 -31" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
       </a-entity>
       <!--分隔島結束-->
 
@@ -340,8 +340,8 @@
       <a-entity position="0 0 -114.5" rotation="0 180 0">
         <!--馬路 由左至右-->
         <a-entity position="0 0 -76" >
-          <a-triangle vertex-a="-16.2 0 1" vertex-b="-16.2 0 -31" vertex-c="-14.2 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
-          <a-triangle vertex-a="-14.2 0 1" vertex-b="-16.2 0 -31" vertex-c="-14.2 0 -31" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          <a-triangle position="0 0.05 0" vertex-a="-16.2 0 1" vertex-b="-16.2 0 -31" vertex-c="-14.2 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
+          <a-triangle position="0 0.05 0" vertex-a="-14.2 0 1" vertex-b="-16.2 0 -31" vertex-c="-14.2 0 -31" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
           
           <a-triangle vertex-a="-12.7 0 1" vertex-b="-12.7 0 -31" vertex-c="-11.7 0 1" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
           <a-triangle vertex-a="-11.7 0 1" vertex-b="-12.7 0 -31" vertex-c="-11.7 0 -31" material="side:double;repeat:0.3 2;offset:0.55 0" src="#drive-lane-texture"></a-triangle>
@@ -388,8 +388,8 @@
         <!--馬路結束-->
   
         <!--人行道 由左至右-->
-        <a-triangle vertex-a="-20.3 0 1" vertex-b="-20.3 0 -31" vertex-c="-17.8 0 1" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
-        <a-triangle vertex-a="-17.8 0 1" vertex-b="-20.3 0 -31" vertex-c="-17.8 0 -31" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
+        <a-triangle vertex-a="-20.3 0 1" vertex-b="-20.3 0 -31" vertex-c="-17.8 0 1" position="0 0.05 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
+        <a-triangle vertex-a="-17.8 0 1" vertex-b="-20.3 0 -31" vertex-c="-17.8 0 -31" position="0 0.05 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
         
         <a-triangle vertex-a="-14.2 0 1" vertex-b="-14.2 0 -31" vertex-c="-12.7 0 1" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
         <a-triangle vertex-a="-12.7 0 1" vertex-b="-14.2 0 -31" vertex-c="-12.7 0 -31" position="0 0 -76" material="side:double;repeat:1.5 20;offset:0.55 0" src="#sidewalk-texture"></a-triangle>
@@ -405,13 +405,13 @@
   
         <!--分隔島開始-->
         <a-entity rotation="0 0 180">
-          <a-triangle position="34 0 -76" vertex-a="-17.7 0 1" vertex-b="-17.7 0 -31" vertex-c="-16.2 0 1" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
-          <a-triangle position="34 0 -76" vertex-a="-16.2 0 1" vertex-b="-17.7 0 -31" vertex-c="-16.2 0 -31" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
+          <a-triangle position="34 -0.05 -76" vertex-a="-17.7 0 1" vertex-b="-17.7 0 -31" vertex-c="-16.2 0 1" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
+          <a-triangle position="34 -0.05 -76" vertex-a="-16.2 0 1" vertex-b="-17.7 0 -31" vertex-c="-16.2 0 -31" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
         
           <a-triangle position="17 0 -76" vertex-a="-17.9 0 1" vertex-b="-16 0 -15" vertex-c="-16 0 1" material="side:double;repeat:1 16;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#hatched-normal" src="#hatched-base"></a-triangle>
           
-          <a-triangle position="0 0 -76" vertex-a="-17.8 0 1" vertex-b="-17.8 0 -31" vertex-c="-16.3 0 1" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
-          <a-triangle position="0 0 -76" vertex-a="-16.3 0 1" vertex-b="-17.8 0 -31" vertex-c="-16.3 0 -31" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
+          <a-triangle position="0 -0.05 -76" vertex-a="-17.8 0 1" vertex-b="-17.8 0 -31" vertex-c="-16.3 0 1" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
+          <a-triangle position="0 -0.05 -76" vertex-a="-16.3 0 1" vertex-b="-17.8 0 -31" vertex-c="-16.3 0 -31" material="side:double;repeat:1 32;offset:0.415 0;normalTextureOffset:0.415 0;normalTextureRepeat:0.21 150;normalMap:#grass-texture" src="#grass-texture"></a-triangle>
         </a-entity>
         <!--分隔島結束-->
   
@@ -615,7 +615,7 @@
       <!--不重要道路(上下)-->
       <a-entity id="unimportant" position="0 -0.1 0">
         <a-entity
-          position="-75 0 0"
+          position="-95.335 0 0"
           rotation="0 90 0"
           id="up"
           street='showGround: false; left: none; right: none; JSON:
@@ -630,7 +630,7 @@
         ></a-entity>
 
         <a-entity
-          position="75 0 0"
+          position="95.335 0 0"
           rotation="0 90 0"
           id="down"
           street='showGround: false; left: none; right: none; JSON:
@@ -644,17 +644,17 @@
         }'
         ></a-entity>
 
-        <a-plane id="panel" position="0 0.1 0" rotation="-90 0 0" width="15" height="15" color="#545f59"></a-plane>
+        <a-plane id="panel" position="0 0.1 0" rotation="-90 0 0" width="40.67" height="15" color="#545f59"></a-plane>
         <a-text id='text' align="center" position="0 5 0" side="double" value="3m" color="white" scale="15 15 15" visible="false"
           animation="property: rotation; to: 0 360 0; loop: true; dur: 5000 fill: forwards;" ></a-text>
       </a-entity>
 
       <!--11/11 營建署需求新增-->
       <!--人行道方塊-->
-      <a-plane position="16.478 0.02 -6.123" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="7.7"></a-plane>
-      <a-plane position="-16.8 0.02 -6.02" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="7.2"></a-plane>
-      <a-plane position="16.8 0.02 6.123" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="7.2"></a-plane>
-      <a-plane position="-16.478 0.02 6.02" rotation="90 0 0" material="side:double;repeat:1.5 1.5;offset:0.55 0" src="#sidewalk-texture" height="3" width="7.7"></a-plane>
+      <a-entity scale="1 1.36 1" position="20.325 0.02 -7.588" rotation="90 270 0" geometry="primitive:circle; radius:3;  thetaLength:90" material="repeat:3 3;src:#sidewalk-texture;side:double;"></a-entity>
+      <a-entity scale="1.36 1 1" position="-20.325 0.02 -7.588" rotation="90 0 0" geometry="primitive:circle; radius:3;  thetaLength:90" material="repeat:3 3;src:#sidewalk-texture;side:double;"></a-entity>
+      <a-entity scale="1.36 1 1" position="20.325 0.02 7.588" rotation="90 180 0" geometry="primitive:circle; radius:3;  thetaLength:90" material="repeat:3 3;src:#sidewalk-texture;side:double;"></a-entity>
+      <a-entity scale="1 1.36 1" position="-20.325 0.02 7.588" rotation="90 90 0" geometry="primitive:circle; radius:3;  thetaLength:90" material="repeat:3 3;src:#sidewalk-texture;side:double;"></a-entity>
       <!--停止線-->
       <a-entity  position="-20.45 0.02 2.3" rotation="-90 0 0" atlas-uvs="totalColumns: 8; column: 3" material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;" geometry="primitive: plane; buffer: false; skipCache: true; width:0.3; height:4.5;"></a-entity>
       <a-entity  position="20.45 0.02 -2.3" rotation="-90 0 0" atlas-uvs="totalColumns: 8; column: 3" material="src: #markings-atlas;alphaTest: 0;transparent:true;repeat:1 25;" geometry="primitive: plane; buffer: false; skipCache: true; width:0.3; height:4.5;"></a-entity>
@@ -672,14 +672,4 @@
       
     </a-scene>
   </body>
-  <script>
-    let totalWidth = 133.33333 * 0.3048;
-    document.getElementById("panel").setAttribute("width", totalWidth);
-    document
-      .getElementById("up")
-      .setAttribute("position", -75 - totalWidth / 2 + " 0 0");
-    document
-      .getElementById("down")
-      .setAttribute("position", 75 + totalWidth / 2 + " 0 0");
-  </script>
 </html>
