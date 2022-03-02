@@ -14,9 +14,10 @@ MenuBar.propTypes = {
   onMenuDropdownClick: PropTypes.func.isRequired
 }
 
-function MenuBar (props) {
+function MenuBar(props) {
   const user = useSelector((state) => state.user.signInData?.details || null)
   const offline = useSelector((state) => state.system.offline)
+  const streetName = useSelector((state) => state.street.name)
   const upgradeFunnel = useSelector(
     (state) => state.flags.BUSINESS_PLAN.value || false
   )
@@ -45,14 +46,14 @@ function MenuBar (props) {
    * Pass in the name of this menu, and it returns (curries) a function
    * that handles the event.
    */
-  function handleClickMenuButton (menu) {
+  function handleClickMenuButton(menu) {
     return (event) => {
       const el = event.target.closest('button')
       props.onMenuDropdownClick(menu, el)
     }
   }
 
-  function handleWindowResize () {
+  function handleWindowResize() {
     // Throw this event so that the StreetName can figure out if it needs
     // to push itself lower than the menubar
     window.dispatchEvent(
@@ -65,18 +66,18 @@ function MenuBar (props) {
     )
   }
 
-  function renderUserAvatar (user) {
+  function renderUserAvatar(user) {
     return user
       ? (
         <li>
           <AvatarMenu user={user} onClick={handleClickMenuButton('identity')} />
         </li>
-        )
+      )
       : (
         <li>
           <SignInButton onClick={doSignIn} />
         </li>
-        )
+      )
   }
 
   return (
@@ -109,7 +110,10 @@ function MenuBar (props) {
           label="Plan view"
           translation="menu.item.plan"
           url="#"
-          onClick={() => dispatch(showDialog('PLAN_VIEW'))}
+          onClick={() => {
+            dispatch(showDialog('PLAN_VIEW'))
+            console.log(streetName)
+          }}
         />
         <MenuBarItem
           label="3D mode"
