@@ -112,7 +112,8 @@ function MenuBar(props) {
           url="#"
           onClick={() => {
             dispatch(showDialog('PLAN_VIEW'))
-            console.log(streetName)
+            console.log(streetName);
+            localStorage.setItem('street-name', streetName);
           }}
         />
         <MenuBarItem
