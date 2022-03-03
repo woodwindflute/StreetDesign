@@ -217,7 +217,8 @@
             position="-75 0 0"
             rotation="0 90 0"
             id="up"
-            street='showGround: false; left: none; right: none; JSON:
+          >
+          <a-entity street='showGround: false; left: none; right: none; JSON:
           {
             "streetmixSegmentsFeet": [
             {"width":10,"type":"sidewalk","variantString":"dense"},
@@ -225,14 +226,15 @@
             {"width":15,"type":"drive-lane","variantString":"outbound|car"},
             {"width":10,"type":"sidewalk","variantString":"dense"}
             ]
-          }'
-          ></a-entity>
+          }'></a-entity>
+          <a-plane position="0 0.5 -7.5" rotation="-90 0 0" material="color: #000000; opacity: 0.2" geometry="width: 15; height: 150"></a-plane>
+          </a-entity>
 
           <a-entity
             position="75 0 0"
             rotation="0 90 0"
-            id="down"
-            street='showGround: false; left: none; right: none; JSON:
+            id="down">
+          <a-entity  street='showGround: false; left: none; right: none; JSON:
           {
             "streetmixSegmentsFeet": [
             {"width":10,"type":"sidewalk","variantString":"dense"},
@@ -240,8 +242,10 @@
             {"width":15,"type":"drive-lane","variantString":"outbound|car"},
             {"width":10,"type":"sidewalk","variantString":"dense"}
             ]
-          }'
-          ></a-entity>
+          }'>
+          </a-entity>
+          <a-plane position="0 0.5 7.5" rotation="-90 0 0" material="color: #000000; opacity: 0.2" geometry="width: 15; height: 150"></a-plane>
+          </a-entity>
 
           <a-plane
             id="panel"

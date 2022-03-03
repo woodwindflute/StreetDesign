@@ -603,56 +603,61 @@
             </a-entity>
     
           <!--不重要道路(上下)-->
-        <a-entity id="unimportant" position="0 -0.1 0">
-          <a-entity
-            position="-95.335 0 0"
-            rotation="0 90 0"
-            id="up"
-            street='showGround: false; left: none; right: none; JSON:
-          {
-            "streetmixSegmentsFeet": [
-            {"width":10,"type":"sidewalk","variantString":"dense"},
-            {"width":15,"type":"drive-lane","variantString":"inbound|car"},
-            {"width":15,"type":"drive-lane","variantString":"outbound|car"},
-            {"width":10,"type":"sidewalk","variantString":"dense"}
-            ]
-          }'
-          ></a-entity>
-
-          <a-entity
-            position="95.335 0 0"
-            rotation="0 90 0"
-            id="down"
-            street='showGround: false; left: none; right: none; JSON:
-          {
-            "streetmixSegmentsFeet": [
-            {"width":10,"type":"sidewalk","variantString":"dense"},
-            {"width":15,"type":"drive-lane","variantString":"inbound|car"},
-            {"width":15,"type":"drive-lane","variantString":"outbound|car"},
-            {"width":10,"type":"sidewalk","variantString":"dense"}
-            ]
-          }'
-          ></a-entity>
-
-          <a-plane
-            id="panel"
-            position="0 0.1 0"
-            rotation="-90 0 0"
-            width="40.67"
-            height="15"
-            color="#545f59"
-          ></a-plane>
-          <a-text
-            id='text'
-            position="0 0.1 0"
-            rotation="-90 -90 0"
-            align="center"
-            value="3m"
-            color="white"
-            scale="10 10 10"
-            visible='false'
-          ></a-text>
-        </a-entity>
+          <a-entity id="unimportant" position="0 -0.1 0">
+            <a-entity
+              position="-95.335 0 0"
+              rotation="0 90 0"
+              id="up"
+            >
+            <a-entity street='showGround: false; left: none; right: none; JSON:
+            {
+              "streetmixSegmentsFeet": [
+              {"width":10,"type":"sidewalk","variantString":"dense"},
+              {"width":15,"type":"drive-lane","variantString":"inbound|car"},
+              {"width":15,"type":"drive-lane","variantString":"outbound|car"},
+              {"width":10,"type":"sidewalk","variantString":"dense"}
+              ]
+            }'
+            ></a-entity>
+            <a-plane position="0 0.5 0" rotation="-90 0 0" material="color: #000000; opacity: 0.2" geometry="width: 15; height: 150"></a-plane>
+            </a-entity>
+  
+            <a-entity
+              position="95.335 0 0"
+              rotation="0 90 0"
+              id="down"
+            >
+            <a-entity street='showGround: false; left: none; right: none; JSON:
+            {
+              "streetmixSegmentsFeet": [
+              {"width":10,"type":"sidewalk","variantString":"dense"},
+              {"width":15,"type":"drive-lane","variantString":"inbound|car"},
+              {"width":15,"type":"drive-lane","variantString":"outbound|car"},
+              {"width":10,"type":"sidewalk","variantString":"dense"}
+              ]
+            }'></a-entity>
+            <a-plane position="0 0.5 0" rotation="-90 0 0" material="color: #000000; opacity: 0.2" geometry="width: 15; height: 150"></a-plane>
+            </a-entity>
+  
+            <a-plane
+              id="panel"
+              position="0 0.1 0"
+              rotation="-90 0 0"
+              width="40.67"
+              height="15"
+              color="#545f59"
+            ></a-plane>
+            <a-text
+              id='text'
+              position="0 0.1 0"
+              rotation="-90 -90 0"
+              align="center"
+              value="3m"
+              color="white"
+              scale="10 10 10"
+              visible='false'
+            ></a-text>
+          </a-entity>
 
         <!--11/11 營建署需求新增-->
       <!--人行道方塊-->

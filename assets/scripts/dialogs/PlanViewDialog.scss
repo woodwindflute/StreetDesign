@@ -2,11 +2,24 @@
   width: 90vw;
   height:95vh;
   max-height: 1000px;
+  background-image:url('../../images/TexturesCom_Grass0052_2_seamless_S.jpg')
 }
 
 .plan-view-dialog iframe {
   position: absolute; /* We need this to make height actually be 100% */
   width: 100%;
-  height: 100%;
+  height: 95%;
   border: 0;
+}
+
+.plan-view-right {
+  color: white;
+  text-align:right;
+  margin: -15px 15px 0px 0px
+}
+
+.plan-view-left {
+  color: white;
+  text-align:left;
+  margin: -15px 0px 0px 15px
 }
