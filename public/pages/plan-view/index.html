@@ -144,14 +144,29 @@
         .getElementById("main")
         .getAttribute("totalWidth");
       console.log(totalWidth);
-      if(totalWidth === null) location.reload();
-      document.getElementById("panel").setAttribute("width", totalWidth);
-      document
-        .getElementById("up")
-        .setAttribute("position", -75 - totalWidth / 2 + " 0 0");
-      document
-        .getElementById("down")
-        .setAttribute("position", 75 + totalWidth / 2 + " 0 0");
+      if(totalWidth === null) {
+        setTimeout(() => {
+          totalWidth = document
+          .getElementById("main")
+          .getAttribute("totalWidth");
+          document.getElementById("panel").setAttribute("width", totalWidth);
+          document
+            .getElementById("up")
+            .setAttribute("position", -75 - totalWidth / 2 + " 0 0");
+          document
+            .getElementById("down")
+            .setAttribute("position", 75 + totalWidth / 2 + " 0 0");
+        },4000)
+      }
+      else {
+        document.getElementById("panel").setAttribute("width", totalWidth);
+        document
+          .getElementById("up")
+          .setAttribute("position", -75 - totalWidth / 2 + " 0 0");
+        document
+          .getElementById("down")
+          .setAttribute("position", 75 + totalWidth / 2 + " 0 0");
+      }
     }, 4000);
   </script>
 </html>
